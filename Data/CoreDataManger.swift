@@ -18,14 +18,24 @@ class CoreDataManger {
         return persistentContainer.viewContext
     }
 
-    var workCycleList = [WorkCycleEntity]()
-
+    var workCycleList  = [WorkCycleEntity]()
+    var latestDayList = [LatestDayEntity]()
 
     func fetchWorkCycle() {
 
         let request = WorkCycleEntity.fetchRequest()
         do {
             workCycleList = try mainContext.fetch(request)
+        } catch {
+            print(error)
+        }
+    }
+
+    func fetcthLatestDay() {
+
+        let request = LatestDayEntity.fetchRequest()
+        do {
+            latestDayList = try mainContext.fetch(request)
         } catch {
             print(error)
         }
@@ -41,6 +51,37 @@ class CoreDataManger {
         
         saveContext()
     }
+
+    func updateWorkCycle(update: WorkCycleEntity, name: String) {
+        update.name = name
+
+        do {
+            try mainContext.save()
+        } catch {
+            print(error)
+        }
+    }
+
+    func addLatestDay(latestDay: Int) {
+        let newLatestDay = LatestDayEntity(context: mainContext)
+
+        newLatestDay.latestDay = Int16(latestDay)
+
+        latestDayList.insert(newLatestDay, at:  0)
+
+        saveContext()
+    }
+
+    func updateTodayDay(update: LatestDayEntity, latestDay: Int) {
+        update.latestDay = Int16(latestDay)
+
+        do {
+            try mainContext.save()
+        } catch {
+            print(error)
+        }
+    }
+
 
 
 
