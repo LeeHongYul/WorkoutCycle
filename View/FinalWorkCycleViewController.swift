@@ -44,7 +44,7 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
 print("\(target)")
 
 
-        cell.finalWorkoutLabel.text = "\(target)"
+        cell.finalWorkoutLabel.text = "\(target!)"
 
 
         return cell

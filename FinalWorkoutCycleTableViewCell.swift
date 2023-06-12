@@ -10,9 +10,14 @@ import UIKit
 class FinalWorkoutCycleTableViewCell: UITableViewCell {
 
     @IBOutlet var finalWorkoutLabel: UILabel!
+
+    @IBOutlet var finalView: RoundedView!
+
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        finalView.dropShadow(scale: true)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
