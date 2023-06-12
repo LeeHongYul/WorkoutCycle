@@ -12,6 +12,7 @@ struct WorkCycle {
     let workImage: String
 }
 
+let cycleList = ["2분할", "3분할", "4분할", "5분할"]
 
 let twoCycleList   = [
     WorkCycle(workPart: "상체", workImage: "upperBody"),

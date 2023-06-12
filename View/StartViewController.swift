@@ -17,7 +17,10 @@ class StartViewController: UIViewController {
         if CoreDataManger.shared.latestDayList.count == 0 {
             CoreDataManger.shared.addLatestDay(latestDay: todayDay)
         } else {
-            CoreDataManger.shared.updateTodayDay(update: target!, latestDay: todayDay)
+            if let target {
+                CoreDataManger.shared.updateTodayDay(update: target, latestDay: todayDay)
+            }
+
         }
 
         

@@ -8,10 +8,10 @@
 import UIKit
 
 class WorkCycleViewController: UIViewController {
-
+    
     var selectedSegue: String?
 
-
+    @IBOutlet var workcycleTableView: UITableView!
 
     @IBAction func saveCycleButton(_ sender: Any) {
         switch selectedSegue {
@@ -37,55 +37,66 @@ class WorkCycleViewController: UIViewController {
         }
     }
 
-
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        print(selectedSegue,"aaaaaaaa")
     }
 }
 
 extension WorkCycleViewController: UITableViewDataSource {
 
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch selectedSegue {
-        case SegueID.twoCycle.rawValue:
-            return twoCycleList.count
-        case SegueID.threeCycle.rawValue:
-            return threeCycleList.count
-        case SegueID.fourCycle.rawValue:
-            return fourCycleList.count
-        case SegueID.fiveCycle.rawValue:
-            return fiveCycleList.count
-        default:
-            return 0
-        }
+        print(selectedSegue, "tableview입니다")
+        
+
+            switch selectedSegue {
+            case SegueID.twoCycle.rawValue:
+                print(twoCycleList.count)
+                return twoCycleList.count
+            case SegueID.threeCycle.rawValue:
+                return threeCycleList.count
+            case SegueID.fourCycle.rawValue:
+                return fourCycleList.count
+            case SegueID.fiveCycle.rawValue:
+                return fiveCycleList.count
+            default:
+                return 0
+            }
+
+
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorkCycleTableViewCell", for: indexPath) as! WorkCycleTableViewCell
 
-        switch selectedSegue {
-        case SegueID.twoCycle.rawValue:
-            let target = twoCycleList[indexPath.row]
-            cell.workoutLabel.text = target.workPart
-            cell.workoutImage.image = UIImage(named: target.workImage)
-        case SegueID.threeCycle.rawValue:
-            let target = threeCycleList[indexPath.row]
-            cell.workoutLabel.text = target.workPart
-            cell.workoutImage.image = UIImage(named: target.workImage)
-        case SegueID.fourCycle.rawValue:
-            let target = fourCycleList[indexPath.row]
-            cell.workoutLabel.text = target.workPart
-            cell.workoutImage.image = UIImage(named: target.workImage)
-        case SegueID.fiveCycle.rawValue:
-            let target = fiveCycleList[indexPath.row]
-            cell.workoutLabel.text = target.workPart
-            cell.workoutImage.image = UIImage(named: target.workImage)
-        default:
-            return UITableViewCell()
-        }
+
+            switch selectedSegue {
+            case SegueID.twoCycle.rawValue:
+                let target = twoCycleList[indexPath.row]
+                cell.workoutLabel.text = target.workPart
+                cell.workoutImage.image = UIImage(named: target.workImage)
+            case SegueID.threeCycle.rawValue:
+                let target = threeCycleList[indexPath.row]
+                cell.workoutLabel.text = target.workPart
+                cell.workoutImage.image = UIImage(named: target.workImage)
+            case SegueID.fourCycle.rawValue:
+                let target = fourCycleList[indexPath.row]
+                cell.workoutLabel.text = target.workPart
+                cell.workoutImage.image = UIImage(named: target.workImage)
+            case SegueID.fiveCycle.rawValue:
+                let target = fiveCycleList[indexPath.row]
+                cell.workoutLabel.text = target.workPart
+                cell.workoutImage.image = UIImage(named: target.workImage)
+            default:
+                return UITableViewCell()
+            }
+
+
 
         return cell
     }

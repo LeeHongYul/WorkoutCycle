@@ -36,12 +36,7 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
         CoreDataManger.shared.fetchWorkCycle()
         let getDay = dayCount % CoreDataManger.shared.workCycleList.count
 
-
-
         let target = CoreDataManger.shared.workCycleList[getDay].name
-
-
-print("\(target)")
 
 
         cell.finalWorkoutLabel.text = "\(target!)"
