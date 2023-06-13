@@ -83,6 +83,21 @@ class CoreDataManger {
     }
 
 
+        func deleteWorkData() {
+            let data = workCycleList.first!
+            mainContext.delete(data)
+
+            saveContext()
+        }
+
+
+    func deleteDayDate() {
+        let data = latestDayList.first!
+        mainContext.delete(data)
+            saveContext()
+    }
+
+
 
 
     // MARK: - Core Data stack

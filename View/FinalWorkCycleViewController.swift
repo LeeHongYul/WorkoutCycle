@@ -14,6 +14,7 @@ class FinalWorkCycleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        CoreDataManger.shared.fetchWorkCycle()
         CoreDataManger.shared.fetcthLatestDay()
     }
 

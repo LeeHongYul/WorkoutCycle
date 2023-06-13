@@ -18,7 +18,6 @@ class WorkCycleViewController: UIViewController {
         case SegueID.twoCycle.rawValue:
             for i in twoCycleList {
                 CoreDataManger.shared.addWorkCycle(name:i.workPart)
-               
             }
         case SegueID.threeCycle.rawValue:
             for i in threeCycleList {
@@ -48,7 +47,6 @@ class WorkCycleViewController: UIViewController {
 extension WorkCycleViewController: UITableViewDataSource {
 
 
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(selectedSegue, "tableview입니다")
         
@@ -66,9 +64,6 @@ extension WorkCycleViewController: UITableViewDataSource {
             default:
                 return 0
             }
-
-
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
