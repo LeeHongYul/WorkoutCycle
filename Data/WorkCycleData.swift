@@ -14,6 +14,8 @@ struct WorkCycle {
 
 let cycleList = ["2분할", "3분할", "4분할", "5분할"]
 
+let addWorkCycleList = ["휴식", "스트렝스", "근비대", "자율운동", "크로스핏", "유산소"]
+
 let twoCycleList   = [
     WorkCycle(workPart: "상체", workImage: "upperBody"),
     WorkCycle(workPart: "하체", workImage: "lowerBody")

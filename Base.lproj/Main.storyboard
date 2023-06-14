@@ -210,16 +210,11 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="VkE-bD-z7y">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="hli-6g-niv">
-                            <connections>
-                                <segue destination="gM0-60-fb5" kind="presentation" modalPresentationStyle="fullScreen" id="B7e-IJ-4ot"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="VkE-bD-z7y"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="workcycleTableView" destination="g9V-KM-wRJ" id="VSB-AL-iPn"/>
+                        <segue destination="gM0-60-fb5" kind="presentation" identifier="finalWorkout" modalPresentationStyle="fullScreen" id="WfW-8A-Hq3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzz-T2-ztu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -305,18 +300,196 @@
         <!--오늘의 운동-->
         <scene sceneID="Fnq-Jj-eH2">
             <objects>
-                <viewController id="AsX-3s-NtD" customClass="TesttViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AsX-3s-NtD" customClass="ListWorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0wW-Vp-MLq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n5g-oZ-VOJ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListWorkCycleTableViewCell" rowHeight="134" id="4mg-4k-nx8" customClass="ListWorkCycleTableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="134"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4mg-4k-nx8" id="3zq-vX-kSE">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="134"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91S-iX-DUp">
+                                                    <rect key="frame" x="25" y="16" width="353" height="102"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-jb-YaP">
+                                                            <rect key="frame" x="138.33333333333334" y="33" width="76.666666666666657" height="36"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Ocf-jb-YaP" firstAttribute="centerX" secondItem="91S-iX-DUp" secondAttribute="centerX" id="hXW-0g-pk9"/>
+                                                        <constraint firstItem="Ocf-jb-YaP" firstAttribute="centerY" secondItem="91S-iX-DUp" secondAttribute="centerY" id="j8o-LM-0G9"/>
+                                                        <constraint firstAttribute="height" constant="100" id="pkd-vQ-bIM"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="91S-iX-DUp" firstAttribute="top" secondItem="3zq-vX-kSE" secondAttribute="topMargin" constant="5" id="KkY-7Y-wZg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="91S-iX-DUp" secondAttribute="bottom" constant="5" id="cxe-Wt-JgB"/>
+                                                <constraint firstItem="91S-iX-DUp" firstAttribute="leading" secondItem="3zq-vX-kSE" secondAttribute="leadingMargin" constant="5" id="j8o-Tq-OY8"/>
+                                                <constraint firstItem="91S-iX-DUp" firstAttribute="trailing" secondItem="3zq-vX-kSE" secondAttribute="trailingMargin" constant="5" id="pVV-Ic-E1w"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="listWorkCycleLabel" destination="Ocf-jb-YaP" id="fcQ-AC-XDX"/>
+                                            <outlet property="listWorkCycleView" destination="91S-iX-DUp" id="qGJ-Rg-uig"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="AsX-3s-NtD" id="a40-1E-3B2"/>
+                                    <outlet property="delegate" destination="AsX-3s-NtD" id="S4c-Ce-Qcg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ij1-13-d2P"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n5g-oZ-VOJ" firstAttribute="trailing" secondItem="ij1-13-d2P" secondAttribute="trailing" id="1d6-dS-U7G"/>
+                            <constraint firstItem="n5g-oZ-VOJ" firstAttribute="leading" secondItem="ij1-13-d2P" secondAttribute="leading" id="6eb-gE-uwc"/>
+                            <constraint firstAttribute="bottom" secondItem="n5g-oZ-VOJ" secondAttribute="bottom" id="THX-dK-akp"/>
+                            <constraint firstItem="n5g-oZ-VOJ" firstAttribute="top" secondItem="0wW-Vp-MLq" secondAttribute="top" id="pMO-yY-ahD"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="오늘의 운동" id="65q-h4-Dd4"/>
+                    <navigationItem key="navigationItem" title="오늘의 운동" id="65q-h4-Dd4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nap-bf-eau">
+                            <connections>
+                                <segue destination="M88-po-Ejl" kind="presentation" id="e0I-tX-Kc2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7rU-yb-wbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1960" y="2365"/>
+            <point key="canvasLocation" x="1959.5419847328244" y="2364.7887323943664"/>
+        </scene>
+        <!--Add Work Cycle View Controller-->
+        <scene sceneID="hzQ-Ii-SY7">
+            <objects>
+                <viewController id="Inp-tE-VFe" customClass="AddWorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i3J-dq-1Yp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="분할에 추가할 옵션을 선택해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtC-CE-AKd">
+                                <rect key="frame" x="20" y="76" width="353" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B8E-jb-jfa">
+                                <rect key="frame" x="20" y="120" width="353" height="204"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8hg-A2-oWW">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddWorkCycleCollectionViewCell" id="nMv-Tb-EVh" customClass="AddWorkCycleCollectionViewCell" customModule="WorkoutCycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DUC-VG-LKT">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikc-B9-e9W" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syA-g4-gfV">
+                                                            <rect key="frame" x="43" y="53.666666666666657" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="syA-g4-gfV" firstAttribute="centerX" secondItem="Ikc-B9-e9W" secondAttribute="centerX" id="cli-jV-yf8"/>
+                                                        <constraint firstItem="syA-g4-gfV" firstAttribute="centerY" secondItem="Ikc-B9-e9W" secondAttribute="centerY" id="fka-zL-tvz"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ikc-B9-e9W" firstAttribute="top" secondItem="DUC-VG-LKT" secondAttribute="top" id="CcR-fh-GBb"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ikc-B9-e9W" secondAttribute="trailing" id="GNh-UC-fvq"/>
+                                                <constraint firstItem="Ikc-B9-e9W" firstAttribute="leading" secondItem="DUC-VG-LKT" secondAttribute="leading" id="Hac-Kf-olF"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ikc-B9-e9W" secondAttribute="bottom" id="tnP-Ad-oh2"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="addWorkCycleLabel" destination="syA-g4-gfV" id="axU-Rm-1wc"/>
+                                            <outlet property="addWorkCycleView" destination="Ikc-B9-e9W" id="bP9-4a-2YT"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Inp-tE-VFe" id="5rh-Ht-ogH"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직접 추가해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayx-eH-hpS">
+                                <rect key="frame" x="20" y="344" width="353" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="추가할 운동 분할을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CrD-lL-bqY">
+                                <rect key="frame" x="20" y="388" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zw-aR-1Fg">
+                                <rect key="frame" x="20" y="442" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="swP-dK-atK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B8E-jb-jfa" firstAttribute="trailing" secondItem="EtC-CE-AKd" secondAttribute="trailing" id="3NU-CJ-C2f"/>
+                            <constraint firstItem="CrD-lL-bqY" firstAttribute="top" secondItem="Ayx-eH-hpS" secondAttribute="bottom" constant="20" id="4G5-qm-ZWd"/>
+                            <constraint firstItem="CrD-lL-bqY" firstAttribute="leading" secondItem="Ayx-eH-hpS" secondAttribute="leading" id="4eJ-vx-kbU"/>
+                            <constraint firstItem="B8E-jb-jfa" firstAttribute="leading" secondItem="EtC-CE-AKd" secondAttribute="leading" id="8fj-Ga-ObY"/>
+                            <constraint firstItem="Ayx-eH-hpS" firstAttribute="top" secondItem="B8E-jb-jfa" secondAttribute="bottom" constant="20" id="B5T-W0-35Y"/>
+                            <constraint firstItem="4zw-aR-1Fg" firstAttribute="trailing" secondItem="CrD-lL-bqY" secondAttribute="trailing" id="Cu2-jO-cMl"/>
+                            <constraint firstItem="Ayx-eH-hpS" firstAttribute="leading" secondItem="B8E-jb-jfa" secondAttribute="leading" id="GMN-XO-BH0"/>
+                            <constraint firstItem="swP-dK-atK" firstAttribute="bottom" secondItem="4zw-aR-1Fg" secondAttribute="bottom" constant="365" id="GyO-aa-JOB"/>
+                            <constraint firstItem="Ayx-eH-hpS" firstAttribute="trailing" secondItem="B8E-jb-jfa" secondAttribute="trailing" id="RNq-fy-rZd"/>
+                            <constraint firstItem="4zw-aR-1Fg" firstAttribute="leading" secondItem="CrD-lL-bqY" secondAttribute="leading" id="cwF-mn-ITt"/>
+                            <constraint firstItem="EtC-CE-AKd" firstAttribute="leading" secondItem="swP-dK-atK" secondAttribute="leading" constant="20" id="eqV-6N-er8"/>
+                            <constraint firstItem="4zw-aR-1Fg" firstAttribute="top" secondItem="CrD-lL-bqY" secondAttribute="bottom" constant="20" id="f7f-DO-tSo"/>
+                            <constraint firstItem="EtC-CE-AKd" firstAttribute="top" secondItem="swP-dK-atK" secondAttribute="top" constant="20" id="kcB-8g-pLg"/>
+                            <constraint firstItem="swP-dK-atK" firstAttribute="trailing" secondItem="EtC-CE-AKd" secondAttribute="trailing" constant="20" id="peo-eh-94y"/>
+                            <constraint firstItem="CrD-lL-bqY" firstAttribute="trailing" secondItem="Ayx-eH-hpS" secondAttribute="trailing" id="tl4-7J-coO"/>
+                            <constraint firstItem="B8E-jb-jfa" firstAttribute="top" secondItem="EtC-CE-AKd" secondAttribute="bottom" constant="20" id="v4X-Ab-qp0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0QA-LU-VNr"/>
+                    <connections>
+                        <outlet property="addWorkCycleCollectionView" destination="B8E-jb-jfa" id="09i-cI-qy4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yYh-x7-Ojd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3692.3664122137402" y="2364.7887323943664"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aZN-pT-2lK">
@@ -466,7 +639,7 @@
                     <tabBarItem key="tabBarItem" title="" image="dumbbell" catalog="system" id="z6x-6n-hwd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RZw-3r-Umh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -485,7 +658,7 @@
                     <tabBarItem key="tabBarItem" title="" image="list.bullet.clipboard" catalog="system" id="ZJA-BF-ftl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4di-4p-Zrc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -504,7 +677,7 @@
                     <tabBarItem key="tabBarItem" title="Item" image="gearshape.fill" catalog="system" id="4ST-l4-yFx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eZX-3c-DaJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -534,9 +707,28 @@
             </objects>
             <point key="canvasLocation" x="-695.41984732824426" y="-13.380281690140846"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iOA-TH-RdG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M88-po-Ejl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="JCs-aF-hl7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hfp-fk-Ag4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Inp-tE-VFe" kind="relationship" relationship="rootViewController" id="PNH-ca-Mhr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N87-Qx-Z36" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2816" y="2365"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B7e-IJ-4ot"/>
+        <segue reference="7kH-8Y-Fws"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dumbbell" catalog="system" width="128" height="72"/>
@@ -555,6 +747,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -28,4 +28,8 @@ extension UIView {
         self.layer.shadowOffset = offset
         self.layer.shadowPath = path
     }
+
+    func setCornerRadius(radius: CGFloat) {
+        self.layer.cornerRadius = radius
+    }
 }

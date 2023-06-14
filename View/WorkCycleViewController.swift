@@ -7,34 +7,56 @@
 
 import UIKit
 
-class WorkCycleViewController: UIViewController {
+class WorkCycleViewController: BaseViewController {
     
     var selectedSegue: String?
 
     @IBOutlet var workcycleTableView: UITableView!
 
-    @IBAction func saveCycleButton(_ sender: Any) {
-        switch selectedSegue {
+
+    func saveToCoredata(target: String)  {
+        switch target {
+
         case SegueID.twoCycle.rawValue:
             for i in twoCycleList {
                 CoreDataManger.shared.addWorkCycle(name:i.workPart)
+print("A")
             }
         case SegueID.threeCycle.rawValue:
             for i in threeCycleList {
                 CoreDataManger.shared.addWorkCycle(name: i.workPart)
+
             }
         case SegueID.fourCycle.rawValue:
             for i in fourCycleList {
                 CoreDataManger.shared.addWorkCycle(name: i.workPart)
+
             }
         case SegueID.fiveCycle.rawValue:
             for i in fiveCycleList {
                 CoreDataManger.shared.addWorkCycle(name: i.workPart)
+
             }
         default:
             return
         }
     }
+
+    @IBAction func saveCycleButton(_ sender: Any) {
+
+
+
+        showAlert(titile: "분할법을 선택합니다.", message: "\(selectedSegue!) 분할법으로 하시겠습니다?") {
+            self.saveToCoredata(target: self.selectedSegue ?? "없음")
+            self.performSegue(withIdentifier: "finalWorkout", sender: self)
+        } cancelCallback: {
+            return
+        }
+    }
+    
+
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
