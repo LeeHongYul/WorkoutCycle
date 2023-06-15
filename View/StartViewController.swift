@@ -13,6 +13,7 @@ class StartViewController: UIViewController {
 
     let target = CoreDataManger.shared.latestDayList.first
 
+    @IBOutlet var startBtn: UIButton!
     @IBAction func startButton(_ sender: Any) {
         if CoreDataManger.shared.latestDayList.count == 0 {
             CoreDataManger.shared.addLatestDay(latestDay: todayDay)
@@ -34,5 +35,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         CoreDataManger.shared.fetchWorkCycle()
+        
+        let Btn = CustomButton(color: .red, title: "시작합니다", systemImageName: "plus")
     }
 }

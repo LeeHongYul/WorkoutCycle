@@ -11,6 +11,12 @@ class AddWorkCycleViewController: BaseViewController {
 
     @IBOutlet var addWorkCycleCollectionView: UICollectionView!
 
+//    @IBAction func nextPage(_ sender: Any) {
+//        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "second") else { return }
+//
+//        self.present(nextVC, animated: true)
+//    }
+
     func creatLayout() -> UICollectionViewLayout {
 
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .absolute(100))
@@ -32,8 +38,7 @@ class AddWorkCycleViewController: BaseViewController {
         if newWorkCycle.count != 0 {
             CoreDataManger.shared.addWorkCycle(name: newWorkCycle)
             showAlert(titile: "새로운 분할을 저장합니다", message: "\(newWorkCycle)을 저장합니다") {
-                let vc = ListWorkCycleViewController()
-                vc.navigationController?.popViewController(animated: true)
+                self.navigationController?.popViewController(animated: true)
             } cancelCallback: {
                 return
             }
@@ -73,7 +78,8 @@ extension AddWorkCycleViewController: UICollectionViewDelegate {
             CoreDataManger.shared.addWorkCycle(name: target)
             CoreDataManger.shared.saveContext()
             showAlert(titile: "새로운 분할을 저장합니다", message: "\(target)을 저장합니다") {
-                self.performSegue(withIdentifier: "addWorkCycle", sender: self)
+//                self.performSegue(withIdentifier: "addWorkCycle", sender: self)
+                self.navigationController?.popViewController(animated: true)
             } cancelCallback: {
                 return
             }

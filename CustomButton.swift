@@ -16,7 +16,10 @@ class CustomButton: UIButton {
         fatalError("init coder has not been implemented")
     }
 
-
+    convenience init(color: UIColor, title: String, systemImageName: String) {
+        self.init(frame: .zero)
+        setColor(color: color, title: title, systemImage: systemImageName)
+    }
 
     func configure() {
         configuration = .tinted()
@@ -24,7 +27,7 @@ class CustomButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false
     }
 
-    func setColor(color: UIColor, title: String, systemImage: String) {
+    final func setColor(color: UIColor, title: String, systemImage: String) {
         configuration?.baseBackgroundColor = color
         configuration?.baseForegroundColor = color
         configuration?.title = title

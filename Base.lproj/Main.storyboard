@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7p0-As-Sa6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yfa-Dr-60x">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -67,7 +67,7 @@
                                         <connections>
                                             <outlet property="pickWorkoutCycleLabel" destination="jx4-n5-YEd" id="0nJ-LV-cW0"/>
                                             <outlet property="pickWorkoutView" destination="kdw-wA-4Su" id="crf-wu-ajB"/>
-                                            <segue destination="S9t-eD-8sR" kind="show" id="rvN-cc-tTu"/>
+                                            <segue destination="S9t-eD-8sR" kind="show" id="OqJ-eR-4NN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3470.9923664122134" y="-13.380281690140846"/>
+            <point key="canvasLocation" x="4397.7099236641216" y="-13.380281690140846"/>
         </scene>
         <!--상세 분할 부위-->
         <scene sceneID="91a-dP-fIt">
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzz-T2-ztu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4637.4045801526718" y="2.8169014084507045"/>
+            <point key="canvasLocation" x="6490.8396946564881" y="2.8169014084507045"/>
         </scene>
         <!--오늘의 운동 부위-->
         <scene sceneID="K8u-C5-pYa">
@@ -365,7 +365,8 @@
                     <navigationItem key="navigationItem" title="오늘의 운동" id="65q-h4-Dd4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nap-bf-eau">
                             <connections>
-                                <segue destination="znL-Hi-xz0" kind="show" identifier="addWorkCycle" id="Cxq-EL-QcM"/>
+                                <action selector="nextPage:" destination="vez-eb-U4Y" id="2Sm-r6-DnX"/>
+                                <segue destination="Inp-tE-VFe" kind="show" id="gjO-rk-1Mz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -374,13 +375,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7rU-yb-wbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vez-eb-U4Y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1959.5419847328244" y="2364.7887323943664"/>
         </scene>
         <!--Add Work Cycle View Controller-->
         <scene sceneID="hzQ-Ii-SY7">
             <objects>
-                <viewController id="Inp-tE-VFe" customClass="AddWorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="second" id="Inp-tE-VFe" customClass="AddWorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i3J-dq-1Yp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -498,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYh-x7-Ojd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4619.0839694656488" y="2364.7887323943664"/>
+            <point key="canvasLocation" x="2824" y="2365"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aZN-pT-2lK">
@@ -526,18 +528,18 @@
             <objects>
                 <viewController id="7p0-As-Sa6" customClass="StartViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nig-Ck-rfj">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="제목_없는_아트워크 3" translatesAutoresizingMaskIntoConstraints="NO" id="M2x-s3-bLv">
-                                <rect key="frame" x="76.666666666666686" y="100" width="240" height="240"/>
+                                <rect key="frame" x="76.666666666666686" y="203" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="YIS-gE-CY3"/>
                                     <constraint firstAttribute="width" constant="240" id="i1B-c7-cqR"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaC-bZ-e34">
-                                <rect key="frame" x="76.666666666666686" y="692" width="240" height="100"/>
+                                <rect key="frame" x="76.666666666666686" y="668" width="240" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trq-Ow-4nZ">
                                         <rect key="frame" x="20" y="20" width="200" height="60"/>
@@ -579,13 +581,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="gtL-IR-8aW"/>
                     <connections>
+                        <outlet property="startBtn" destination="trq-Ow-4nZ" id="uRN-98-Zny"/>
                         <segue destination="gM0-60-fb5" kind="presentation" identifier="yesWorloutCycle" modalPresentationStyle="fullScreen" id="7kH-8Y-Fws"/>
                         <segue destination="Ebo-Dc-q9f" kind="presentation" identifier="noWorkoutCycle" modalPresentationStyle="fullScreen" id="LOj-aL-2bK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUt-lE-RSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231.29770992366412" y="-13.380281690140846"/>
+            <point key="canvasLocation" x="1158.0152671755725" y="-13.380281690140846"/>
         </scene>
         <!--설정-->
         <scene sceneID="1oj-xA-XSD">
@@ -616,7 +619,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="7p0-As-Sa6" kind="showDetail" id="UP8-QH-D4I"/>
+                                            <segue destination="yfa-Dr-60x" kind="presentation" modalPresentationStyle="fullScreen" id="UP8-QH-D4I"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -715,26 +718,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zq-I7-zAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2544.2748091603053" y="-13.380281690140846"/>
+            <point key="canvasLocation" x="3470.9923664122134" y="-13.380281690140846"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="hLf-M4-9Lw">
+        <scene sceneID="DQ7-3g-bNH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="znL-Hi-xz0" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yfa-Dr-60x" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="td2-Mc-dLp"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ylV-if-1IK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y78-k6-YuA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Inp-tE-VFe" kind="relationship" relationship="rootViewController" id="xhs-lt-EtF"/>
+                        <segue destination="7p0-As-Sa6" kind="relationship" relationship="rootViewController" id="Fni-Z2-95T"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gva-nA-Gd8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8p9-jy-q5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3692.3664122137402" y="2364.7887323943664"/>
+            <point key="canvasLocation" x="231.29770992366412" y="-13.380281690140846"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
