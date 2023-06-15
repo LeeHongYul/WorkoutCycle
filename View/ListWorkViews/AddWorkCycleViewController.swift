@@ -37,7 +37,7 @@ class AddWorkCycleViewController: BaseViewController {
         guard let newWorkCycle = addTextField.text else { return }
         if newWorkCycle.count != 0 {
             CoreDataManger.shared.addWorkCycle(name: newWorkCycle)
-            showAlert(titile: "새로운 분할을 저장합니다", message: "\(newWorkCycle)을 저장합니다") {
+            showAlert(title: "새로운 분할을 저장합니다", message: "\(newWorkCycle)을 저장합니다") {
                 self.navigationController?.popViewController(animated: true)
             } cancelCallback: {
                 return
@@ -86,7 +86,7 @@ extension AddWorkCycleViewController: UICollectionViewDelegate {
             CoreDataManger.shared.addWorkCycle(name: target)
 
             CoreDataManger.shared.saveContext()
-            showAlert(titile: "새로운 분할을 저장합니다", message: "\(target)을 저장합니다") {
+            showAlert(title: "새로운 분할을 저장합니다", message: "\(target)을 저장합니다") {
                 self.navigationController?.popViewController(animated: true)
             } cancelCallback: {
                 self.addWorkCycleCollectionView.reloadData()

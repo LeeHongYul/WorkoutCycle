@@ -15,13 +15,13 @@ class BaseViewController: UIViewController {
 
     }
 
-    func showAlert(titile : String,
+    func showAlert(title : String,
                    message : String ,
                    confrimTitle: String = "확인" ,
                    cancelTitle : String = "취소",
                    callback: @escaping () -> Void,
                    cancelCallback : @escaping () -> Void) {
-        let alert = UIAlertController(title: titile, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         let alertAction = UIAlertAction(title: confrimTitle, style: .default) { _ in
            callback()
@@ -36,6 +36,23 @@ class BaseViewController: UIViewController {
         alert.addAction(cancleAction)
         alert.addAction(alertAction)
         self.present(alert, animated: true )
+    }
+
+    func showActionSheet(title: String, message: String, callback: @escaping () -> Void,
+                         cancelCallback : @escaping () -> Void) {
+        let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+
+        let confirmAction = UIAlertAction(title: "확인", style: .default){ _ in
+            callback()
+        }
+        let cancleAction = UIAlertAction(title: "취소", style: .default){ _ in
+            cancelCallback()
+        }
+
+        actionSheet.addAction(confirmAction)
+        actionSheet.addAction(cancleAction)
+        self.present(actionSheet, animated: true)
+
     }
 
 }
