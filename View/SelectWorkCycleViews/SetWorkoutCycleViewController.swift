@@ -53,7 +53,7 @@ extension SetWorkoutCycleViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PickCollectionViewCell", for: indexPath) as! PickCollectionViewCell
 
         let target = cycleList[indexPath.row]
-
+        cell.setup()
         cell.pickWorkoutCycleLabel.text = target
         return cell
     }

@@ -8,10 +8,27 @@
 import UIKit
 
 class AddWorkCycleCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet var addWorkCycleView: UIView!
+
     @IBOutlet var addWorkCycleLabel: UILabel!
 
+    @IBOutlet var cellView: UIView!
+
+    func setup() {
+        cellView.backgroundColor = .orange
+        cellView.layer.cornerRadius = 15
+    }
+
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                cellView.backgroundColor = .blue
+                addWorkCycleLabel.textColor = .white
+            } else {
+                cellView.backgroundColor = .orange
+                addWorkCycleLabel.textColor = .black
+            }
+        }
+    }
 //    init(addWorkCycleView: UIView!, addWorkCycleLabel: UILabel!) {
 //        super.init(frame: CGRect(origin: CGPoint.zero, size: addWorkCycleView.frame.size))
 //        self.addWorkCycleView = addWorkCycleView
