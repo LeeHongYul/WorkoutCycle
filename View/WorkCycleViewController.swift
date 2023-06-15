@@ -20,7 +20,7 @@ class WorkCycleViewController: BaseViewController {
         case SegueID.twoCycle.rawValue:
             for i in twoCycleList {
                 CoreDataManger.shared.addWorkCycle(name:i.workPart)
-print("A")
+
             }
         case SegueID.threeCycle.rawValue:
             for i in threeCycleList {

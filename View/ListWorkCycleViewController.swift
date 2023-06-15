@@ -9,12 +9,16 @@ import UIKit
 
 class ListWorkCycleViewController: UIViewController {
 
+    @IBOutlet var listTableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        CoreDataManger.shared.fetchWorkCycle()
+        listTableView.reloadData()
+    }
 }
 
 extension ListWorkCycleViewController: UITableViewDataSource {
@@ -29,12 +33,8 @@ extension ListWorkCycleViewController: UITableViewDataSource {
 
         cell.listWorkCycleLabel.text = target
 
-
-
         return cell
     }
-
-
 }
 
 extension ListWorkCycleViewController: UITableViewDelegate {

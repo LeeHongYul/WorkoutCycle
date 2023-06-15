@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
         }
 
 
-        let cancleAction = UIAlertAction(title: cancelTitle, style: .cancel)
+        let cancleAction = UIAlertAction(title: cancelTitle, style: .destructive)
 
 
         alert.addAction(cancleAction)
