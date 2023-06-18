@@ -19,22 +19,22 @@ class WorkCycleViewController: BaseViewController {
 
         case SegueID.twoCycle.rawValue:
             for i in twoCycleList {
-                CoreDataManger.shared.addWorkCycle(name:i.workPart)
+                WorkCycleManger.shared.addWorkCycle(name:i.workPart)
 
             }
         case SegueID.threeCycle.rawValue:
             for i in threeCycleList {
-                CoreDataManger.shared.addWorkCycle(name: i.workPart)
+                WorkCycleManger.shared.addWorkCycle(name: i.workPart)
 
             }
         case SegueID.fourCycle.rawValue:
             for i in fourCycleList {
-                CoreDataManger.shared.addWorkCycle(name: i.workPart)
+                WorkCycleManger.shared.addWorkCycle(name: i.workPart)
 
             }
         case SegueID.fiveCycle.rawValue:
             for i in fiveCycleList {
-                CoreDataManger.shared.addWorkCycle(name: i.workPart)
+                WorkCycleManger.shared.addWorkCycle(name: i.workPart)
 
             }
         default:

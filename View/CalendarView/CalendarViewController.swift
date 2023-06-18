@@ -35,6 +35,8 @@ let section = UICalendarSelectionSingleDate(delegate: self)
         ])
     }
 }
+
+
 extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
 
@@ -48,5 +50,10 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
     }
 }
 extension CalendarViewController :UICalendarViewDelegate {
+    func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
 
+        return .image(UIImage(systemName: "checkmark")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal))
+
+
+    }
 }

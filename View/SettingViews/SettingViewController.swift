@@ -33,16 +33,16 @@ extension SettingViewController: UITableViewDataSource {
 
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let target1 = CoreDataManger.shared.latestDayList
-        let target2 = CoreDataManger.shared.workCycleList
+        let target1 = LatestDayManger.shared.latestDayList
+        let target2 = WorkCycleManger.shared.workCycleList
 
-        CoreDataManger.shared.deleteDayDate()
-        CoreDataManger.shared.fetcthLatestDay()
+        LatestDayManger.shared.deleteDayDate()
+        LatestDayManger.shared.fetcthLatestDay()
 
         for i in target2 {
 
-            CoreDataManger.shared.deleteWorkData()
-            CoreDataManger.shared.fetchWorkCycle()
+            WorkCycleManger.shared.deleteWorkData()
+            WorkCycleManger.shared.fetchWorkCycle()
             print("deleteWork\(i)")
         }
 

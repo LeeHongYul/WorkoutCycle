@@ -10,16 +10,20 @@ import CoreData
 
 class FinalWorkCycleViewController: UIViewController {
 
+    @IBOutlet var tomorrowWorkLabel: UILabel!
+
+    @IBOutlet var tomorrowWorkView: UIView!
     let todayDate = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CoreDataManger.shared.fetchWorkCycle()
-        CoreDataManger.shared.fetcthLatestDay()
+        tomorrowWorkView.dropShadow()
+        WorkCycleManger.shared.fetchWorkCycle()
+        LatestDayManger.shared.fetcthLatestDay()
     }
 
     func CheckHowManyDayGone() -> Int {
-        let daysCount = Int16(todayDate.day) - (CoreDataManger.shared.latestDayList.first!.latestDay)
+        let daysCount = Int16(todayDate.day) - (LatestDayManger.shared.latestDayList.first!.latestDay)
 
         return Int(daysCount)
     }
@@ -34,12 +38,15 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FinalWorkoutCycleTableViewCell", for: indexPath) as! FinalWorkoutCycleTableViewCell
 
         let dayCount = CheckHowManyDayGone()
-        CoreDataManger.shared.fetchWorkCycle()
-        let getDay = dayCount % CoreDataManger.shared.workCycleList.count
+        WorkCycleManger.shared.fetchWorkCycle()
 
-        let target = CoreDataManger.shared.workCycleList[getDay].name
+        let getDay = dayCount % WorkCycleManger.shared.workCycleList.count
+        let target = WorkCycleManger.shared.workCycleList[getDay].name
 
+        let getTomorrow = getDay + 1
+        let tomorrowTarget = WorkCycleManger.shared.workCycleList[getTomorrow].name
 
+        tomorrowWorkLabel.text = tomorrowTarget
         cell.finalWorkoutLabel.text = "\(target!)"
 
 

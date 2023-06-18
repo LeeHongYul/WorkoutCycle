@@ -45,7 +45,7 @@ class BaseViewController: UIViewController {
         let confirmAction = UIAlertAction(title: "확인", style: .default){ _ in
             callback()
         }
-        let cancleAction = UIAlertAction(title: "취소", style: .default){ _ in
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel){ _ in
             cancelCallback()
         }
 
