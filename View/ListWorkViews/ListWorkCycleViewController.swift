@@ -16,19 +16,19 @@ class ListWorkCycleViewController: UIViewController {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        CoreDataManger.shared.fetchWorkCycle()
+        WorkCycleManger.shared.fetchWorkCycle()
         listTableView.reloadData()
     }
 }
 
 extension ListWorkCycleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        CoreDataManger.shared.workCycleList.count
+        WorkCycleManger.shared.workCycleList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListWorkCycleTableViewCell", for: indexPath) as! ListWorkCycleTableViewCell
-        let target = CoreDataManger.shared.workCycleList[indexPath.row].name
+        let target = WorkCycleManger.shared.workCycleList[indexPath.row].name
 
 
         cell.listWorkCycleLabel.text = target
