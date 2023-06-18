@@ -136,6 +136,55 @@ class LatestDayManger: BaseManger {
     }
 }
 
+class CheckMarkManger: BaseManger {
 
+    static let shared = CheckMarkManger()
+
+    private override init() {}
+
+    var mainContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+
+    var checkMarkList = [CheckMarkEntity]()
+
+//    func fetchByChecked() {
+//        let request = CheckMarkEntity.fetchRequest()
+//        let sortByCheck = NSSortDescriptor(key: "isChecked", ascending: false)
+//        request.sortDescriptors = [sortByCheck]
+//        do {
+//            checkMarkList = try mainContext.fetch(request)
+//        } catch {
+//            print(error)
+//        }
+//    }
+
+    func fetcthCheckMark() {
+
+        let request = CheckMarkEntity.fetchRequest()
+        do {
+            checkMarkList = try mainContext.fetch(request)
+        } catch {
+            print(error)
+        }
+    }
+
+    func addCheckMark(checkedDate: Date, isChecked: Bool) {
+        let newCheck = CheckMarkEntity(context: mainContext)
+
+        newCheck.checkedDate = checkedDate
+        newCheck.isChecked = isChecked
+
+        checkMarkList.insert(newCheck, at:  0)
+
+        saveContext()
+    }
+
+    func deleteCheckMark() {
+        let data = checkMarkList.first!
+        mainContext.delete(data)
+            saveContext()
+    }
+}
 
 
