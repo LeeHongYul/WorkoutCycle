@@ -41,7 +41,7 @@ extension SettingViewController: UITableViewDelegate {
 
         for i in target2 {
 
-            WorkCycleManger.shared.deleteWorkData()
+            WorkCycleManger.shared.deleteWorkData(WorkCycle: i)
             WorkCycleManger.shared.fetchWorkCycle()
             print("deleteWork\(i)")
         }

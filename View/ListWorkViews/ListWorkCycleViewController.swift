@@ -39,4 +39,18 @@ extension ListWorkCycleViewController: UITableViewDataSource {
 
 extension ListWorkCycleViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let target = WorkCycleManger.shared.workCycleList[indexPath.row]
+            WorkCycleManger.shared.deleteWorkData(WorkCycle: target)
+
+            WorkCycleManger.shared.fetchWorkCycle()
+            listTableView.reloadData()
+        }
+    }
+
 }

@@ -288,15 +288,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oep-cD-bH6">
                                 <rect key="frame" x="20" y="661.33333333333337" width="353" height="111.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일의 운동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-Zh-xJw">
-                                        <rect key="frame" x="10" y="10" width="333" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOt-h5-GyS">
                                         <rect key="frame" x="10" y="68" width="333" height="33.666666666666657"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일의 운동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-Zh-xJw">
+                                        <rect key="frame" x="10" y="10" width="333" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -543,14 +543,30 @@
                     <view key="view" contentMode="scaleToFill" id="ghI-gk-GHm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오운완" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOA-ix-bfL">
+                                <rect key="frame" x="20" y="727" width="353" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oHk-Of-K5w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oHk-Of-K5w" firstAttribute="trailing" secondItem="YOA-ix-bfL" secondAttribute="trailing" constant="20" id="KUs-iP-XkX"/>
+                            <constraint firstItem="oHk-Of-K5w" firstAttribute="bottom" secondItem="YOA-ix-bfL" secondAttribute="bottom" constant="40" id="Km8-i2-pwM"/>
+                            <constraint firstItem="YOA-ix-bfL" firstAttribute="leading" secondItem="oHk-Of-K5w" secondAttribute="leading" constant="20" id="opH-gh-5eS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WX7-4p-NuX"/>
+                    <connections>
+                        <outlet property="checkedDatesLabel" destination="YOA-ix-bfL" id="E5t-WE-Yhn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUa-GY-mIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="2365"/>
+            <point key="canvasLocation" x="3003.8167938931297" y="2364.7887323943664"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aZN-pT-2lK">

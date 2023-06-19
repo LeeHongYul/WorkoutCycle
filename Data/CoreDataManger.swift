@@ -78,9 +78,8 @@ class WorkCycleManger: BaseManger {
         }
     }
 
-        func deleteWorkData() {
-            let data = workCycleList.first!
-            mainContext.delete(data)
+    func deleteWorkData(WorkCycle: WorkCycleEntity) {
+            mainContext.delete(WorkCycle)
 
             saveContext()
         }
