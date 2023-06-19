@@ -40,7 +40,7 @@ class CalendarViewController: BaseViewController {
             calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 10),
             calendarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            calendarView.heightAnchor.constraint(equalToConstant: 400)
+            calendarView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.6)
         ])
     }
 }
@@ -68,7 +68,7 @@ extension CalendarViewController :UICalendarViewDelegate {
         // 날짜에 해당하는 체크마크 데이터를 가져옵니다.
         if checkMarkManager.contains(where: { $0.isChecked && $0.checkedDate == dateComponents.date }) {
 
-            return .image(UIImage(systemName: "checkmark")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal))
+            return .image(UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal))
         } else {
             return nil
         }
