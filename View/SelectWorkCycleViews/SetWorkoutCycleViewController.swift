@@ -11,6 +11,24 @@ class SetWorkoutCycleViewController: UIViewController {
 
     @IBOutlet var pickCollectionView: UICollectionView!
 
+    @IBOutlet var workcyclePageControl: UIPageControl!
+
+    @IBAction func workcyclePageControl(_ sender: Any) {
+
+        let indexPath = IndexPath(item: self.workcyclePageControl.currentPage, section: 0)
+
+
+        pickCollectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
+        
+
+    }
+
+    func setPageControl() {
+        workcyclePageControl.currentPage = 0
+        workcyclePageControl.numberOfPages = cycleList.count
+    }
+
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? WorkCycleViewController, let cell = sender as? UICollectionViewCell, let indexPath = pickCollectionView.indexPath(for: cell)  {
             let target = cycleList[indexPath.row]
@@ -19,7 +37,7 @@ class SetWorkoutCycleViewController: UIViewController {
     }
 
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.8))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
 
@@ -37,7 +55,7 @@ class SetWorkoutCycleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setPageControl()
         pickCollectionView.collectionViewLayout = createLayout()
         pickCollectionView.reloadData()
     }
@@ -56,6 +74,12 @@ extension SetWorkoutCycleViewController: UICollectionViewDataSource {
         cell.setup()
         cell.pickWorkoutCycleLabel.text = target
         return cell
+    }
+}
+
+extension SetWorkoutCycleViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        workcyclePageControl.currentPage = indexPath.row
     }
 }
 

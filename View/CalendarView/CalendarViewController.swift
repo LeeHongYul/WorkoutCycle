@@ -9,7 +9,6 @@ import UIKit
 
 class CalendarViewController: BaseViewController {
 
-    @IBOutlet var checkedDatesLabel: UILabel!
     let calendarView = UICalendarView()
 
     override func viewDidLoad() {
@@ -18,12 +17,6 @@ class CalendarViewController: BaseViewController {
         CheckMarkManger.shared.fetcthCheckMark()
         calendarView.reloadInputViews()
     }
-
-//    func checkedDatesCount() {
-//        let dateCounts = CheckMarkManger.shared.checkMarkList.count
-//
-//        checkedDatesLabel.text = "오운완 : \(dateCounts)"
-//    }
 
     func createCalendar() {
         calendarView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +33,7 @@ class CalendarViewController: BaseViewController {
             calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 10),
             calendarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            calendarView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.6)
+            calendarView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.9)
         ])
     }
 }
@@ -51,7 +44,7 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
 
         guard let todayDate = dateComponents?.date else { return }
 
-        self.showActionSheet(title: "오운완?", message: "\(todayDate.dateToString()) 운동을 완료합니다.") {
+        self.showActionSheet(title: "오운완?", message: "\(todayDate.dateToString()) 운동을 완료합니다") {
             print("오늘 운동 함")
             CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
             CheckMarkManger.shared.fetcthCheckMark()
@@ -81,6 +74,7 @@ extension CalendarViewController :UICalendarViewDelegate {
 
         let matchingCount = target.filter { $0.isChecked && $0.checkedDate?.month == availableDate }.count
 
-        self.checkedDatesLabel.text = "\(availableDate)월 오운완 \(matchingCount)"
+        self.navigationItem.title = "\(availableDate)월 오운완 \(matchingCount) 번"
+
     }
 }
