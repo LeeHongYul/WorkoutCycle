@@ -11,11 +11,13 @@ class AddWorkCycleViewController: BaseViewController {
 
     @IBOutlet var addWorkCycleCollectionView: UICollectionView!
 
-    //    @IBAction func nextPage(_ sender: Any) {
-    //        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "second") else { return }
-    //
-    //        self.present(nextVC, animated: true)
-    //    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "inputWorkcycle" {
+            if (segue.destination.sheetPresentationController?.detents = [.medium()]) != nil {
+                let viewController = segue.destination as?  InputWorlCycleViewController
+            }
+        }
+    }
 
     func creatLayout() -> UICollectionViewLayout {
 
@@ -30,22 +32,7 @@ class AddWorkCycleViewController: BaseViewController {
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
-
-    @IBOutlet var addTextField: UITextField!
-
-    @IBAction func saveButton(_ sender: Any) {
-        guard let newWorkCycle = addTextField.text else { return }
-        if newWorkCycle.count != 0 {
-            WorkCycleManger.shared.addWorkCycle(name: newWorkCycle)
-            showAlert(title: "새로운 분할을 저장합니다", message: "\(newWorkCycle)을 저장합니다") {
-                self.navigationController?.popViewController(animated: true)
-            } cancelCallback: {
-                return
-            }
-        }
-    }
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addWorkCycleCollectionView.collectionViewLayout = creatLayout()

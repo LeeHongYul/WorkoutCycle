@@ -22,6 +22,10 @@ class FinalWorkCycleViewController: UIViewController {
         LatestDayManger.shared.fetcthLatestDay()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        WorkCycleManger.shared.fetchWorkCycle()
+    }
+
     func CheckHowManyDayGone() -> Int {
         let daysCount = Int16(todayDate.day) - (LatestDayManger.shared.latestDayList.first!.latestDay)
 
@@ -42,12 +46,18 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
 
         let getDay = dayCount % WorkCycleManger.shared.workCycleList.count
         let target = WorkCycleManger.shared.workCycleList[getDay].name
+        cell.finalWorkoutLabel.text = "\(target!)"
+
 
         let getTomorrow = getDay + 1
-        let tomorrowTarget = WorkCycleManger.shared.workCycleList[getTomorrow].name
+        if WorkCycleManger.shared.workCycleList.count > 1 {
+            let tomorrowTarget = WorkCycleManger.shared.workCycleList[getTomorrow].name
 
-        tomorrowWorkLabel.text = tomorrowTarget
-        cell.finalWorkoutLabel.text = "\(target!)"
+            tomorrowWorkLabel.text = tomorrowTarget
+        } else {
+            tomorrowWorkLabel.text = target
+        }
+
 
 
         return cell
