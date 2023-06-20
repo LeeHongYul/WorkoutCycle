@@ -8,8 +8,10 @@
 import UIKit
 import CoreData
 
-class FinalWorkCycleViewController: UIViewController {
+class FinalWorkCycleViewController: BaseViewController {
 
+    @IBOutlet var finalTableView: UITableView!
+    
     @IBOutlet var tomorrowWorkLabel: UILabel!
 
     @IBOutlet var tomorrowWorkView: UIView!
@@ -21,11 +23,7 @@ class FinalWorkCycleViewController: UIViewController {
         WorkCycleManger.shared.fetchWorkCycle()
         LatestDayManger.shared.fetcthLatestDay()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        WorkCycleManger.shared.fetchWorkCycle()
-    }
-
+    
     func CheckHowManyDayGone() -> Int {
         let daysCount = Int16(todayDate.day) - (LatestDayManger.shared.latestDayList.first!.latestDay)
 
@@ -57,14 +55,11 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
         } else {
             tomorrowWorkLabel.text = target
         }
-
-
-
         return cell
     }
-
-
 }
+
+
 
 
 

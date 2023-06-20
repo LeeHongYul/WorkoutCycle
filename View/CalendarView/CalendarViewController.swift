@@ -10,7 +10,7 @@ import UIKit
 class CalendarViewController: BaseViewController {
 
     let calendarView = UICalendarView()
-
+    var dateComponentList = [DateComponents]()
     override func viewDidLoad() {
         super.viewDidLoad()
         createCalendar()
@@ -46,8 +46,9 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
 
         self.showActionSheet(title: "오운완?", message: "\(todayDate.dateToString()) 운동을 완료합니다") {
             print("오늘 운동 함")
+            self.dateComponentList.append(dateComponents!)
             CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
-            CheckMarkManger.shared.fetcthCheckMark()
+            self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
         } cancelCallback: {
             print("오늘 운동 안함")
         }
@@ -74,7 +75,7 @@ extension CalendarViewController :UICalendarViewDelegate {
 
         let matchingCount = target.filter { $0.isChecked && $0.checkedDate?.month == availableDate }.count
 
-        self.navigationItem.title = "\(availableDate)월 오운완 \(matchingCount) 번"
+        self.navigationItem.title = "\(availableDate) 월 오운완 \(matchingCount) 번"
 
     }
 }

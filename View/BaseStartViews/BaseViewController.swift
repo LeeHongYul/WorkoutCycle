@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
 
 
     }
-
+    
     func showAlert(title : String,
                    message : String ,
                    confrimTitle: String = "확인" ,
@@ -54,6 +54,5 @@ class BaseViewController: UIViewController {
         self.present(actionSheet, animated: true)
 
     }
-
 }
 

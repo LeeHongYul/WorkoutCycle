@@ -391,6 +391,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="오늘의 운동 " id="Lkq-v9-zMK"/>
                     <connections>
+                        <outlet property="finalTableView" destination="gi0-oJ-nsX" id="Uue-90-ZYr"/>
                         <outlet property="tomorrowWorkLabel" destination="sOt-h5-GyS" id="yXa-d4-ZRx"/>
                         <outlet property="tomorrowWorkView" destination="oep-cD-bH6" id="8uq-ee-Apk"/>
                     </connections>
@@ -644,10 +645,10 @@
             </objects>
             <point key="canvasLocation" x="3003.8167938931297" y="2364.7887323943664"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="aZN-pT-2lK">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gM0-60-fb5" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gM0-60-fb5" customClass="TabBarViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6i4-Xj-Od7"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eEi-Wx-kfv">
