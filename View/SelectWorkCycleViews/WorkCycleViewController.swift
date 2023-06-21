@@ -13,29 +13,24 @@ class WorkCycleViewController: BaseViewController {
 
     @IBOutlet var workcycleTableView: UITableView!
 
-
     func saveToCoredata(target: String)  {
         switch target {
 
         case SegueID.twoCycle.rawValue:
             for i in twoCycleList {
                 WorkCycleManger.shared.addWorkCycle(name:i.workPart)
-
             }
         case SegueID.threeCycle.rawValue:
             for i in threeCycleList {
                 WorkCycleManger.shared.addWorkCycle(name: i.workPart)
-
             }
         case SegueID.fourCycle.rawValue:
             for i in fourCycleList {
                 WorkCycleManger.shared.addWorkCycle(name: i.workPart)
-
             }
         case SegueID.fiveCycle.rawValue:
             for i in fiveCycleList {
                 WorkCycleManger.shared.addWorkCycle(name: i.workPart)
-
             }
         default:
             return
@@ -61,8 +56,6 @@ extension WorkCycleViewController: UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(selectedSegue, "tableview입니다")
-        
 
             switch selectedSegue {
             case SegueID.twoCycle.rawValue:
@@ -81,7 +74,6 @@ extension WorkCycleViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorkCycleTableViewCell", for: indexPath) as! WorkCycleTableViewCell
-
 
             switch selectedSegue {
             case SegueID.twoCycle.rawValue:

@@ -24,9 +24,9 @@ extension TabBarViewController: UITabBarControllerDelegate {
             finalWorkCycleViewController.finalTableView.reloadData()
             WorkCycleManger.shared.fetchWorkCycle()
 
-                print("여기는 파이널 뷰")
-            } else {
-                print("탭 바 누림")
-            }
+            print("Entered FinalView")
+        } else {
+            print("Tabbar Clicked")
+        }
     }
 }

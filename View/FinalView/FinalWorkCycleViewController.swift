@@ -11,9 +11,7 @@ import CoreData
 class FinalWorkCycleViewController: BaseViewController {
 
     @IBOutlet var finalTableView: UITableView!
-    
     @IBOutlet var tomorrowWorkLabel: UILabel!
-
     @IBOutlet var tomorrowWorkView: UIView!
     
 
@@ -22,7 +20,7 @@ class FinalWorkCycleViewController: BaseViewController {
         tomorrowWorkView.dropShadow()
         WorkCycleManger.shared.fetchWorkCycle()
         LatestDayManger.shared.fetcthLatestDay()
-       checkPermission()
+        checkPermission()
     }
 
 }
@@ -37,28 +35,21 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
 
         WorkCycleManger.shared.fetchWorkCycle()
 
+        let getTomorrow = checkHowManyDayGone() + 1
+
         let target = WorkCycleManger.shared.workCycleList[checkHowManyDayGone()].name
+        let tomorrowTarget = WorkCycleManger.shared.workCycleList[getTomorrow].name
+
         cell.finalWorkoutLabel.text = "\(target!)"
 
+        let selectedTarget = WorkCycleManger.shared.workCycleList.count > 1 ? tomorrowTarget : target
+        tomorrowWorkLabel.text = selectedTarget
 
-        let getTomorrow = checkHowManyDayGone() + 1
-        if WorkCycleManger.shared.workCycleList.count > 1 {
-            let tomorrowTarget = WorkCycleManger.shared.workCycleList[getTomorrow].name
-
-            tomorrowWorkLabel.text = tomorrowTarget
-        } else {
-            tomorrowWorkLabel.text = target
-        }
         return cell
     }
 }
 
-
-
-
-
 extension Date {
-    // Date에서 Component에 해당되는 값 가져오기
     var year: Int {
         let cal = Calendar.current
         return cal.component(.year, from: self)

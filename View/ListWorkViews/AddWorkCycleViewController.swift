@@ -36,10 +36,7 @@ class AddWorkCycleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addWorkCycleCollectionView.collectionViewLayout = creatLayout()
-        
     }
-
-
 }
 
 extension AddWorkCycleViewController: UICollectionViewDataSource {

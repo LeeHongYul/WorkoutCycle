@@ -80,9 +80,8 @@ extension CalendarViewController :UICalendarViewDelegate {
     func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
 
         let checkMarkManager = CheckMarkManger.shared.checkMarkList
-        // 날짜에 해당하는 체크마크 데이터를 가져옵니다.
-        if checkMarkManager.contains(where: { $0.isChecked && $0.checkedDate == dateComponents.date }) {
 
+        if checkMarkManager.contains(where: { $0.isChecked && $0.checkedDate == dateComponents.date }) {
             return .image(UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal))
         } else {
             return nil

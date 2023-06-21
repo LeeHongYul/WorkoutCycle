@@ -18,7 +18,7 @@ class PickCollectionViewCell: UICollectionViewCell {
     var randomeNumber = Int.random(in: 1...10)
 
     func setup() {
-        pickWorkoutView.setShadow(color: .gray, opacity: 0.8, radius: 10, offset: CGSize(width: 5, height: 5))
+        pickWorkoutView.setShadow(color: .darkGray, opacity: 1, radius: 20, offset: CGSize(width: 5, height: 5))
         pickWorkoutView.layer.cornerRadius = 15
         randomWorkoutImageView.layer.cornerRadius = 15
         randomWorkoutImageView.image = UIImage(named: "workout\(randomeNumber)")

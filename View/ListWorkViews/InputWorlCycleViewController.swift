@@ -23,10 +23,7 @@ class InputWorlCycleViewController: BaseViewController {
         }
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
 }

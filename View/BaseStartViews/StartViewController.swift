@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartViewController: UIViewController {
+class StartViewController: BaseViewController {
 
     let todayDay = Date().day
 
@@ -21,21 +21,14 @@ class StartViewController: UIViewController {
             if let target {
                 LatestDayManger.shared.updateTodayDay(update: target, latestDay: todayDay)
             }
-
         }
 
-        
-        if WorkCycleManger.shared.workCycleList.count != 0 {
-            performSegue(withIdentifier: "yesWorloutCycle", sender: self)
-        } else {
-            performSegue(withIdentifier: "noWorkoutCycle", sender: self)
-        }
+        let segueIdentifier = WorkCycleManger.shared.workCycleList.count != 0 ? "yesWorkoutCycle" : "noWorkoutCycle"
+        performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         WorkCycleManger.shared.fetchWorkCycle()
-        
-        let Btn = CustomButton(color: .red, title: "시작합니다", systemImageName: "plus")
     }
 }

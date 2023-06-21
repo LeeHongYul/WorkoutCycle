@@ -17,9 +17,9 @@ class SettingViewController: UIViewController {
         let vc = StartViewController()
         present(vc, animated: true)
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
     }
 

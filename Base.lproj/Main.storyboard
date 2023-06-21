@@ -725,7 +725,7 @@
                     <navigationItem key="navigationItem" id="gtL-IR-8aW"/>
                     <connections>
                         <outlet property="startBtn" destination="trq-Ow-4nZ" id="uRN-98-Zny"/>
-                        <segue destination="gM0-60-fb5" kind="presentation" identifier="yesWorloutCycle" modalPresentationStyle="fullScreen" id="7kH-8Y-Fws"/>
+                        <segue destination="gM0-60-fb5" kind="presentation" identifier="yesWorkoutCycle" modalPresentationStyle="fullScreen" id="7kH-8Y-Fws"/>
                         <segue destination="Ebo-Dc-q9f" kind="presentation" identifier="noWorkoutCycle" modalPresentationStyle="fullScreen" id="LOj-aL-2bK"/>
                     </connections>
                 </viewController>

@@ -7,20 +7,16 @@
 
 import UIKit
 
-class SetWorkoutCycleViewController: UIViewController {
+class SetWorkoutCycleViewController: BaseViewController {
 
     @IBOutlet var pickCollectionView: UICollectionView!
-
     @IBOutlet var workcyclePageControl: UIPageControl!
 
     @IBAction func workcyclePageControl(_ sender: Any) {
 
         let indexPath = IndexPath(item: self.workcyclePageControl.currentPage, section: 0)
 
-
         pickCollectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
-        
-
     }
 
     func setPageControl() {
@@ -47,7 +43,7 @@ class SetWorkoutCycleViewController: UIViewController {
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                    section.orthogonalScrollingBehavior = .groupPaging
+        section.orthogonalScrollingBehavior = .groupPaging
         let layout = UICollectionViewCompositionalLayout(section: section)
 
         return layout
@@ -56,7 +52,7 @@ class SetWorkoutCycleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPageControl()
-        pickCollectionView.collectionViewLayout = createLayout()
+        pickCollectionView.collectionViewLayout = createLayout() 
         pickCollectionView.reloadData()
     }
 }
@@ -71,8 +67,10 @@ extension SetWorkoutCycleViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PickCollectionViewCell", for: indexPath) as! PickCollectionViewCell
 
         let target = cycleList[indexPath.row]
+
         cell.setup()
         cell.pickWorkoutCycleLabel.text = target
+
         return cell
     }
 }
