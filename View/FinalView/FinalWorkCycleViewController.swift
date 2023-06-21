@@ -22,6 +22,7 @@ class FinalWorkCycleViewController: BaseViewController {
         tomorrowWorkView.dropShadow()
         WorkCycleManger.shared.fetchWorkCycle()
         LatestDayManger.shared.fetcthLatestDay()
+       checkPermission()
     }
     
     func CheckHowManyDayGone() -> Int {

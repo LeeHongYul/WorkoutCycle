@@ -11,6 +11,7 @@ class CalendarViewController: BaseViewController {
 
     let calendarView = UICalendarView()
     var dateComponentList = [DateComponents]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createCalendar()
@@ -46,9 +47,14 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
 
         self.showActionSheet(title: "오운완?", message: "\(todayDate.dateToString()) 운동을 완료합니다") {
             print("오늘 운동 함")
-            self.dateComponentList.append(dateComponents!)
-            CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
-            self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
+
+            if !self.dateComponentList.contains(dateComponents!) {
+                self.dateComponentList.append(dateComponents!)
+                CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
+                self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
+            } else {
+                print("중복입니다")
+            }
         } cancelCallback: {
             print("오늘 운동 안함")
         }
@@ -56,6 +62,7 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
 }
 
 extension CalendarViewController :UICalendarViewDelegate {
+
     func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
 
         let checkMarkManager = CheckMarkManger.shared.checkMarkList

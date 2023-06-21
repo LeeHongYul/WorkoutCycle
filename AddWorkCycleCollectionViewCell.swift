@@ -14,7 +14,8 @@ class AddWorkCycleCollectionViewCell: UICollectionViewCell {
     @IBOutlet var cellView: UIView!
 
     func setup() {
-        cellView.backgroundColor = .systemYellow
+        cellView.dropGrayShadow()
+        cellView.backgroundColor = .systemGray6
         cellView.layer.cornerRadius = 15
     }
 

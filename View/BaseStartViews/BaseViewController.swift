@@ -6,13 +6,74 @@
 //
 
 import UIKit
+import UserNotifications
 
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+    }
 
+    func checkPermission() {
+        let notiCenter = UNUserNotificationCenter.current()
 
+        notiCenter.getNotificationSettings { setting in
+            switch setting.authorizationStatus {
+
+            case .notDetermined:
+                notiCenter.requestAuthorization(options: [.alert, .sound]) { permissionGranted, error in
+                    if permissionGranted {
+                        self.grantedNotification()
+                    }
+                }
+            case .denied:
+                return
+            case .authorized:
+                self.grantedNotification()
+            @unknown default:
+                return
+            }
+        }
+    }
+
+    func grantedNotification() {
+        let notiCenter = UNUserNotificationCenter.current()
+
+        notiCenter.getNotificationSettings { setting in
+            let title = "오늘 운동"
+            let message = "운동하셔야죠"
+//            let hour = 13
+//            let minute = 3
+            let isDaily = true
+
+            if (setting.authorizationStatus == .authorized) {
+                let content = UNMutableNotificationContent()
+                content.title = title
+                content.body = message
+                content.sound = .default
+
+                let calendar = Calendar.current
+                var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+//                dateComponents.hour = hour
+//                dateComponents.minute = minute
+                dateComponents.second = 10
+
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+                UNUserNotificationCenter.current().add(request) { error in
+                    if let error {
+                        print(error)
+                    }
+                }
+
+            } else {
+
+            }
+        }
     }
     
     func showAlert(title : String,
