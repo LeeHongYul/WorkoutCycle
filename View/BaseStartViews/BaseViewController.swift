@@ -10,10 +10,25 @@ import UserNotifications
 
 class BaseViewController: UIViewController {
 
+    let todayDate = Date()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
+
+    }
+
+    func checkHowManyDayGone() -> Int {
+        let daysCount = Int16(todayDate.day) - (LatestDayManger.shared.latestDayList.first!.latestDay)
+
+        let getDay = ( Int(daysCount)) % WorkCycleManger.shared.workCycleList.count
+
+        return getDay
+    }
+
+    func getTodayWork(dayInt: Int) -> String? {
+        let target = WorkCycleManger.shared.workCycleList[dayInt].name
+
+        return target
     }
 
     func checkPermission() {
@@ -25,27 +40,31 @@ class BaseViewController: UIViewController {
             case .notDetermined:
                 notiCenter.requestAuthorization(options: [.alert, .sound]) { permissionGranted, error in
                     if permissionGranted {
-                        self.grantedNotification()
+                        self.grantedNotification(18, 0)
                     }
                 }
             case .denied:
                 return
             case .authorized:
-                self.grantedNotification()
+                self.grantedNotification(18, 0)
             @unknown default:
                 return
             }
         }
     }
 
-    func grantedNotification() {
+    func grantedNotification(_ hour: Int, _ minute: Int) {
         let notiCenter = UNUserNotificationCenter.current()
 
+        let getDayInt = checkHowManyDayGone()
+
         notiCenter.getNotificationSettings { setting in
-            let title = "오늘 운동"
-            let message = "운동하셔야죠"
-//            let hour = 13
-//            let minute = 3
+
+            guard let todayWorkout = self.getTodayWork(dayInt:getDayInt) else { return }
+
+            let identifier = "FisrtAlarm"
+            let title = "운동갈 시간입니다"
+            let message = "오늘 운동 부위: \(todayWorkout)"
             let isDaily = true
 
             if (setting.authorizationStatus == .authorized) {
@@ -56,14 +75,14 @@ class BaseViewController: UIViewController {
 
                 let calendar = Calendar.current
                 var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
-//                dateComponents.hour = hour
-//                dateComponents.minute = minute
-                dateComponents.second = 10
+                dateComponents.hour = hour
+                dateComponents.minute = minute
 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
-                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
 
+                notiCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
                 UNUserNotificationCenter.current().add(request) { error in
                     if let error {
                         print(error)

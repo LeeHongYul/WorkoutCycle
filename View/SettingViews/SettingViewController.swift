@@ -89,6 +89,7 @@ extension SettingViewController: UITableViewDelegate {
             print("")
         case 1:
                print("운동 설정입니다")
+            performSegue(withIdentifier: "alramSegue", sender: self)
         case 2:
             if target == "공지사항" {
                 performSegue(withIdentifier: "announcementSegue", sender: self)

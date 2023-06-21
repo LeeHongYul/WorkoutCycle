@@ -15,7 +15,7 @@ class FinalWorkCycleViewController: BaseViewController {
     @IBOutlet var tomorrowWorkLabel: UILabel!
 
     @IBOutlet var tomorrowWorkView: UIView!
-    let todayDate = Date()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +24,7 @@ class FinalWorkCycleViewController: BaseViewController {
         LatestDayManger.shared.fetcthLatestDay()
        checkPermission()
     }
-    
-    func CheckHowManyDayGone() -> Int {
-        let daysCount = Int16(todayDate.day) - (LatestDayManger.shared.latestDayList.first!.latestDay)
 
-        return Int(daysCount)
-    }
 }
 
 extension FinalWorkCycleViewController: UITableViewDataSource {
@@ -40,15 +35,13 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FinalWorkoutCycleTableViewCell", for: indexPath) as! FinalWorkoutCycleTableViewCell
 
-        let dayCount = CheckHowManyDayGone()
         WorkCycleManger.shared.fetchWorkCycle()
 
-        let getDay = dayCount % WorkCycleManger.shared.workCycleList.count
-        let target = WorkCycleManger.shared.workCycleList[getDay].name
+        let target = WorkCycleManger.shared.workCycleList[checkHowManyDayGone()].name
         cell.finalWorkoutLabel.text = "\(target!)"
 
 
-        let getTomorrow = getDay + 1
+        let getTomorrow = checkHowManyDayGone() + 1
         if WorkCycleManger.shared.workCycleList.count > 1 {
             let tomorrowTarget = WorkCycleManger.shared.workCycleList[getTomorrow].name
 

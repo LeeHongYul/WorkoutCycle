@@ -45,18 +45,32 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
 
         guard let todayDate = dateComponents?.date else { return }
 
-        self.showActionSheet(title: "오운완?", message: "\(todayDate.dateToString()) 운동을 완료합니다") {
-            print("오늘 운동 함")
+        if UIDevice.current.userInterfaceIdiom != .pad {
+            self.showActionSheet(title: "오운완?", message: "\(todayDate.dateToString()) 운동을 완료합니다") {
+                print("오늘 운동 함")
 
-            if !self.dateComponentList.contains(dateComponents!) {
-                self.dateComponentList.append(dateComponents!)
-                CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
-                self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
-            } else {
-                print("중복입니다")
+                if !self.dateComponentList.contains(dateComponents!) {
+                    self.dateComponentList.append(dateComponents!)
+                    CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
+                    self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
+                } else {
+                    print("중복입니다")
+                }
+            } cancelCallback: {
+                print("오늘 운동 안함")
             }
-        } cancelCallback: {
-            print("오늘 운동 안함")
+        } else {
+            self.showAlert(title: "오운완?", message: "\(todayDate.dateToString()) 운동을 완료합니다") {
+                if !self.dateComponentList.contains(dateComponents!) {
+                    self.dateComponentList.append(dateComponents!)
+                    CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
+                    self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
+                } else {
+                    print("중복입니다")
+                }
+            } cancelCallback: {
+                print("오늘 운동 안함")
+            }
         }
     }
 }
