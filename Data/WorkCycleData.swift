@@ -24,20 +24,20 @@ let twoCycleList   = [
 let threeCycleList = [
     WorkCycle(workPart: "가슴, 삼두", workImage: "chest"),
     WorkCycle(workPart: "등, 이두", workImage: "backBody"),
-    WorkCycle(workPart: "하체, 어깨", workImage: "shoulder")
+    WorkCycle(workPart: "하체, 어깨", workImage: "lowerBody")
 ]
 let fourCycleList  = [
     WorkCycle(workPart: "가슴, 삼두", workImage: "chest"),
-    WorkCycle(workPart: "등, 이두", workImage: "backHuman"),
+    WorkCycle(workPart: "등, 이두", workImage: "backBody"),
     WorkCycle(workPart: "어깨", workImage: "shoulder"),
-    WorkCycle(workPart: "하체", workImage: "leg")
+    WorkCycle(workPart: "하체", workImage: "lowerBody")
 ]
 
 let fiveCycleList  = [
     WorkCycle(workPart: "가슴", workImage: "chest"),
     WorkCycle(workPart: "등", workImage: "backBody"),
     WorkCycle(workPart: "어께", workImage: "shoulder"),
-    WorkCycle(workPart: "하체", workImage: "leg"),
+    WorkCycle(workPart: "하체", workImage: "lowerBody"),
     WorkCycle(workPart: "팔", workImage: "arm")
 ]
 

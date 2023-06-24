@@ -893,7 +893,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-gs-x0I">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="30"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="YkN-fn-cZY">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github " translatesAutoresizingMaskIntoConstraints="NO" id="YkN-fn-cZY">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="LaX-AJ-WIV"/>
@@ -1145,8 +1145,8 @@
         <image name="dumbbell" catalog="system" width="128" height="72"/>
         <image name="figure.run" catalog="system" width="115" height="128"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
-        <image name="github" width="256" height="256"/>
-        <image name="gmail" width="256" height="256"/>
+        <image name="github " width="512" height="512"/>
+        <image name="gmail" width="512" height="512"/>
         <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="workout10" width="3000" height="2000"/>
