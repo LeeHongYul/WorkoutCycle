@@ -33,7 +33,7 @@ class SetWorkoutCycleViewController: BaseViewController {
     }
 
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.9))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.8))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
 
@@ -79,6 +79,25 @@ extension SetWorkoutCycleViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         workcyclePageControl.currentPage = indexPath.row
     }
+}
+
+extension SetWorkoutCycleViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        recommendWorkCycle.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recommendCell", for: indexPath) as! RecommendCellableViewCell
+
+        let target = recommendWorkCycle[indexPath.row]
+        let targetName = recommendWorkImage[indexPath.row]
+
+        cell.recommendLabel.text = target
+        cell.recommendWorkImage.image = UIImage(named: targetName)
+        return cell
+    }
+
+
 }
 
 enum SegueID: String {

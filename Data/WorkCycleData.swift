@@ -42,7 +42,10 @@ let fiveCycleList  = [
 ]
 
 
+let recommendWorkCycle = ["초보자를 위한 루틴", "중급자를 위한 루틴", "상급자를 위한 루틴", "아침형 인간을 위한 루틴", "다이어트를 위한 루틴"]
 
+
+let recommendWorkImage = ["recommend1", "recommend2", "recommend3", "recommend4", "recommend5"]
 
 
 
