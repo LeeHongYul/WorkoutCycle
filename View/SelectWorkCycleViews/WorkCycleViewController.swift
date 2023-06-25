@@ -96,8 +96,6 @@ extension WorkCycleViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
 
-
-
         return cell
     }
 }

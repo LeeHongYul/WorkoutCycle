@@ -12,6 +12,8 @@ class SetWorkoutCycleViewController: BaseViewController {
     @IBOutlet var pickCollectionView: UICollectionView!
     @IBOutlet var workcyclePageControl: UIPageControl!
 
+    @IBOutlet var recommendTableView: UITableView!
+
     @IBAction func workcyclePageControl(_ sender: Any) {
 
         let indexPath = IndexPath(item: self.workcyclePageControl.currentPage, section: 0)
@@ -29,6 +31,13 @@ class SetWorkoutCycleViewController: BaseViewController {
         if let vc = segue.destination as? WorkCycleViewController, let cell = sender as? UICollectionViewCell, let indexPath = pickCollectionView.indexPath(for: cell)  {
             let target = cycleList[indexPath.row]
             vc.selectedSegue = target
+        } else if segue.identifier == "RecommendSegue", let cell = sender as? UITableViewCell, let indexPath = recommendTableView.indexPath(for: cell) {
+            let target = recommendWorkCycle[indexPath.row]
+            let target2 = context[indexPath.row]
+            if let viewController = segue.destination as? SetDetailViewController {
+                viewController.targetLabelValue = target
+                viewController.targetContentValue = target2
+            }
         }
     }
 
@@ -96,8 +105,13 @@ extension SetWorkoutCycleViewController: UITableViewDataSource {
         cell.recommendWorkImage.image = UIImage(named: targetName)
         return cell
     }
+}
 
+extension SetWorkoutCycleViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "운동 루틴 추천"
+    }
 }
 
 enum SegueID: String {
