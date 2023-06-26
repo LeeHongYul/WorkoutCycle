@@ -12,15 +12,18 @@ class SetDetailViewController: UIViewController {
 
     var targetLabelValue: String?
     var targetContentValue: String?
+    var targetImageStr: String?
 
+    @IBOutlet var detailImage: UIImageView!
     @IBOutlet var detailRecommendLabel: UILabel!
     @IBOutlet var contextLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let targetLabelValue, let targetContentValue {
+        if let targetLabelValue, let targetContentValue, let targetImageStr {
             detailRecommendLabel.text = targetLabelValue
             contextLabel.text = targetContentValue
+            detailImage.image = UIImage(named: targetImageStr)
         }
     }
 }

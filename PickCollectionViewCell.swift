@@ -15,7 +15,7 @@ class PickCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var pickWorkoutView: UIView!
 
-    var randomeNumber = Int.random(in: 1...10)
+    var randomeNumber = Int.random(in: 1...7)
 
     func setup() {
         pickWorkoutView.setShadow(color: .black, opacity: 1, radius: 5, offset: CGSize(width: 1, height: 1))

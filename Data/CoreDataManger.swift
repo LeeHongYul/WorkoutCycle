@@ -180,6 +180,16 @@ class CheckMarkManger: BaseManger {
         }
         saveContext()
     }
+
+    func removeCheckMark(checkDate: Date) {
+        guard let checkMark = checkMarkList.first(where: { $0.checkedDate == checkDate}) else {
+            print("not same, no delte")
+            return
+        }
+
+        mainContext.delete(checkMark)
+        saveContext()
+    }
     
 }
 

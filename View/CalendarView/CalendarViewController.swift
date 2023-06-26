@@ -54,7 +54,16 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
                     CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
                     self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
                 } else {
+                    if let index = self.dateComponentList.firstIndex(of: dateComponents!) {
+                        self.dateComponentList.remove(at: index)
+                        print("지우기 완료", self.dateComponentList)
+
+                    }
+                    CheckMarkManger.shared.removeCheckMark(checkDate: todayDate)
                     print("중복입니다")
+
+                    let target = CheckMarkManger.shared.checkMarkList
+                    self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
                 }
             } cancelCallback: {
                 print("오늘 운동 안함")
@@ -66,7 +75,17 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
                     CheckMarkManger.shared.addCheckMark(checkedDate: todayDate, isChecked: true)
                     self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
                 } else {
-                    print("중복입니다")
+
+                    if let index = self.dateComponentList.firstIndex(of: dateComponents!) {
+                        self.dateComponentList.remove(at: index)
+                        print("지우기 완료", self.dateComponentList)
+
+                    }
+
+                    CheckMarkManger.shared.removeCheckMark(checkDate: todayDate)
+                    print("중복입니다 ipad")
+
+                    self.calendarView.reloadDecorations(forDateComponents: self.dateComponentList, animated: true)
                 }
             } cancelCallback: {
                 print("오늘 운동 안함")
@@ -81,7 +100,7 @@ extension CalendarViewController :UICalendarViewDelegate {
 
         let checkMarkManager = CheckMarkManger.shared.checkMarkList
 
-        if checkMarkManager.contains(where: { $0.isChecked && $0.checkedDate == dateComponents.date }) {
+        if checkMarkManager.contains(where: { $0.checkedDate == dateComponents.date }) {
             return .image(UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal))
         } else {
             return nil

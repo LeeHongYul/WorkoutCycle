@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yfa-Dr-60x">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,27 +18,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2A1-ma-zfm">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="582.33333333333337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="dLo-fm-6FG"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YPB-2T-PLz">
-                                    <size key="itemSize" width="353" height="384"/>
+                                    <size key="itemSize" width="353" height="269"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PickCollectionViewCell" id="6TO-D9-iUE" customClass="PickCollectionViewCell" customModule="WorkoutCycle" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="0.0" width="353" height="384"/>
+                                        <rect key="frame" x="20" y="0.0" width="353" height="269"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Spm-h7-zeI">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="384"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="269"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdw-wA-4Su">
-                                                    <rect key="frame" x="20" y="10" width="313" height="344"/>
+                                                    <rect key="frame" x="20" y="5" width="313" height="259"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout4" translatesAutoresizingMaskIntoConstraints="NO" id="Uk8-xP-17N">
-                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="344"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="259"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <real key="value" value="15"/>
@@ -46,7 +49,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2QB-o6-O5Z" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="244" width="313" height="100"/>
+                                                            <rect key="frame" x="0.0" y="159" width="313" height="100"/>
                                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="1T6-Jj-UMm"/>
@@ -58,7 +61,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jx4-n5-YEd">
-                                                            <rect key="frame" x="10" y="264" width="293" height="60"/>
+                                                            <rect key="frame" x="10" y="179" width="293" height="60"/>
                                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -85,13 +88,13 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="kdw-wA-4Su" secondAttribute="bottom" constant="30" id="2He-0E-i81"/>
+                                                <constraint firstAttribute="bottom" secondItem="kdw-wA-4Su" secondAttribute="bottom" constant="5" id="2He-0E-i81"/>
                                                 <constraint firstAttribute="trailing" secondItem="kdw-wA-4Su" secondAttribute="trailing" constant="20" id="Rhc-pV-mH9"/>
-                                                <constraint firstItem="kdw-wA-4Su" firstAttribute="top" secondItem="Spm-h7-zeI" secondAttribute="top" constant="10" id="i3f-id-um6"/>
+                                                <constraint firstItem="kdw-wA-4Su" firstAttribute="top" secondItem="Spm-h7-zeI" secondAttribute="top" constant="5" id="i3f-id-um6"/>
                                                 <constraint firstItem="kdw-wA-4Su" firstAttribute="leading" secondItem="Spm-h7-zeI" secondAttribute="leading" constant="20" id="xT6-kv-JHh"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="353" height="384"/>
+                                        <size key="customSize" width="353" height="269"/>
                                         <connections>
                                             <outlet property="pickWorkoutCycleLabel" destination="jx4-n5-YEd" id="0nJ-LV-cW0"/>
                                             <outlet property="pickWorkoutView" destination="kdw-wA-4Su" id="crf-wu-ajB"/>
@@ -106,7 +109,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jfr-Wf-CSc">
-                                <rect key="frame" x="0.0" y="602.33333333333337" width="393" height="249.66666666666663"/>
+                                <rect key="frame" x="0.0" y="380" width="393" height="432"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recommendCell" rowHeight="87" id="Peq-sf-mdl" customClass="RecommendCellableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
@@ -170,7 +173,7 @@
                                 </connections>
                             </tableView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="SdL-Ta-cSv">
-                                <rect key="frame" x="0.0" y="582.33333333333337" width="393" height="20"/>
+                                <rect key="frame" x="0.0" y="360" width="393" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="gHg-f9-afB"/>
                                 </constraints>
@@ -185,16 +188,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SdL-Ta-cSv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3mp-tx-fkY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jfr-Wf-CSc" secondAttribute="bottom" id="4NN-lT-Mf2"/>
-                            <constraint firstItem="SdL-Ta-cSv" firstAttribute="top" secondItem="2A1-ma-zfm" secondAttribute="bottom" id="6cR-20-Zcb"/>
-                            <constraint firstItem="Jfr-Wf-CSc" firstAttribute="height" secondItem="2A1-ma-zfm" secondAttribute="height" multiplier="3:7" id="Bfo-rB-yAT"/>
                             <constraint firstItem="SdL-Ta-cSv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GTZ-X2-nH2"/>
                             <constraint firstItem="2A1-ma-zfm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mic-7S-SrG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jfr-Wf-CSc" secondAttribute="bottom" constant="40" id="NsI-t0-G7i"/>
                             <constraint firstItem="Jfr-Wf-CSc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d5N-WY-NaS"/>
                             <constraint firstItem="2A1-ma-zfm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hPF-ny-0Ri"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jfr-Wf-CSc" secondAttribute="trailing" id="npA-Em-ulu"/>
                             <constraint firstItem="2A1-ma-zfm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pKc-uO-1Ia"/>
-                            <constraint firstItem="Jfr-Wf-CSc" firstAttribute="top" secondItem="SdL-Ta-cSv" secondAttribute="bottom" id="wy7-aR-YO0"/>
+                            <constraint firstItem="Jfr-Wf-CSc" firstAttribute="top" secondItem="SdL-Ta-cSv" secondAttribute="bottom" id="tn7-xL-2I2"/>
+                            <constraint firstItem="SdL-Ta-cSv" firstAttribute="top" secondItem="2A1-ma-zfm" secondAttribute="bottom" constant="10" id="uCx-Gd-vzz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vQv-EV-Qsj"/>
@@ -216,7 +218,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workRecommend" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-wL-eZ6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginner" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-wL-eZ6">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGX-kT-oxQ" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
@@ -287,6 +289,7 @@
                     <navigationItem key="navigationItem" id="lgY-Tu-TEH"/>
                     <connections>
                         <outlet property="contextLabel" destination="Ioj-90-1Nh" id="P7M-T5-UrW"/>
+                        <outlet property="detailImage" destination="Fbb-wL-eZ6" id="1VZ-ke-bAI"/>
                         <outlet property="detailRecommendLabel" destination="ywk-nJ-7d2" id="wKd-ov-nxx"/>
                     </connections>
                 </viewController>
@@ -438,7 +441,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="433"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout8" translatesAutoresizingMaskIntoConstraints="NO" id="BFP-uF-nSO" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout1" translatesAutoresizingMaskIntoConstraints="NO" id="BFP-uF-nSO" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="10" width="353" height="413"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -490,7 +493,7 @@
                                     <outlet property="dataSource" destination="cHg-fG-6XV" id="Kao-Bs-KU9"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout10" translatesAutoresizingMaskIntoConstraints="NO" id="nVO-kA-0Qr" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout3" translatesAutoresizingMaskIntoConstraints="NO" id="nVO-kA-0Qr" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
                                 <rect key="frame" x="20" y="567.33333333333337" width="353" height="215.66666666666663"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1208,11 +1211,11 @@
             </objects>
             <point key="canvasLocation" x="1960" y="1591"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="r6x-Bb-zFu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aEe-bJ-sJQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="gearshape.fill" catalog="system" id="4ST-l4-yFx"/>
+                    <tabBarItem key="tabBarItem" title="" image="gearshape.fill" catalog="system" id="4ST-l4-yFx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eZX-3c-DaJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
@@ -1286,10 +1289,10 @@
     </scenes>
     <designables>
         <designable name="BFP-uF-nSO">
-            <size key="intrinsicContentSize" width="1365" height="2048"/>
+            <size key="intrinsicContentSize" width="3024" height="2012"/>
         </designable>
         <designable name="nVO-kA-0Qr">
-            <size key="intrinsicContentSize" width="3000" height="2000"/>
+            <size key="intrinsicContentSize" width="2784" height="1856"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
@@ -1297,6 +1300,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WorkoutCycleIcon" width="512" height="512"/>
+        <image name="beginner" width="1575" height="2413"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="dumbbell" catalog="system" width="128" height="72"/>
         <image name="figure.run" catalog="system" width="115" height="128"/>
@@ -1305,10 +1309,9 @@
         <image name="gmail" width="512" height="512"/>
         <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
-        <image name="workRecommend" width="2720" height="1813.5"/>
-        <image name="workout10" width="3000" height="2000"/>
-        <image name="workout4" width="924" height="1384"/>
-        <image name="workout8" width="1365" height="2048"/>
+        <image name="workout1" width="3024" height="2012"/>
+        <image name="workout3" width="2784" height="1856"/>
+        <image name="workout4" width="3499" height="2251.5"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

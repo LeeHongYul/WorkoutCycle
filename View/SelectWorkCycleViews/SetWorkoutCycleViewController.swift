@@ -9,6 +9,20 @@ import UIKit
 
 class SetWorkoutCycleViewController: BaseViewController {
 
+    @IBOutlet var setThemeControl: UISegmentedControl!
+
+    @IBAction func setThemeControl(_ sender: Any) {
+        if setThemeControl.selectedSegmentIndex == 0 {
+            print(setThemeControl.titleForSegment(at: 0))
+        } else {
+            print(setThemeControl.titleForSegment(at: 2))
+        }
+
+
+    }
+
+
+
     @IBOutlet var pickCollectionView: UICollectionView!
     @IBOutlet var workcyclePageControl: UIPageControl!
 
@@ -26,7 +40,6 @@ class SetWorkoutCycleViewController: BaseViewController {
         workcyclePageControl.numberOfPages = cycleList.count
     }
 
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? WorkCycleViewController, let cell = sender as? UICollectionViewCell, let indexPath = pickCollectionView.indexPath(for: cell)  {
             let target = cycleList[indexPath.row]
@@ -34,15 +47,18 @@ class SetWorkoutCycleViewController: BaseViewController {
         } else if segue.identifier == "RecommendSegue", let cell = sender as? UITableViewCell, let indexPath = recommendTableView.indexPath(for: cell) {
             let target = recommendWorkCycle[indexPath.row]
             let target2 = context[indexPath.row]
+            let target3 = detailImages[indexPath.row]
+
             if let viewController = segue.destination as? SetDetailViewController {
                 viewController.targetLabelValue = target
                 viewController.targetContentValue = target2
+                viewController.targetImageStr = target3
             }
         }
     }
 
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.8))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(250))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
 
