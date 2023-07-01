@@ -14,12 +14,11 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.tintColor = .black
     }
 
     func checkHowManyDayGone() -> Int {
         let daysCount = Int16(todayDate.day) - (LatestDayManger.shared.latestDayList.first!.latestDay)
-
         let getDay = ( Int(daysCount)) % WorkCycleManger.shared.workCycleList.count
 
         return getDay
@@ -55,7 +54,6 @@ class BaseViewController: UIViewController {
 
     func grantedNotification(_ hour: Int, _ minute: Int) {
         let notiCenter = UNUserNotificationCenter.current()
-
         let getDayInt = checkHowManyDayGone()
 
         notiCenter.getNotificationSettings { setting in
@@ -101,17 +99,16 @@ class BaseViewController: UIViewController {
                    cancelTitle : String = "취소",
                    callback: @escaping () -> Void,
                    cancelCallback : @escaping () -> Void) {
+
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         let alertAction = UIAlertAction(title: confrimTitle, style: .default) { _ in
            callback()
         }
 
-
         let cancleAction = UIAlertAction(title: cancelTitle, style: .destructive) { _ in
             cancelCallback()
          }
-
 
         alert.addAction(cancleAction)
         alert.addAction(alertAction)

@@ -23,7 +23,7 @@ class StartViewController: BaseViewController {
             }
         }
 
-        let segueIdentifier = WorkCycleManger.shared.workCycleList.count != 0 ? "yesWorkoutCycle" : "noWorkoutCycle"
+        let segueIdentifier = WorkCycleManger.shared.workCycleList.count != 0 ? "YesWorkoutCycle" : "NoWorkoutCycle"
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 

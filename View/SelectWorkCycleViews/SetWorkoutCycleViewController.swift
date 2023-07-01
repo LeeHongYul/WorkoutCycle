@@ -17,15 +17,10 @@ class SetWorkoutCycleViewController: BaseViewController {
         } else {
             print(setThemeControl.titleForSegment(at: 2))
         }
-
-
     }
-
-
 
     @IBOutlet var pickCollectionView: UICollectionView!
     @IBOutlet var workcyclePageControl: UIPageControl!
-
     @IBOutlet var recommendTableView: UITableView!
 
     @IBAction func workcyclePageControl(_ sender: Any) {
@@ -112,7 +107,7 @@ extension SetWorkoutCycleViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recommendCell", for: indexPath) as! RecommendCellableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendCell", for: indexPath) as! RecommendCellableViewCell
 
         let target = recommendWorkCycle[indexPath.row]
         let targetName = recommendWorkImage[indexPath.row]

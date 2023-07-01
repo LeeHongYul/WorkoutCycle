@@ -48,8 +48,5 @@ class AlarmViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
-
 }

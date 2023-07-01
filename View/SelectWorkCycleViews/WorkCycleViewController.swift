@@ -14,8 +14,8 @@ class WorkCycleViewController: BaseViewController {
     @IBOutlet var workcycleTableView: UITableView!
 
     func saveToCoredata(target: String)  {
-        switch target {
 
+        switch target {
         case SegueID.twoCycle.rawValue:
             for i in twoCycleList {
                 WorkCycleManger.shared.addWorkCycle(name:i.workPart)
@@ -41,7 +41,7 @@ class WorkCycleViewController: BaseViewController {
 
         showAlert(title: "분할법을 선택합니다", message: "\(selectedSegue!)으로 하시겠습니다?") {
             self.saveToCoredata(target: self.selectedSegue ?? "없음")
-            self.performSegue(withIdentifier: "finalWorkout", sender: self)
+            self.performSegue(withIdentifier: "FinalWorkout", sender: self)
         } cancelCallback: {
             return
         }
@@ -57,45 +57,44 @@ extension WorkCycleViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-            switch selectedSegue {
-            case SegueID.twoCycle.rawValue:
-                print(twoCycleList.count)
-                return twoCycleList.count
-            case SegueID.threeCycle.rawValue:
-                return threeCycleList.count
-            case SegueID.fourCycle.rawValue:
-                return fourCycleList.count
-            case SegueID.fiveCycle.rawValue:
-                return fiveCycleList.count
-            default:
-                return 0
-            }
+        switch selectedSegue {
+        case SegueID.twoCycle.rawValue:
+            print(twoCycleList.count)
+            return twoCycleList.count
+        case SegueID.threeCycle.rawValue:
+            return threeCycleList.count
+        case SegueID.fourCycle.rawValue:
+            return fourCycleList.count
+        case SegueID.fiveCycle.rawValue:
+            return fiveCycleList.count
+        default:
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorkCycleTableViewCell", for: indexPath) as! WorkCycleTableViewCell
 
-            switch selectedSegue {
-            case SegueID.twoCycle.rawValue:
-                let target = twoCycleList[indexPath.row]
-                cell.workoutLabel.text = target.workPart
-                cell.workoutImage.image = UIImage(named: target.workImage)
-            case SegueID.threeCycle.rawValue:
-                let target = threeCycleList[indexPath.row]
-                cell.workoutLabel.text = target.workPart
-                cell.workoutImage.image = UIImage(named: target.workImage)
-            case SegueID.fourCycle.rawValue:
-                let target = fourCycleList[indexPath.row]
-                cell.workoutLabel.text = target.workPart
-                cell.workoutImage.image = UIImage(named: target.workImage)
-            case SegueID.fiveCycle.rawValue:
-                let target = fiveCycleList[indexPath.row]
-                cell.workoutLabel.text = target.workPart
-                cell.workoutImage.image = UIImage(named: target.workImage)
-            default:
-                return UITableViewCell()
-            }
-
+        switch selectedSegue {
+        case SegueID.twoCycle.rawValue:
+            let target = twoCycleList[indexPath.row]
+            cell.workoutLabel.text = target.workPart
+            cell.workoutImage.image = UIImage(named: target.workImage)
+        case SegueID.threeCycle.rawValue:
+            let target = threeCycleList[indexPath.row]
+            cell.workoutLabel.text = target.workPart
+            cell.workoutImage.image = UIImage(named: target.workImage)
+        case SegueID.fourCycle.rawValue:
+            let target = fourCycleList[indexPath.row]
+            cell.workoutLabel.text = target.workPart
+            cell.workoutImage.image = UIImage(named: target.workImage)
+        case SegueID.fiveCycle.rawValue:
+            let target = fiveCycleList[indexPath.row]
+            cell.workoutLabel.text = target.workPart
+            cell.workoutImage.image = UIImage(named: target.workImage)
+        default:
+            return UITableViewCell()
+        }
         return cell
     }
 }

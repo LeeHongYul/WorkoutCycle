@@ -9,7 +9,6 @@ import UIKit
 
 class SetDetailViewController: UIViewController {
 
-
     var targetLabelValue: String?
     var targetContentValue: String?
     var targetImageStr: String?
@@ -20,6 +19,8 @@ class SetDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .white
+
         if let targetLabelValue, let targetContentValue, let targetImageStr {
             detailRecommendLabel.text = targetLabelValue
             contextLabel.text = targetContentValue

@@ -64,7 +64,6 @@ extension AddWorkCycleViewController: UICollectionViewDelegate {
             cell.isSelected = true
         }
 
-        
         let target = addWorkCycleList[indexPath.row]
         if !target.isEmpty {
             WorkCycleManger.shared.addWorkCycle(name: target)

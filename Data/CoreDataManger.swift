@@ -190,9 +190,7 @@ class CheckMarkManger: BaseManger {
         print(checkMarkList.count)
         mainContext.delete(checkMark)
         saveContext()
-
     }
-    
 }
 
 

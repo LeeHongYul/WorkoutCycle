@@ -41,13 +41,9 @@ let fiveCycleList  = [
     WorkCycle(workPart: "팔", workImage: "arm")
 ]
 
-
 let recommendWorkCycle = ["초보자를 위한 루틴", "중급자를 위한 루틴", "상급자를 위한 루틴", "아침형 인간을 위한 루틴", "다이어트를 위한 루틴"]
 
-
 let recommendWorkImage = ["recommend1", "recommend2", "recommend3", "recommend4", "recommend5"]
-
-
 
 let context = [
     "균형있는 운동: 5분할은 다양한 근육 그룹을 포함하는 균형 잡힌 운동을 할 수 있도록 도와줍니다. 다양한 부위의 근육을 동일하게 발달시키면서도 부상의 위험을 줄일 수 있습니다.",
@@ -58,3 +54,5 @@ let context = [
 ]
 
 let detailImages = ["beginner", "intermediate", "senior", "morningPerson", "diet"]
+
+let tableviewImages = ["cycle1", "cycle2", "cycle3", "cycle4", "cycle5", "cycle6"]

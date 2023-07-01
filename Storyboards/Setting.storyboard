@@ -277,10 +277,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="설정" id="2iG-nJ-l3Y"/>
                     <connections>
-                        <segue destination="mjL-2d-FdG" kind="show" identifier="announcementSegue" id="pQV-Z2-X5L"/>
-                        <segue destination="Crz-sx-YYN" kind="show" identifier="developerSegue" id="XV4-7O-jGp"/>
-                        <segue destination="Ij2-YG-VrT" kind="show" identifier="termofUseSegue" id="SFH-S2-HN9"/>
-                        <segue destination="bAX-a9-h91" kind="show" identifier="alramSegue" id="qbC-I1-3Hk"/>
+                        <segue destination="mjL-2d-FdG" kind="show" identifier="AnnouncementSegue" id="pQV-Z2-X5L"/>
+                        <segue destination="Crz-sx-YYN" kind="show" identifier="DeveloperSegue" id="XV4-7O-jGp"/>
+                        <segue destination="Ij2-YG-VrT" kind="show" identifier="TermofUseSegue" id="SFH-S2-HN9"/>
+                        <segue destination="bAX-a9-h91" kind="show" identifier="AlramSegue" id="qbC-I1-3Hk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKk-gC-Ojb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

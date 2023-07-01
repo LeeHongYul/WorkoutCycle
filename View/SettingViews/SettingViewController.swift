@@ -9,41 +9,25 @@ import UIKit
 
 class SettingViewController: BaseViewController {
 
-//    @IBAction func resetButton(_ sender: Any) {
-//
-//        showAlert(title: "초기화합니까", message: "모든 정보가 사라집니다", callback: {
-//                LatestDayManger.shared.deleteDayDate()
-//                CheckMarkManger.shared.deleteCheckMark()
-//                WorkCycleManger.shared.deleteAllWorkData()
-//
-//                self.performSegue(withIdentifier: "startSegue", sender: nil)
-//            }, cancelCallback: {
-//                print("취소")
-//            })
-//
-//    }
-
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startSegue" {
-                showAlert(title: "초기화합니까", message: "모든 정보가 사라집니다") {
-                    LatestDayManger.shared.deleteDayDate()
-                    CheckMarkManger.shared.deleteCheckMark()
-                    WorkCycleManger.shared.deleteAllWorkData()
+            showAlert(title: "초기화합니까", message: "모든 정보가 사라집니다") {
+                LatestDayManger.shared.deleteDayDate()
+                CheckMarkManger.shared.deleteCheckMark()
+                WorkCycleManger.shared.deleteAllWorkData()
 
-                    if let vc = segue.destination.storyboard?.instantiateViewController(identifier: "StartViewController") as? StartViewController {
-                        vc.modalTransitionStyle = .coverVertical
-                        vc.modalPresentationStyle = .fullScreen
+                if let vc = segue.destination.storyboard?.instantiateViewController(identifier: "StartViewController") as? StartViewController {
+                    vc.modalTransitionStyle = .coverVertical
+                    vc.modalPresentationStyle = .fullScreen
 
-                        self.present(vc, animated: true)
-                    }
+                    self.present(vc, animated: true)
+                }
             } cancelCallback: {
                 print("a")
             }
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,7 +67,7 @@ extension SettingViewController: UITableViewDataSource {
         case 3:
             content.text = "\(target)"
         default:
-           break
+            break
         }
         cell.contentConfiguration = content
         return cell
@@ -114,18 +98,18 @@ extension SettingViewController: UITableViewDelegate {
         case 0:
             print("")
         case 1:
-               print("운동 설정입니다")
-            performSegue(withIdentifier: "alramSegue", sender: self)
+            print("운동 설정입니다")
+            performSegue(withIdentifier: "AlramSegue", sender: self)
         case 2:
             if target == "공지사항" {
-                performSegue(withIdentifier: "announcementSegue", sender: self)
+                performSegue(withIdentifier: "AnnouncementSegue", sender: self)
             } else {
-                performSegue(withIdentifier: "termofUseSegue", sender: self)
+                performSegue(withIdentifier: "TermofUseSegue", sender: self)
             }
         case 3:
-            performSegue(withIdentifier: "developerSegue", sender: self)
+            performSegue(withIdentifier: "DeveloperSegue", sender: self)
         default:
-           break
+            break
         }
     }
 }

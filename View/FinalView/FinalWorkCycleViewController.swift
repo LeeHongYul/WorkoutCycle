@@ -13,7 +13,6 @@ class FinalWorkCycleViewController: BaseViewController {
     @IBOutlet var finalTableView: UITableView!
     @IBOutlet var tomorrowWorkLabel: UILabel!
     @IBOutlet var tomorrowWorkView: UIView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

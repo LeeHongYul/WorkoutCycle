@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListWorkCycleViewController: UIViewController {
+class ListWorkCycleViewController: BaseViewController {
 
     @IBOutlet var listTableView: UITableView!
 
@@ -29,7 +29,6 @@ extension ListWorkCycleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListWorkCycleTableViewCell", for: indexPath) as! ListWorkCycleTableViewCell
         let target = WorkCycleManger.shared.workCycleList[indexPath.row].name
-
 
         cell.listWorkCycleLabel.text = target
 

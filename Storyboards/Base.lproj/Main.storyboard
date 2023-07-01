@@ -112,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="380" width="393" height="432"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recommendCell" rowHeight="87" id="Peq-sf-mdl" customClass="RecommendCellableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecommendCell" rowHeight="87" id="Peq-sf-mdl" customClass="RecommendCellableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Peq-sf-mdl" id="YG7-B8-CBf">
@@ -221,69 +221,59 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginner" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-wL-eZ6">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGX-kT-oxQ" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGX-kT-oxQ" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
                                 <rect key="frame" x="15" y="611.66666666666663" width="363" height="60.666666666666629"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초보자를 위한 루틴" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywk-nJ-7d2">
-                                        <rect key="frame" x="5" y="10" width="353" height="40.666666666666664"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ywk-nJ-7d2" secondAttribute="trailing" constant="5" id="207-FB-cpt"/>
-                                    <constraint firstItem="ywk-nJ-7d2" firstAttribute="top" secondItem="SGX-kT-oxQ" secondAttribute="top" constant="10" id="2Hc-6A-esf"/>
-                                    <constraint firstAttribute="bottom" secondItem="ywk-nJ-7d2" secondAttribute="bottom" constant="10" id="3E3-AF-MaJ"/>
-                                    <constraint firstItem="ywk-nJ-7d2" firstAttribute="centerX" secondItem="SGX-kT-oxQ" secondAttribute="centerX" id="9XZ-ys-Ueu"/>
-                                    <constraint firstItem="ywk-nJ-7d2" firstAttribute="leading" secondItem="SGX-kT-oxQ" secondAttribute="leading" constant="5" id="J0H-gm-A3Y"/>
-                                    <constraint firstItem="ywk-nJ-7d2" firstAttribute="centerY" secondItem="SGX-kT-oxQ" secondAttribute="centerY" id="Z3O-PB-cVw"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초보자를 위한 루틴" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywk-nJ-7d2">
+                                <rect key="frame" x="25" y="621.66666666666663" width="343" height="40.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7q-qx-6at" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
                                 <rect key="frame" x="15" y="692.33333333333337" width="363" height="139.66666666666663"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="균형있는 운동: 5분할은 다양한 근육 그룹을 포함하는 균형 잡힌 운동을 할 수 있도록 도와줍니다. 다양한 부위의 근육을 동일하게 발달시키면서도 부상의 위험을 줄일 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioj-90-1Nh">
-                                        <rect key="frame" x="10" y="10.000000000000007" width="343" height="119.66666666666669"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                <constraints>
-                                    <constraint firstItem="Ioj-90-1Nh" firstAttribute="top" secondItem="P7q-qx-6at" secondAttribute="top" constant="10" id="JEJ-FV-ewf"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ioj-90-1Nh" secondAttribute="bottom" constant="10" id="L2Q-oA-AQB"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ioj-90-1Nh" secondAttribute="trailing" constant="10" id="Zo3-A8-HED"/>
-                                    <constraint firstItem="Ioj-90-1Nh" firstAttribute="leading" secondItem="P7q-qx-6at" secondAttribute="leading" constant="10" id="Zuu-0h-4Pr"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="균형있는 운동: 5분할은 다양한 근육 그룹을 포함하는 균형 잡힌 운동을 할 수 있도록 도와줍니다. 다양한 부위의 근육을 동일하게 발달시키면서도 부상의 위험을 줄일 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioj-90-1Nh">
+                                <rect key="frame" x="25" y="702.33333333333337" width="343" height="119.66666666666663"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zyn-Qh-BfZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Fbb-wL-eZ6" firstAttribute="trailing" secondItem="Zyn-Qh-BfZ" secondAttribute="trailing" id="3bI-wD-PCy"/>
+                            <constraint firstItem="ywk-nJ-7d2" firstAttribute="leading" secondItem="SGX-kT-oxQ" secondAttribute="leading" constant="10" id="41b-ow-RkZ"/>
                             <constraint firstItem="Fbb-wL-eZ6" firstAttribute="leading" secondItem="Zyn-Qh-BfZ" secondAttribute="leading" id="7E7-6z-13k"/>
                             <constraint firstItem="Fbb-wL-eZ6" firstAttribute="top" secondItem="4K2-8K-GZk" secondAttribute="top" id="BhK-dU-pdR"/>
+                            <constraint firstItem="ywk-nJ-7d2" firstAttribute="trailing" secondItem="SGX-kT-oxQ" secondAttribute="trailing" constant="-10" id="F1h-gX-k4o"/>
+                            <constraint firstItem="Ioj-90-1Nh" firstAttribute="trailing" secondItem="P7q-qx-6at" secondAttribute="trailing" constant="-10" id="Hta-jM-R30"/>
                             <constraint firstItem="SGX-kT-oxQ" firstAttribute="leading" secondItem="Zyn-Qh-BfZ" secondAttribute="leading" constant="15" id="U2i-XE-XHL"/>
+                            <constraint firstItem="Ioj-90-1Nh" firstAttribute="leading" secondItem="P7q-qx-6at" secondAttribute="leading" constant="10" id="UKC-8f-05d"/>
+                            <constraint firstItem="ywk-nJ-7d2" firstAttribute="top" secondItem="SGX-kT-oxQ" secondAttribute="top" constant="10" id="VAk-Qp-h7M"/>
+                            <constraint firstItem="Ioj-90-1Nh" firstAttribute="bottom" secondItem="P7q-qx-6at" secondAttribute="bottom" constant="-10" id="Xev-av-HvM"/>
                             <constraint firstItem="Zyn-Qh-BfZ" firstAttribute="bottom" secondItem="P7q-qx-6at" secondAttribute="bottom" constant="20" id="aQA-2w-Dsq"/>
                             <constraint firstAttribute="bottom" secondItem="Fbb-wL-eZ6" secondAttribute="bottom" id="gQn-b1-kBd"/>
+                            <constraint firstItem="ywk-nJ-7d2" firstAttribute="bottom" secondItem="SGX-kT-oxQ" secondAttribute="bottom" constant="-10" id="gb7-3j-6Bz"/>
                             <constraint firstItem="P7q-qx-6at" firstAttribute="trailing" secondItem="SGX-kT-oxQ" secondAttribute="trailing" id="iXl-xq-3Gr"/>
                             <constraint firstItem="SGX-kT-oxQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Zyn-Qh-BfZ" secondAttribute="top" constant="297" id="l7o-Ih-qjj"/>
                             <constraint firstItem="Zyn-Qh-BfZ" firstAttribute="trailing" secondItem="SGX-kT-oxQ" secondAttribute="trailing" constant="15" id="oni-jL-KZP"/>
                             <constraint firstItem="P7q-qx-6at" firstAttribute="leading" secondItem="SGX-kT-oxQ" secondAttribute="leading" id="qIb-Wm-BcP"/>
                             <constraint firstItem="P7q-qx-6at" firstAttribute="top" secondItem="SGX-kT-oxQ" secondAttribute="bottom" constant="20" id="smb-7E-Lsn"/>
+                            <constraint firstItem="Ioj-90-1Nh" firstAttribute="top" secondItem="P7q-qx-6at" secondAttribute="top" constant="10" id="twq-Ss-Bl0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lgY-Tu-TEH"/>
@@ -316,7 +306,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evs-yA-XDV" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evs-yA-XDV" customClass="FAUGradientView" customModule="WorkoutCycle" customModuleProvider="target">
                                                     <rect key="frame" x="25" y="16" width="343" height="135"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="figure.run" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JRB-Zb-9Au">
@@ -327,13 +317,12 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상체" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdA-Ql-cuj">
-                                                            <rect key="frame" x="115" y="47" width="223" height="41"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="115" y="47.666666666666671" width="223" height="39.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     <constraints>
                                                         <constraint firstItem="bdA-Ql-cuj" firstAttribute="centerY" secondItem="evs-yA-XDV" secondAttribute="centerY" id="3a5-OW-iaM"/>
                                                         <constraint firstItem="JRB-Zb-9Au" firstAttribute="leading" secondItem="evs-yA-XDV" secondAttribute="leading" constant="10" id="RFx-Rp-o1l"/>
@@ -345,6 +334,18 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                            <color key="value" systemColor="systemGray2Color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                            <color key="value" systemColor="systemGray4Color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                                            <point key="value" x="0.0" y="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                                            <point key="value" x="1" y="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -415,7 +416,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="workcycleTableView" destination="g9V-KM-wRJ" id="VSB-AL-iPn"/>
-                        <segue destination="gM0-60-fb5" kind="presentation" identifier="finalWorkout" modalPresentationStyle="fullScreen" id="WfW-8A-Hq3"/>
+                        <segue destination="gM0-60-fb5" kind="presentation" identifier="FinalWorkout" modalPresentationStyle="fullScreen" id="WfW-8A-Hq3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzz-T2-ztu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -502,8 +503,8 @@
                     <navigationItem key="navigationItem" id="gtL-IR-8aW"/>
                     <connections>
                         <outlet property="startBtn" destination="trq-Ow-4nZ" id="uRN-98-Zny"/>
-                        <segue destination="gM0-60-fb5" kind="presentation" identifier="yesWorkoutCycle" modalPresentationStyle="fullScreen" id="7kH-8Y-Fws"/>
-                        <segue destination="Ebo-Dc-q9f" kind="presentation" identifier="noWorkoutCycle" modalPresentationStyle="fullScreen" id="LOj-aL-2bK"/>
+                        <segue destination="gM0-60-fb5" kind="presentation" identifier="YesWorkoutCycle" modalPresentationStyle="fullScreen" id="7kH-8Y-Fws"/>
+                        <segue destination="Ebo-Dc-q9f" kind="presentation" identifier="NoWorkoutCycle" modalPresentationStyle="fullScreen" id="LOj-aL-2bK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUt-lE-RSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -591,7 +592,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7kH-8Y-Fws"/>
+        <segue reference="WfW-8A-Hq3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WorkoutCycleIcon" width="512" height="512"/>
@@ -603,6 +604,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

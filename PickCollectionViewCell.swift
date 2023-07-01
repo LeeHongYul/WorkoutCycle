@@ -10,9 +10,7 @@ import UIKit
 class PickCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var pickWorkoutCycleLabel: UILabel!
-
     @IBOutlet var randomWorkoutImageView: UIImageView!
-    
     @IBOutlet var pickWorkoutView: UIView!
 
     var randomeNumber = Int.random(in: 1...7)

@@ -10,7 +10,6 @@ import UIKit
 class AddWorkCycleCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var addWorkCycleLabel: UILabel!
-
     @IBOutlet var cellView: UIView!
 
     func setup() {
