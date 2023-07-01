@@ -7,17 +7,43 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: BaseViewController {
 
-    @IBAction func resetButton(_ sender: Any) {
-        LatestDayManger.shared.deleteDayDate()
-        CheckMarkManger.shared.deleteCheckMark()
-        WorkCycleManger.shared.deleteAllWorkData()
+//    @IBAction func resetButton(_ sender: Any) {
+//
+//        showAlert(title: "초기화합니까", message: "모든 정보가 사라집니다", callback: {
+//                LatestDayManger.shared.deleteDayDate()
+//                CheckMarkManger.shared.deleteCheckMark()
+//                WorkCycleManger.shared.deleteAllWorkData()
+//
+//                self.performSegue(withIdentifier: "startSegue", sender: nil)
+//            }, cancelCallback: {
+//                print("취소")
+//            })
+//
+//    }
 
-        let vc = StartViewController()
-        present(vc, animated: true)
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startSegue" {
+                showAlert(title: "초기화합니까", message: "모든 정보가 사라집니다") {
+                    LatestDayManger.shared.deleteDayDate()
+                    CheckMarkManger.shared.deleteCheckMark()
+                    WorkCycleManger.shared.deleteAllWorkData()
+
+                    if let vc = segue.destination.storyboard?.instantiateViewController(identifier: "StartViewController") as? StartViewController {
+                        vc.modalTransitionStyle = .coverVertical
+                        vc.modalPresentationStyle = .fullScreen
+
+                        self.present(vc, animated: true)
+                    }
+            } cancelCallback: {
+                print("a")
+            }
+        }
     }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

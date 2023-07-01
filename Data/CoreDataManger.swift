@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+
 class BaseManger {
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
@@ -153,7 +154,7 @@ class CheckMarkManger: BaseManger {
     
     var checkMarkList = [CheckMarkEntity]()
     
-    func fetcthCheckMark() {
+    func fetchCheckMark() {
         
         let request = CheckMarkEntity.fetchRequest()
         do {
@@ -163,12 +164,11 @@ class CheckMarkManger: BaseManger {
         }
     }
     
-    func addCheckMark(checkedDate: Date, isChecked: Bool) {
+    func addCheckMark(checkedDate: Date) {
         let newCheck = CheckMarkEntity(context: mainContext)
         
         newCheck.checkedDate = checkedDate
-        newCheck.isChecked = isChecked
-        
+
         checkMarkList.insert(newCheck, at:  0)
         
         saveContext()
@@ -181,14 +181,16 @@ class CheckMarkManger: BaseManger {
         saveContext()
     }
 
-    func removeCheckMark(checkDate: Date) {
-        guard let checkMark = checkMarkList.first(where: { $0.checkedDate == checkDate}) else {
-            print("not same, no delte")
+    func removeCheckMark(checkedDate: Date) {
+
+        guard let checkMark = checkMarkList.first(where: { $0.checkedDate == checkedDate }) else {
             return
         }
-
+        checkMarkList = checkMarkList.filter { $0 != checkMark }
+        print(checkMarkList.count)
         mainContext.delete(checkMark)
         saveContext()
+
     }
     
 }

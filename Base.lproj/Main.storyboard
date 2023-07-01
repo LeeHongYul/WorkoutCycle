@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yfa-Dr-60x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22113.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yfa-Dr-60x">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22089.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -830,7 +831,7 @@
         <!--Start View Controller-->
         <scene sceneID="Xaz-fc-c2W">
             <objects>
-                <viewController id="7p0-As-Sa6" customClass="StartViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" id="7p0-As-Sa6" customClass="StartViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nig-Ck-rfj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1144,8 +1145,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="resetButton:" destination="ROK-J1-Omj" eventType="touchUpInside" id="T3a-1Y-Iis"/>
-                                    <segue destination="yfa-Dr-60x" kind="presentation" modalPresentationStyle="fullScreen" id="dE8-db-aI2"/>
+                                    <segue destination="yfa-Dr-60x" kind="presentation" identifier="startSegue" modalPresentationStyle="fullScreen" id="iue-o8-fEF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1254,6 +1254,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yfa-Dr-60x" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4fx-Pl-bwm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y78-k6-YuA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1296,7 +1297,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="WfW-8A-Hq3"/>
+        <segue reference="7kH-8Y-Fws"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WorkoutCycleIcon" width="512" height="512"/>
@@ -1307,28 +1308,28 @@
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="github " width="512" height="512"/>
         <image name="gmail" width="512" height="512"/>
-        <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
+        <image name="list.bullet.clipboard" catalog="system" width="98" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="workout1" width="3024" height="2012"/>
         <image name="workout3" width="2784" height="1856"/>
         <image name="workout4" width="3499" height="2251.5"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
