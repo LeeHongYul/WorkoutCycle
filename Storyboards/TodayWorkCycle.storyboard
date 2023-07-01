@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cPe-gG-sTd">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--오늘의 운동 -->
+        <scene sceneID="DZs-gJ-8yg">
+            <objects>
+                <viewController id="yFV-u7-8OJ" customClass="FinalWorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SkM-jB-sp5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yVd-CY-cWu">
+                                <rect key="frame" x="0.0" y="102.99999999999997" width="393" height="438.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FinalWorkoutCycleTableViewCell" rowHeight="433" id="QRP-Hc-Uzj" customClass="FinalWorkoutCycleTableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="433"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QRP-Hc-Uzj" id="ozw-37-Nye">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="433"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout1" translatesAutoresizingMaskIntoConstraints="NO" id="Emz-td-zZ3" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="10" width="353" height="413"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-vp-awb" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="10" width="353" height="413"/>
+                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="BWw-vp-awb" secondAttribute="height" multiplier="353:413" id="vGh-si-mS2"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOb-pt-FK4">
+                                                    <rect key="frame" x="20" y="10" width="353" height="413"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="BWw-vp-awb" secondAttribute="trailing" constant="20" id="7Sr-6U-4ue"/>
+                                                <constraint firstItem="zOb-pt-FK4" firstAttribute="trailing" secondItem="BWw-vp-awb" secondAttribute="trailing" id="9Rx-hm-Rqt"/>
+                                                <constraint firstItem="Emz-td-zZ3" firstAttribute="top" secondItem="BWw-vp-awb" secondAttribute="top" id="Bdo-0X-9Ld"/>
+                                                <constraint firstItem="BWw-vp-awb" firstAttribute="leading" secondItem="ozw-37-Nye" secondAttribute="leading" constant="20" id="Igj-VQ-jxf"/>
+                                                <constraint firstItem="Emz-td-zZ3" firstAttribute="bottom" secondItem="BWw-vp-awb" secondAttribute="bottom" id="Mz8-1a-ua0"/>
+                                                <constraint firstItem="zOb-pt-FK4" firstAttribute="top" secondItem="BWw-vp-awb" secondAttribute="top" id="REe-L2-LJo"/>
+                                                <constraint firstItem="BWw-vp-awb" firstAttribute="top" secondItem="ozw-37-Nye" secondAttribute="top" constant="10" id="TJw-tY-cDY"/>
+                                                <constraint firstItem="Emz-td-zZ3" firstAttribute="trailing" secondItem="BWw-vp-awb" secondAttribute="trailing" id="eaI-Es-xzM"/>
+                                                <constraint firstAttribute="bottom" secondItem="BWw-vp-awb" secondAttribute="bottom" constant="10" id="gT2-BE-Ifd"/>
+                                                <constraint firstItem="Emz-td-zZ3" firstAttribute="leading" secondItem="BWw-vp-awb" secondAttribute="leading" id="ikr-Ui-T5b"/>
+                                                <constraint firstItem="zOb-pt-FK4" firstAttribute="leading" secondItem="BWw-vp-awb" secondAttribute="leading" id="mSG-LB-hMi"/>
+                                                <constraint firstItem="zOb-pt-FK4" firstAttribute="bottom" secondItem="BWw-vp-awb" secondAttribute="bottom" id="pSc-Sk-XDM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="finalView" destination="BWw-vp-awb" id="h8a-mB-98m"/>
+                                            <outlet property="finalWorkoutLabel" destination="zOb-pt-FK4" id="yu6-5f-ys5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yFV-u7-8OJ" id="CQc-SI-HOK"/>
+                                </connections>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout3" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-Nn-Gwz" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                <rect key="frame" x="20" y="561.33333333333337" width="353" height="187.66666666666663"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8f-g1-Z78">
+                                <rect key="frame" x="20" y="561.33333333333337" width="353" height="187.66666666666663"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0qj-Ot-hUC">
+                                <rect key="frame" x="50" y="591.33333333333337" width="293" height="127.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="내일의 운동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csI-zv-T1f">
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="91.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tB5-tn-QMR">
+                                        <rect key="frame" x="0.0" y="91.666666666666629" width="293" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i0c-rQ-tiJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0qj-Ot-hUC" firstAttribute="bottom" secondItem="J8f-g1-Z78" secondAttribute="bottom" constant="-30" id="1PC-ci-a4U"/>
+                            <constraint firstItem="J8f-g1-Z78" firstAttribute="height" secondItem="yVd-CY-cWu" secondAttribute="height" multiplier="3:7" id="6Fh-TE-vA4"/>
+                            <constraint firstItem="12Z-Nn-Gwz" firstAttribute="top" secondItem="J8f-g1-Z78" secondAttribute="top" id="7tm-g1-WLl"/>
+                            <constraint firstItem="J8f-g1-Z78" firstAttribute="leading" secondItem="i0c-rQ-tiJ" secondAttribute="leading" constant="20" id="CBI-5H-BTu"/>
+                            <constraint firstItem="yVd-CY-cWu" firstAttribute="trailing" secondItem="i0c-rQ-tiJ" secondAttribute="trailing" id="DE0-4R-zUS"/>
+                            <constraint firstItem="i0c-rQ-tiJ" firstAttribute="trailing" secondItem="J8f-g1-Z78" secondAttribute="trailing" constant="20" id="FcN-Yc-3dh"/>
+                            <constraint firstItem="yVd-CY-cWu" firstAttribute="top" secondItem="i0c-rQ-tiJ" secondAttribute="top" id="FhY-Xd-zCk"/>
+                            <constraint firstItem="yVd-CY-cWu" firstAttribute="leading" secondItem="i0c-rQ-tiJ" secondAttribute="leading" id="LJz-qX-Edg"/>
+                            <constraint firstItem="0qj-Ot-hUC" firstAttribute="top" secondItem="J8f-g1-Z78" secondAttribute="top" constant="30" id="MXg-3R-7KK"/>
+                            <constraint firstItem="i0c-rQ-tiJ" firstAttribute="bottom" secondItem="J8f-g1-Z78" secondAttribute="bottom" constant="20" id="aZB-5V-da4"/>
+                            <constraint firstItem="12Z-Nn-Gwz" firstAttribute="bottom" secondItem="J8f-g1-Z78" secondAttribute="bottom" id="fWs-Sk-frR"/>
+                            <constraint firstItem="J8f-g1-Z78" firstAttribute="top" secondItem="yVd-CY-cWu" secondAttribute="bottom" constant="20" id="iHM-WP-vOV"/>
+                            <constraint firstItem="0qj-Ot-hUC" firstAttribute="leading" secondItem="J8f-g1-Z78" secondAttribute="leading" constant="30" id="nda-ty-nNf"/>
+                            <constraint firstItem="0qj-Ot-hUC" firstAttribute="trailing" secondItem="J8f-g1-Z78" secondAttribute="trailing" constant="-30" id="t27-gU-aMt"/>
+                            <constraint firstItem="12Z-Nn-Gwz" firstAttribute="leading" secondItem="J8f-g1-Z78" secondAttribute="leading" id="vFg-pJ-Psz"/>
+                            <constraint firstItem="12Z-Nn-Gwz" firstAttribute="trailing" secondItem="J8f-g1-Z78" secondAttribute="trailing" id="vn8-Kx-s9V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="오늘의 운동 " id="NuT-Te-1C8"/>
+                    <connections>
+                        <outlet property="finalTableView" destination="yVd-CY-cWu" id="iiU-vo-9Pc"/>
+                        <outlet property="tomorrowWorkLabel" destination="tB5-tn-QMR" id="lGb-0O-fJV"/>
+                        <outlet property="tomorrowWorkView" destination="J8f-g1-Z78" id="EjQ-xF-BH3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7FY-I7-bnu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="1574"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wNJ-R7-fS7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cPe-gG-sTd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="dumbbell" catalog="system" id="zVy-3h-WsR"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="43h-84-KDU">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yFV-u7-8OJ" kind="relationship" relationship="rootViewController" id="QsR-7a-VeO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XB2-Uw-xXn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877" y="1574"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="12Z-Nn-Gwz">
+            <size key="intrinsicContentSize" width="2784" height="1856"/>
+        </designable>
+        <designable name="Emz-td-zZ3">
+            <size key="intrinsicContentSize" width="3024" height="2012"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="dumbbell" catalog="system" width="128" height="72"/>
+        <image name="workout1" width="3024" height="2012"/>
+        <image name="workout3" width="2784" height="1856"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
