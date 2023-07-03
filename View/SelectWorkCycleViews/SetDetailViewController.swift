@@ -19,8 +19,6 @@ class SetDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.tintColor = .white
-
         if let targetLabelValue, let targetContentValue, let targetImageStr {
             detailRecommendLabel.text = targetLabelValue
             contextLabel.text = targetContentValue

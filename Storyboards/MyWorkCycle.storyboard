@@ -40,8 +40,8 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhd-Ci-8Sm">
                                                             <rect key="frame" x="10" y="10" width="92" height="92"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sfa-AS-eQY">
-                                                                    <rect key="frame" x="10" y="10" width="72" height="72"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycle2" translatesAutoresizingMaskIntoConstraints="NO" id="sfa-AS-eQY">
+                                                                    <rect key="frame" x="5" y="5" width="82" height="82"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
@@ -58,10 +58,10 @@
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="xhd-Ci-8Sm" secondAttribute="height" multiplier="1:1" id="PYF-wy-vYa"/>
-                                                                <constraint firstItem="sfa-AS-eQY" firstAttribute="top" secondItem="xhd-Ci-8Sm" secondAttribute="top" constant="10" id="SMg-j3-e2f"/>
-                                                                <constraint firstAttribute="trailing" secondItem="sfa-AS-eQY" secondAttribute="trailing" constant="10" id="ZOn-bq-GFD"/>
-                                                                <constraint firstItem="sfa-AS-eQY" firstAttribute="leading" secondItem="xhd-Ci-8Sm" secondAttribute="leading" constant="10" id="kc6-tQ-Lzl"/>
-                                                                <constraint firstAttribute="bottom" secondItem="sfa-AS-eQY" secondAttribute="bottom" constant="10" id="o8i-ab-GgE"/>
+                                                                <constraint firstItem="sfa-AS-eQY" firstAttribute="top" secondItem="xhd-Ci-8Sm" secondAttribute="top" constant="5" id="SMg-j3-e2f"/>
+                                                                <constraint firstAttribute="trailing" secondItem="sfa-AS-eQY" secondAttribute="trailing" constant="5" id="ZOn-bq-GFD"/>
+                                                                <constraint firstItem="sfa-AS-eQY" firstAttribute="leading" secondItem="xhd-Ci-8Sm" secondAttribute="leading" constant="5" id="kc6-tQ-Lzl"/>
+                                                                <constraint firstAttribute="bottom" secondItem="sfa-AS-eQY" secondAttribute="bottom" constant="5" id="o8i-ab-GgE"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -148,14 +148,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="루틴에 추가할 옵션을 선택해 주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drM-ja-l53">
-                                <rect key="frame" x="20" y="123" width="353" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ej2-NO-sGd" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                <rect key="frame" x="15" y="103.00000000000001" width="363" height="130.33333333333337"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dumbells" translatesAutoresizingMaskIntoConstraints="NO" id="CJe-dQ-Jvc" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="130.33333333333334"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="CJe-dQ-Jvc" secondAttribute="bottom" id="VpG-Sj-33q"/>
+                                    <constraint firstItem="CJe-dQ-Jvc" firstAttribute="leading" secondItem="ej2-NO-sGd" secondAttribute="leading" id="jPl-Xu-au2"/>
+                                    <constraint firstItem="CJe-dQ-Jvc" firstAttribute="top" secondItem="ej2-NO-sGd" secondAttribute="top" id="uzk-su-2fu"/>
+                                    <constraint firstAttribute="trailing" secondItem="CJe-dQ-Jvc" secondAttribute="trailing" id="wPb-yz-C2k"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-BX-tsK">
-                                <rect key="frame" x="20" y="167" width="353" height="602"/>
+                                <rect key="frame" x="15" y="248.33333333333331" width="363" height="520.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GkN-gB-Jd4">
                                     <size key="itemSize" width="128" height="128"/>
@@ -202,17 +221,40 @@
                                     <outlet property="delegate" destination="KvX-Tz-OdA" id="XOd-mU-ULP"/>
                                 </connections>
                             </collectionView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4q-F1-Yn5" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                <rect key="frame" x="15" y="173" width="363" height="60.333333333333343"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="루틴에 추가할 옵션을 선택해 주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drM-ja-l53">
+                                <rect key="frame" x="15" y="194.33333333333334" width="363" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RzA-eT-MZP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fuV-BX-tsK" firstAttribute="trailing" secondItem="drM-ja-l53" secondAttribute="trailing" id="2BA-FI-feS"/>
+                            <constraint firstItem="fuV-BX-tsK" firstAttribute="top" secondItem="ej2-NO-sGd" secondAttribute="bottom" constant="15" id="1nZ-8Z-m7I"/>
+                            <constraint firstItem="f4q-F1-Yn5" firstAttribute="trailing" secondItem="ej2-NO-sGd" secondAttribute="trailing" id="2Ng-0I-tCd"/>
                             <constraint firstItem="RzA-eT-MZP" firstAttribute="bottom" secondItem="fuV-BX-tsK" secondAttribute="bottom" id="4xE-dq-u8C"/>
-                            <constraint firstItem="drM-ja-l53" firstAttribute="leading" secondItem="RzA-eT-MZP" secondAttribute="leading" constant="20" id="7b9-hh-NzR"/>
-                            <constraint firstItem="fuV-BX-tsK" firstAttribute="top" secondItem="drM-ja-l53" secondAttribute="bottom" constant="20" id="A21-TS-fJq"/>
-                            <constraint firstItem="RzA-eT-MZP" firstAttribute="trailing" secondItem="drM-ja-l53" secondAttribute="trailing" constant="20" id="Ez0-Hz-h3b"/>
-                            <constraint firstItem="fuV-BX-tsK" firstAttribute="leading" secondItem="drM-ja-l53" secondAttribute="leading" id="ld2-WX-TdG"/>
-                            <constraint firstItem="drM-ja-l53" firstAttribute="top" secondItem="RzA-eT-MZP" secondAttribute="top" constant="20" id="yS7-hA-a6Q"/>
+                            <constraint firstItem="f4q-F1-Yn5" firstAttribute="top" secondItem="ej2-NO-sGd" secondAttribute="top" constant="70" id="6Nj-Md-xuR"/>
+                            <constraint firstItem="drM-ja-l53" firstAttribute="bottom" secondItem="f4q-F1-Yn5" secondAttribute="bottom" constant="-15" id="DgH-RR-dek"/>
+                            <constraint firstItem="f4q-F1-Yn5" firstAttribute="bottom" secondItem="ej2-NO-sGd" secondAttribute="bottom" id="FQc-Rs-mY4"/>
+                            <constraint firstItem="ej2-NO-sGd" firstAttribute="top" secondItem="RzA-eT-MZP" secondAttribute="top" id="ITF-0k-T5h"/>
+                            <constraint firstItem="fuV-BX-tsK" firstAttribute="leading" secondItem="ej2-NO-sGd" secondAttribute="leading" id="Lwp-Lp-YO6"/>
+                            <constraint firstItem="ej2-NO-sGd" firstAttribute="leading" secondItem="RzA-eT-MZP" secondAttribute="leading" constant="15" id="NCb-hN-YYH"/>
+                            <constraint firstItem="f4q-F1-Yn5" firstAttribute="leading" secondItem="ej2-NO-sGd" secondAttribute="leading" id="Noz-S9-SY2"/>
+                            <constraint firstItem="ej2-NO-sGd" firstAttribute="height" secondItem="fuV-BX-tsK" secondAttribute="height" multiplier="2:8" id="OfY-uN-XKS"/>
+                            <constraint firstItem="RzA-eT-MZP" firstAttribute="trailing" secondItem="ej2-NO-sGd" secondAttribute="trailing" constant="15" id="PPC-yu-YHJ"/>
+                            <constraint firstItem="drM-ja-l53" firstAttribute="trailing" secondItem="f4q-F1-Yn5" secondAttribute="trailing" id="WId-gc-bnp"/>
+                            <constraint firstItem="drM-ja-l53" firstAttribute="leading" secondItem="f4q-F1-Yn5" secondAttribute="leading" id="XbX-Tr-DV8"/>
+                            <constraint firstItem="fuV-BX-tsK" firstAttribute="trailing" secondItem="ej2-NO-sGd" secondAttribute="trailing" id="kQJ-KU-CdP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="amZ-jj-tCP">
@@ -228,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sas-d6-v7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3749" y="1591"/>
+            <point key="canvasLocation" x="3748.8549618320608" y="1590.8450704225354"/>
         </scene>
         <!--Input Worl Cycle View Controller-->
         <scene sceneID="Yek-VO-u7f">
@@ -309,6 +351,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cycle2" width="512" height="512"/>
+        <image name="dumbells" width="3300" height="2200"/>
         <image name="list.clipboard" catalog="system" width="103" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

@@ -10,17 +10,17 @@ import UserNotifications
 
 class BaseViewController: UIViewController {
 
-    let todayDate = Date()
+    var todayDate = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.tintColor = .black
+
     }
 
     func checkHowManyDayGone() -> Int {
         let daysCount = Int16(todayDate.day) - (LatestDayManger.shared.latestDayList.first!.latestDay)
         let getDay = ( Int(daysCount)) % WorkCycleManger.shared.workCycleList.count
-
+        print("checkDayGone \(getDay)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         return getDay
     }
 
@@ -115,11 +115,14 @@ class BaseViewController: UIViewController {
         self.present(alert, animated: true )
     }
 
-    func showActionSheet(title: String, message: String, callback: @escaping () -> Void,
+    func showActionSheet(title: String,
+                         message: String,
+                         confrimStyle:  UIAlertAction.Style,
+                         callback: @escaping () -> Void,
                          cancelCallback : @escaping () -> Void) {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
 
-        let confirmAction = UIAlertAction(title: "확인", style: .default){ _ in
+        let confirmAction = UIAlertAction(title: "확인", style: confrimStyle){ _ in
             callback()
         }
         let cancleAction = UIAlertAction(title: "취소", style: .cancel){ _ in
@@ -129,7 +132,17 @@ class BaseViewController: UIViewController {
         actionSheet.addAction(confirmAction)
         actionSheet.addAction(cancleAction)
         self.present(actionSheet, animated: true)
+    }
 
+    func showOneAlert(title: String,
+                      cancelCallback : @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+
+        let cancleAction = UIAlertAction(title: "확인", style: .cancel){ _ in
+            cancelCallback()
+        }
+        alert.addAction(cancleAction)
+        self.present(alert, animated: true)
     }
 }
 

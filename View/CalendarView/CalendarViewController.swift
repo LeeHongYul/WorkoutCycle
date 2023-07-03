@@ -60,8 +60,7 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
         guard let todayDate = dateComponents?.date else { return }
 
         if !CheckMarkManger.shared.checkMarkList.contains(where: { $0.checkedDate == todayDate}) {
-            self.showActionSheet(title: "오운완?", message: "오늘 운동을 완료합니다.") {
-                CheckMarkManger.shared.addCheckMark(checkedDate: todayDate)
+            self.showActionSheet(title: "오운완?", message: "오늘 운동을 완료합니다.", confrimStyle: .default) {                CheckMarkManger.shared.addCheckMark(checkedDate: todayDate)
                 let target = CheckMarkManger.shared.checkMarkList
                 let targetArray = target.map { Calendar.current.dateComponents([.year, .month, .day], from: $0.checkedDate!)}
 
@@ -71,7 +70,7 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
             }
 
         } else {
-            self.showActionSheet(title: "오운완을 취소합니다", message: "운동 취소합니다.") {
+            self.showActionSheet(title: "오운완을 취소합니다", message: "운동 취소합니다.", confrimStyle: .destructive) {
                 CheckMarkManger.shared.removeCheckMark(checkedDate: todayDate)
 
                 CheckMarkManger.shared.fetchCheckMark()

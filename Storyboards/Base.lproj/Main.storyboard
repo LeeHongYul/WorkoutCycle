@@ -596,7 +596,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WorkoutCycleIcon" width="512" height="512"/>
-        <image name="beginner" width="1575" height="2413"/>
+        <image name="beginner" width="2008" height="3008"/>
         <image name="figure.run" catalog="system" width="115" height="128"/>
         <image name="workout4" width="3499" height="2251.5"/>
         <systemColor name="secondaryLabelColor">
