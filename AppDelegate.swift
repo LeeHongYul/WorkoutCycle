@@ -25,5 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        let todayDay = Date()
+        print(todayDay.day, "BACKGROUND ENTERED")
+    }
 }
 

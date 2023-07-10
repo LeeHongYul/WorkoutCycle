@@ -95,9 +95,9 @@ extension SettingViewController: UITableViewDelegate {
 
         switch indexPath.section {
         case 0:
-            print("")
+            print("버전 정보")
         case 1:
-            print("운동 설정입니다")
+            print("알림 시간 설정")
             performSegue(withIdentifier: "AlramSegue", sender: self)
         case 2:
             if target == "공지사항" {

@@ -80,7 +80,6 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
 
                 NotificationCenter.default.post(name: .removeCheck, object: nil)
 
-                //                self.calendarView.reloadDecorations(forDateComponents: targetArray, animated: true)
             } cancelCallback: {
                 print("취소")
             }

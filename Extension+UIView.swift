@@ -33,7 +33,6 @@ extension UIView {
         self.layer.cornerRadius = radius
     }
 
-
     func setGradient(firstColor: UIColor, secondColor: UIColor, thridColor: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor, thridColor.cgColor]
@@ -42,5 +41,4 @@ extension UIView {
         gradientLayer.frame = self.bounds
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
-
 }

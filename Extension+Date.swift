@@ -40,4 +40,25 @@ extension Date {
         
         return dateString.string(from: self)
     }
+
+    var year: Int {
+        let cal = Calendar.current
+        return cal.component(.year, from: self)
+    }
+    var month: Int {
+        let cal = Calendar.current
+        return cal.component(.month, from: self)
+    }
+    var day: Int {
+        let cal = Calendar.current
+        return cal.component(.day, from: self)
+    }
+    var hour: Int {
+        let cal = Calendar.current
+        return cal.component(.hour, from: self)
+    }
+    var minute: Int {
+        let cal = Calendar.current
+        return cal.component(.minute, from: self)
+    }
 }

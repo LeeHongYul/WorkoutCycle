@@ -92,7 +92,6 @@ class WorkCycleManger: BaseManger {
     }
 }
 
-
 class LatestDayManger: BaseManger {
     
     static let shared = LatestDayManger()
@@ -115,11 +114,12 @@ class LatestDayManger: BaseManger {
         }
     }
     
-    func addLatestDay(latestDay: Int) {
+    func addLatestDay(latestDay: Int, firstDay: Int) {
         let newLatestDay = LatestDayEntity(context: mainContext)
         
         newLatestDay.latestDay = Int16(latestDay)
-        
+        newLatestDay.firstDay = Int16(firstDay)
+
         latestDayList.insert(newLatestDay, at:  0)
         
         saveContext()

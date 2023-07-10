@@ -9,7 +9,6 @@ import Foundation
 
 struct SettingTableData {
     let items: [String]
-
 }
 
 let mainSettinglist = [

@@ -13,8 +13,8 @@ class ListWorkCycleViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
+
     override func viewWillAppear(_ animated: Bool) {
         WorkCycleManger.shared.fetchWorkCycle()
         listTableView.reloadData()

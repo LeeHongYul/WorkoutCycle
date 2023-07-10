@@ -9,14 +9,13 @@ import UIKit
 
 class StartViewController: BaseViewController {
 
-    let todayDay = Date().day
-
     let target = LatestDayManger.shared.latestDayList.first
 
     @IBOutlet var startBtn: UIButton!
     @IBAction func startButton(_ sender: Any) {
+        let todayDay = Date().day
         if LatestDayManger.shared.latestDayList.count == 0 {
-            LatestDayManger.shared.addLatestDay(latestDay: todayDay)
+            LatestDayManger.shared.addLatestDay(latestDay: todayDay, firstDay: todayDay)
         } else {
             if let target {
                 LatestDayManger.shared.updateTodayDay(update: target, latestDay: todayDay)

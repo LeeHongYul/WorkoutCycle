@@ -19,13 +19,20 @@ extension TabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 
         if let finalWorkCycleViewController = (viewController as? UINavigationController)?.topViewController as? FinalWorkCycleViewController {
-            
+            print("Entered FinalView")
             finalWorkCycleViewController.finalTableView.reloadData()
             WorkCycleManger.shared.fetchWorkCycle()
+            
+            let todayDay = Date().day
+            print("Tab Bar FinalView: Today Date\(todayDay)")
 
-            print("Entered FinalView")
+            let target = LatestDayManger.shared.latestDayList.first
+
+            if let target {
+                LatestDayManger.shared.updateTodayDay(update: target, latestDay: todayDay)
+            }
         } else {
-            print("Tabbar Clicked")
+            print("Just Tab Bar Clicked")
         }
     }
 }

@@ -10,18 +10,45 @@ import UserNotifications
 
 class BaseViewController: UIViewController {
 
-    var todayDate = Date()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
     func checkHowManyDayGone() -> Int {
-        let daysCount = Int16(todayDate.day) - (LatestDayManger.shared.latestDayList.first!.latestDay)
-        let getDay = ( Int(daysCount)) % WorkCycleManger.shared.workCycleList.count
-        print("checkDayGone \(getDay)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-        return getDay
+            let target = LatestDayManger.shared.latestDayList
+        print("CHECK HOW MANY DAY GONE \(target.first!.firstDay), \(LatestDayManger.shared.latestDayList.first!.latestDay)" )
+
+            let daysCount = Int16(target.first!.firstDay) - (target.first!.latestDay)
+            let getAbs = abs(Int(daysCount))
+        print("DAY COUNT : \(getAbs)")
+
+            let getDay = (getAbs) % WorkCycleManger.shared.workCycleList.count
+        print("배열 카운트 : \(WorkCycleManger.shared.workCycleList.count)")
+            print("checkDayGone \(getDay)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+
+        if Int16(target.first!.firstDay) <= target.first!.latestDay {
+            let daysCount = Int16(target.first!.firstDay) - (target.first!.latestDay)
+            let getAbs = abs(Int(daysCount))
+
+            let getDay = (getAbs) % WorkCycleManger.shared.workCycleList.count
+            return getDay
+        } else {
+            let daysCount = Int16(target.first!.firstDay - 1) - (target.first!.latestDay)
+            let getAbs = abs(Int(daysCount))
+
+            let getDay = (getAbs) % WorkCycleManger.shared.workCycleList.count
+
+            let target = LatestDayManger.shared.latestDayList.first
+            let target2 = target?.firstDay as? Int
+
+                if let target {
+                    LatestDayManger.shared.updateTodayDay(update: target, latestDay: target2!)
+            }
+            
+            return getDay
+        }
     }
 
     func getTodayWork(dayInt: Int) -> String? {
@@ -35,7 +62,6 @@ class BaseViewController: UIViewController {
 
         notiCenter.getNotificationSettings { setting in
             switch setting.authorizationStatus {
-
             case .notDetermined:
                 notiCenter.requestAuthorization(options: [.alert, .sound]) { permissionGranted, error in
                     if permissionGranted {

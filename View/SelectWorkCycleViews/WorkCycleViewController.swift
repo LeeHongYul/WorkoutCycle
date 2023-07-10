@@ -54,7 +54,6 @@ class WorkCycleViewController: BaseViewController {
 
 extension WorkCycleViewController: UITableViewDataSource {
 
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         switch selectedSegue {

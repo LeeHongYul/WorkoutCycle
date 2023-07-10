@@ -12,7 +12,6 @@ class AnnouncementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "공지사항"
-
     }
 }
 
