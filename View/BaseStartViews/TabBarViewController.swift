@@ -24,7 +24,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
             WorkCycleManger.shared.fetchWorkCycle()
             
             let todayDay = Date().day
-            print("Tab Bar FinalView: Today Date\(todayDay)")
+            print("Tab Bar FinalView: Today Date: \(todayDay)일")
 
             let target = LatestDayManger.shared.latestDayList.first
 

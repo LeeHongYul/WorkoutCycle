@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import TagListView
 
 class InputWorlCycleViewController: BaseViewController {
 
+    @IBOutlet var TagListView: TagListView!
     @IBOutlet var addTextField: UITextField!
 
     @IBAction func saveButton(_ sender: Any) {
@@ -16,8 +18,9 @@ class InputWorlCycleViewController: BaseViewController {
 
         if !newWorkCycle.isEmpty && newWorkCycle.count <= 15 {
             showAlert(title: "새로운 분할을 저장합니다", message: "\(newWorkCycle)을 저장합니다") {
+                self.TagListView.addTag(newWorkCycle)
                 WorkCycleManger.shared.addWorkCycle(name: newWorkCycle)
-                self.dismiss(animated: true)
+//                self.dismiss(animated: true)
             } cancelCallback: {
                 return
             }
@@ -30,5 +33,18 @@ class InputWorlCycleViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        TagListView.delegate = self
+    }
+}
+
+extension InputWorlCycleViewController: TagListViewDelegate {
+    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag Pressed")
+        tagView.isSelected.toggle()
+    }
+
+    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        print("Tag Removed")
+        sender.removeTagView(tagView)
     }
 }

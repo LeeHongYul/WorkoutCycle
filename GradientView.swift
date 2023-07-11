@@ -27,6 +27,7 @@ class FAUGradientView: UIView {
         self.gradientLayer.startPoint = self.startPoint
         self.gradientLayer.endPoint = self.endPoint
         self.gradientLayer.frame = self.bounds
+        self.gradientLayer.opacity = 0.5
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
 }

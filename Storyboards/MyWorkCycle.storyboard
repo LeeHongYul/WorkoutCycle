@@ -311,23 +311,43 @@
                                     <constraint firstAttribute="height" constant="130" id="rb6-sT-k1b"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9T-jR-PYX" customClass="TagListView" customModule="TagListView">
+                                <rect key="frame" x="20" y="170" width="353" height="130"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="1" green="0.41176470590000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kvb-ao-6f3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="E9T-jR-PYX" firstAttribute="leading" secondItem="soM-M2-Prj" secondAttribute="leading" id="370-6r-ady"/>
+                            <constraint firstItem="E9T-jR-PYX" firstAttribute="top" secondItem="soM-M2-Prj" secondAttribute="bottom" constant="20" id="Bfu-Om-Wxg"/>
+                            <constraint firstItem="E9T-jR-PYX" firstAttribute="trailing" secondItem="soM-M2-Prj" secondAttribute="trailing" id="GPy-zk-nQ8"/>
                             <constraint firstItem="soM-M2-Prj" firstAttribute="top" secondItem="kvb-ao-6f3" secondAttribute="top" constant="20" id="O6A-kf-Ffz"/>
                             <constraint firstItem="kvb-ao-6f3" firstAttribute="trailing" secondItem="soM-M2-Prj" secondAttribute="trailing" constant="20" id="aEX-No-mYp"/>
+                            <constraint firstItem="soM-M2-Prj" firstAttribute="height" secondItem="E9T-jR-PYX" secondAttribute="height" id="kdA-Du-qgq"/>
                             <constraint firstItem="soM-M2-Prj" firstAttribute="leading" secondItem="kvb-ao-6f3" secondAttribute="leading" constant="20" id="lPC-CE-GzK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IOT-Rg-YX3"/>
                     <connections>
+                        <outlet property="TagListView" destination="E9T-jR-PYX" id="Uep-5p-4n2"/>
                         <outlet property="addTextField" destination="FUx-rF-LtM" id="Nzq-Dm-lpg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hm7-2M-8dX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4527" y="1591"/>
+            <point key="canvasLocation" x="4525.9541984732823" y="1590.8450704225354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ev9-gE-Nge">
@@ -350,6 +370,11 @@
             <point key="canvasLocation" x="1960" y="1591"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="CJe-dQ-Jvc">
+            <size key="intrinsicContentSize" width="3300" height="2200"/>
+        </designable>
+    </designables>
     <resources>
         <image name="cycle2" width="512" height="512"/>
         <image name="dumbells" width="3300" height="2200"/>
@@ -363,6 +388,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -16,19 +16,17 @@ class BaseViewController: UIViewController {
     }
 
     func checkHowManyDayGone() -> Int {
-            let target = LatestDayManger.shared.latestDayList
-        print("CHECK HOW MANY DAY GONE \(target.first!.firstDay), \(LatestDayManger.shared.latestDayList.first!.latestDay)" )
+        let target = LatestDayManger.shared.latestDayList // firstDay, latestDay 데이터 접근
 
-            let daysCount = Int16(target.first!.firstDay) - (target.first!.latestDay)
-            let getAbs = abs(Int(daysCount))
-        print("DAY COUNT : \(getAbs)")
+        print("처음 날짜: \(Int16(target.first!.firstDay))일, 최근 날짜: \(target.first!.latestDay)일")
 
-            let getDay = (getAbs) % WorkCycleManger.shared.workCycleList.count
-        print("배열 카운트 : \(WorkCycleManger.shared.workCycleList.count)")
-            print("checkDayGone \(getDay)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        let daysCount = Int16(target.first!.firstDay) - (target.first!.latestDay) // firstDay, latestDay 차 구하기
 
+        let getAbs = abs(Int(daysCount)) // 절댓값으로 변경
 
-        if Int16(target.first!.firstDay) <= target.first!.latestDay {
+//        let getDay = (getAbs) % WorkCycleManger.shared.workCycleList.count //설정된 분할법에서 현재 순서 가져오기
+
+        if Int16(target.first!.firstDay) <= target.first!.latestDay { //ex 12일 < 15일
             let daysCount = Int16(target.first!.firstDay) - (target.first!.latestDay)
             let getAbs = abs(Int(daysCount))
 
@@ -43,8 +41,8 @@ class BaseViewController: UIViewController {
             let target = LatestDayManger.shared.latestDayList.first
             let target2 = target?.firstDay as? Int
 
-                if let target {
-                    LatestDayManger.shared.updateTodayDay(update: target, latestDay: target2!)
+            if let target {
+                LatestDayManger.shared.updateTodayDay(update: target, latestDay: target2!)
             }
             
             return getDay
@@ -129,12 +127,12 @@ class BaseViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         let alertAction = UIAlertAction(title: confrimTitle, style: .default) { _ in
-           callback()
+            callback()
         }
 
         let cancleAction = UIAlertAction(title: cancelTitle, style: .destructive) { _ in
             cancelCallback()
-         }
+        }
 
         alert.addAction(cancleAction)
         alert.addAction(alertAction)
