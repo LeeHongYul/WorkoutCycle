@@ -35,9 +35,9 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-vp-awb" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
+                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-vp-awb" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="10" width="353" height="413"/>
-                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="BWw-vp-awb" secondAttribute="height" multiplier="353:413" id="vGh-si-mS2"/>
                                                     </constraints>
