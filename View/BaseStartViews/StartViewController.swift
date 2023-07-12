@@ -9,16 +9,18 @@ import UIKit
 
 class StartViewController: BaseViewController {
 
-    let target = LatestDayManger.shared.latestDayList.first
+    lazy var target = DayCheckManger.shared.dayCheckList.first
 
     @IBOutlet var startBtn: UIButton!
     @IBAction func startButton(_ sender: Any) {
-        let todayDay = Date().day
-        if LatestDayManger.shared.latestDayList.count == 0 {
-            LatestDayManger.shared.addLatestDay(latestDay: todayDay, firstDay: todayDay)
+        let now = Date()
+        let today = calendar.startOfDay(for: now) //현재 시간의 시간을 12:00AM으로 설정
+
+        if DayCheckManger.shared.dayCheckList.count == 0 {
+            DayCheckManger.shared.addLatestDay(latestDay: today, firstDay: today)
         } else {
             if let target {
-                LatestDayManger.shared.updateTodayDay(update: target, latestDay: todayDay)
+                DayCheckManger.shared.updateTodayDay(update: target, latestDay: today)
             }
         }
 

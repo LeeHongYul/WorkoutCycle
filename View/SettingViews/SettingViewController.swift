@@ -12,7 +12,7 @@ class SettingViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startSegue" {
             showAlert(title: "초기화하면 이전 데이터가 모두 삭제됩니다", message: "계속하시겠습니까?") {
-                LatestDayManger.shared.deleteDayDate()
+                DayCheckManger.shared.deleteDayDate()
                 CheckMarkManger.shared.deleteCheckMark()
                 WorkCycleManger.shared.deleteAllWorkData()
 

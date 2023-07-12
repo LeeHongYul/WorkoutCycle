@@ -58,7 +58,6 @@ extension WorkCycleViewController: UITableViewDataSource {
 
         switch selectedSegue {
         case SegueID.twoCycle.rawValue:
-            print(twoCycleList.count)
             return twoCycleList.count
         case SegueID.threeCycle.rawValue:
             return threeCycleList.count

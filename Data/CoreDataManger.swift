@@ -92,9 +92,9 @@ class WorkCycleManger: BaseManger {
     }
 }
 
-class LatestDayManger: BaseManger {
+class DayCheckManger: BaseManger {
     
-    static let shared = LatestDayManger()
+    static let shared = DayCheckManger()
     
     private override init() {}
     
@@ -102,31 +102,31 @@ class LatestDayManger: BaseManger {
         return persistentContainer.viewContext
     }
     
-    var latestDayList = [LatestDayEntity]()
+    var dayCheckList = [DayCheckEntity]()
     
-    func fetcthLatestDay() {
+    func fetcthDays() {
         
-        let request = LatestDayEntity.fetchRequest()
+        let request = DayCheckEntity.fetchRequest()
         do {
-            latestDayList = try mainContext.fetch(request)
+            dayCheckList = try mainContext.fetch(request)
         } catch {
             print(error)
         }
     }
     
-    func addLatestDay(latestDay: Int, firstDay: Int) {
-        let newLatestDay = LatestDayEntity(context: mainContext)
+    func addLatestDay(latestDay: Date, firstDay: Date?) {
+        let newLatestDay = DayCheckEntity(context: mainContext)
         
-        newLatestDay.latestDay = Int16(latestDay)
-        newLatestDay.firstDay = Int16(firstDay)
+        newLatestDay.latestDay = latestDay
+        newLatestDay.firstDay = firstDay
 
-        latestDayList.insert(newLatestDay, at:  0)
+        dayCheckList.insert(newLatestDay, at:  0)
         
         saveContext()
     }
     
-    func updateTodayDay(update: LatestDayEntity, latestDay: Int) {
-        update.latestDay = Int16(latestDay)
+    func updateTodayDay(update: DayCheckEntity, latestDay: Date) {
+        update.latestDay = latestDay
         
         do {
             try mainContext.save()
@@ -136,7 +136,7 @@ class LatestDayManger: BaseManger {
     }
     
     func deleteDayDate() {
-        let data = latestDayList.first!
+        let data = dayCheckList.first!
         mainContext.delete(data)
         saveContext()
     }

@@ -10,43 +10,32 @@ import UserNotifications
 
 class BaseViewController: UIViewController {
 
+    let calendar = Calendar.current
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
     func checkHowManyDayGone() -> Int {
-        let target = LatestDayManger.shared.latestDayList // firstDay, latestDay 데이터 접근
+        let target = DayCheckManger.shared.dayCheckList // firstDay, latestDay 데이터 접근
 
-        print("처음 날짜: \(Int16(target.first!.firstDay))일, 최근 날짜: \(target.first!.latestDay)일")
+        print("처음 날짜: \(target.first!.firstDay)일, 최근 날짜: \(target.first!.latestDay)일")
 
-        let daysCount = Int16(target.first!.firstDay) - (target.first!.latestDay) // firstDay, latestDay 차 구하기
+        let firstDay = target.first!.firstDay
+        let latestDay = target.first!.latestDay
 
-        let getAbs = abs(Int(daysCount)) // 절댓값으로 변경
+        let daysCount =  calendar.dateComponents([.day], from: firstDay!, to: latestDay!)// firstDay, latestDay 차 구하기
 
-//        let getDay = (getAbs) % WorkCycleManger.shared.workCycleList.count //설정된 분할법에서 현재 순서 가져오기
+        print("두 날짜의 차이: \(daysCount) !!!!!!!")
 
-        if Int16(target.first!.firstDay) <= target.first!.latestDay { //ex 12일 < 15일
-            let daysCount = Int16(target.first!.firstDay) - (target.first!.latestDay)
-            let getAbs = abs(Int(daysCount))
 
-            let getDay = (getAbs) % WorkCycleManger.shared.workCycleList.count
-            return getDay
-        } else {
-            let daysCount = Int16(target.first!.firstDay - 1) - (target.first!.latestDay)
-            let getAbs = abs(Int(daysCount))
 
-            let getDay = (getAbs) % WorkCycleManger.shared.workCycleList.count
+        let resultDayCount = (daysCount.day!) % WorkCycleManger.shared.workCycleList.count
 
-            let target = LatestDayManger.shared.latestDayList.first
-            let target2 = target?.firstDay as? Int
+        print("최종 오늘의 날짜 순서: \(resultDayCount) !!!!!!!!!!!")
+        return resultDayCount
 
-            if let target {
-                LatestDayManger.shared.updateTodayDay(update: target, latestDay: target2!)
-            }
-            
-            return getDay
-        }
     }
 
     func getTodayWork(dayInt: Int) -> String? {

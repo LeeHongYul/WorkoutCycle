@@ -3,9 +3,9 @@
     <entity name="CheckMark" representedClassName="CheckMarkEntity" syncable="YES" codeGenerationType="class">
         <attribute name="checkedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="LatestDay" representedClassName="LatestDayEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="firstDay" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="latestDay" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="DayCheck" representedClassName="DayCheckEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="firstDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="latestDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="WorkCycle" representedClassName="WorkCycleEntity" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>

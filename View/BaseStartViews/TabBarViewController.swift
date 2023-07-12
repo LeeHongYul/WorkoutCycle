@@ -9,6 +9,8 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+    let calendar = Calendar.current
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -23,13 +25,15 @@ extension TabBarViewController: UITabBarControllerDelegate {
             finalWorkCycleViewController.finalTableView.reloadData()
             WorkCycleManger.shared.fetchWorkCycle()
             
-            let todayDay = Date().day
-            print("Tab Bar FinalView: Today Date: \(todayDay)일")
+            let now = Date()
+            let today = calendar.startOfDay(for: now)
 
-            let target = LatestDayManger.shared.latestDayList.first
+            print("Tab Bar FinalView: Today Date: \(today)일")
+
+            let target = DayCheckManger.shared.dayCheckList.first
 
             if let target {
-                LatestDayManger.shared.updateTodayDay(update: target, latestDay: todayDay)
+                DayCheckManger.shared.updateTodayDay(update: target, latestDay: today)
             }
         } else {
             print("Just Tab Bar Clicked")

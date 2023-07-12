@@ -18,7 +18,7 @@ class FinalWorkCycleViewController: BaseViewController {
         super.viewDidLoad()
         tomorrowWorkView.dropShadow()
         WorkCycleManger.shared.fetchWorkCycle()
-        LatestDayManger.shared.fetcthLatestDay()
+        DayCheckManger.shared.fetcthDays()
         checkPermission()
     }
 }
