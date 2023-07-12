@@ -15,7 +15,8 @@ let mainSettinglist = [
     SettingTableData(items: ["버전 정보"]),
     SettingTableData(items: ["알림 시간 설정"]),
     SettingTableData(items: ["공지사항", "이용약관"]),
-    SettingTableData(items: ["개발자 연락처"])
+    SettingTableData(items: ["개발자 연락처"]),
+    SettingTableData(items: ["분할 초기화"])
 ]
 
 struct Announcement {

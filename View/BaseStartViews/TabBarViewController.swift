@@ -7,6 +7,10 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let doneUpdateDate = Notification.Name(rawValue: "doneUpdateDate")
+}
+
 class TabBarViewController: UITabBarController {
 
     let calendar = Calendar.current
@@ -34,7 +38,9 @@ extension TabBarViewController: UITabBarControllerDelegate {
 
             if let target {
                 DayCheckManger.shared.updateTodayDay(update: target, latestDay: today)
+                NotificationCenter.default.post(name: .doneUpdateDate, object: nil)
             }
+
         } else {
             print("Just Tab Bar Clicked")
         }

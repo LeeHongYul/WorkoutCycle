@@ -19,6 +19,7 @@ class InputWorlCycleViewController: BaseViewController {
         if !newWorkCycle.isEmpty && newWorkCycle.count <= 15 {
             showAlert(title: "새로운 분할을 저장합니다", message: "\(newWorkCycle)을 저장합니다") {
                 self.TagListView.addTag(newWorkCycle)
+                TagManger.shared.addTag(name: newWorkCycle)
                 WorkCycleManger.shared.addWorkCycle(name: newWorkCycle)
 //                self.dismiss(animated: true)
             } cancelCallback: {
@@ -34,6 +35,21 @@ class InputWorlCycleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         TagListView.delegate = self
+        initTagListView()
+
+    }
+
+//    override func viewWillAppear(_ animated: Bool) {
+//        initTagListView()
+//    }
+
+    func initTagListView() {
+        TagManger.shared.fetchTag()
+        let target = TagManger.shared.tagList
+        for i in target {
+            print(i.name!)
+            TagListView.addTag(i.name!)
+        }
     }
 }
 
@@ -46,5 +62,6 @@ extension InputWorlCycleViewController: TagListViewDelegate {
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Removed")
         sender.removeTagView(tagView)
+        TagManger.shared.deleteTage(tag: title)
     }
 }

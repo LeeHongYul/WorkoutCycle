@@ -10,7 +10,7 @@ import UIKit
 class SettingViewController: BaseViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "startSegue" {
+        if segue.identifier == "StartSegue" {
             showAlert(title: "초기화하면 이전 데이터가 모두 삭제됩니다", message: "계속하시겠습니까?") {
                 DayCheckManger.shared.deleteDayDate()
                 CheckMarkManger.shared.deleteCheckMark()
@@ -58,13 +58,16 @@ extension SettingViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             content.text = "\(target)"
-            content.secondaryText = "최신버전: \(getVersion())"
+            content.secondaryText = "\(getVersion())"
         case 1:
             content.text = "\(target)"
         case 2:
             content.text = "\(target)"
         case 3:
             content.text = "\(target)"
+        case 4:
+            content.text = "\(target)"
+            content.textProperties.color = .systemRed
         default:
             break
         }
@@ -107,6 +110,8 @@ extension SettingViewController: UITableViewDelegate {
             }
         case 3:
             performSegue(withIdentifier: "DeveloperSegue", sender: self)
+        case 4:
+            performSegue(withIdentifier: "StartSegue", sender: self)
         default:
             break
         }

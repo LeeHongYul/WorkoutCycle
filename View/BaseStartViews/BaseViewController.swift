@@ -14,7 +14,9 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(forName: .doneUpdateDate, object: nil, queue: .main) { noti in
+            self.grantedNotification(18, 0)
+        }
     }
 
     func checkHowManyDayGone() -> Int {
@@ -29,9 +31,7 @@ class BaseViewController: UIViewController {
 
         print("두 날짜의 차이: \(daysCount) !!!!!!!")
 
-
-
-        let resultDayCount = (daysCount.day!) % WorkCycleManger.shared.workCycleList.count
+        var resultDayCount = (daysCount.day!) % WorkCycleManger.shared.workCycleList.count
 
         print("최종 오늘의 날짜 순서: \(resultDayCount) !!!!!!!!!!!")
         return resultDayCount

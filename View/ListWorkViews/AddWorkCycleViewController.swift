@@ -66,10 +66,11 @@ extension AddWorkCycleViewController: UICollectionViewDelegate {
         
         let target = addWorkCycleList[indexPath.row]
         if !target.isEmpty {
-            WorkCycleManger.shared.addWorkCycle(name: target)
-            
-            WorkCycleManger.shared.saveContext()
+
             showAlert(title: "새로운 분할을 저장합니다", message: "\(target)을 저장합니다") {
+                WorkCycleManger.shared.addWorkCycle(name: target)
+
+                WorkCycleManger.shared.saveContext()
                 self.navigationController?.popViewController(animated: true)
             } cancelCallback: {
                 self.addWorkCycleCollectionView.reloadData()

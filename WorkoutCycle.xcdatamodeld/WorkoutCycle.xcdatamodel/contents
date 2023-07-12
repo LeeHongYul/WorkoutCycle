@@ -7,6 +7,9 @@
         <attribute name="firstDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="latestDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="TagList" representedClassName="TagListEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="WorkCycle" representedClassName="WorkCycleEntity" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
