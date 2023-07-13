@@ -36,18 +36,12 @@ class InputWorlCycleViewController: BaseViewController {
         super.viewDidLoad()
         TagListView.delegate = self
         initTagListView()
-
     }
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        initTagListView()
-//    }
 
     func initTagListView() {
         TagManger.shared.fetchTag()
         let target = TagManger.shared.tagList
         for i in target {
-            print(i.name!)
             TagListView.addTag(i.name!)
         }
     }
