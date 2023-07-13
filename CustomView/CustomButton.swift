@@ -2,13 +2,13 @@
 //  CustomButton.swift
 //  WorkoutCycle
 //
-//  Created by 이홍렬 on 2023/06/15.
+//  Created by 이홍렬 on 2023/07/13.
 //
 
 import UIKit
 
 class CustomButton: UIButton {
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -39,3 +39,4 @@ class CustomButton: UIButton {
         configuration?.imagePlacement = .leading
     }
 }
+
