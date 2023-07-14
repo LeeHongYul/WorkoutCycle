@@ -7,10 +7,6 @@
 
 import UIKit
 
-extension Notification.Name {
-    static let removeCheck = Notification.Name(rawValue: "removeCheck")
-}
-
 class CalendarViewController: BaseViewController {
 
     let calendarView = UICalendarView()
@@ -20,17 +16,6 @@ class CalendarViewController: BaseViewController {
         createCalendar()
         CheckMarkManger.shared.fetchCheckMark()
         calendarView.reloadInputViews()
-
-        NotificationCenter.default.addObserver(forName: .removeCheck, object: nil, queue: .main) { _ in
-            CheckMarkManger.shared.fetchCheckMark()
-            let target = CheckMarkManger.shared.checkMarkList
-            let targetArray = target.map { Calendar.current.dateComponents([.year, .month, .day], from: $0.checkedDate!)}
-            print(targetArray)
-
-            self.calendarView.reloadDecorations(forDateComponents: targetArray, animated: true)
-            self.calendarView.layoutIfNeeded()//되나
-            print("노피 되냐?")
-        }
     }
 
     func createCalendar() {
@@ -60,25 +45,30 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
         guard let todayDate = dateComponents?.date else { return }
 
         if !CheckMarkManger.shared.checkMarkList.contains(where: { $0.checkedDate == todayDate}) {
-            self.showActionSheet(title: "오운완?", message: "오늘 운동을 완료합니다.", confrimStyle: .default) {                CheckMarkManger.shared.addCheckMark(checkedDate: todayDate)
+            self.showActionSheet(title: "오운완?", message: "오늘 운동을 완료합니다.", confrimStyle: .default) {
+                CheckMarkManger.shared.fetchCheckMark()
+                CheckMarkManger.shared.addCheckMark(checkedDate: todayDate)
+
                 let target = CheckMarkManger.shared.checkMarkList
                 let targetArray = target.map { Calendar.current.dateComponents([.year, .month, .day], from: $0.checkedDate!)}
 
                 self.calendarView.reloadDecorations(forDateComponents: targetArray, animated: true)
+
             } cancelCallback: {
                 print("취소")
             }
-
         } else {
             self.showActionSheet(title: "오운완을 취소합니다", message: "운동 취소합니다.", confrimStyle: .destructive) {
-                CheckMarkManger.shared.removeCheckMark(checkedDate: todayDate)
-
                 CheckMarkManger.shared.fetchCheckMark()
                 let target = CheckMarkManger.shared.checkMarkList
 
                 let targetArray = target.map { Calendar.current.dateComponents([.year, .month, .day], from: $0.checkedDate!)}
 
-                NotificationCenter.default.post(name: .removeCheck, object: nil)
+                if let removeTarget = target.first { $0.checkedDate == dateComponents?.date} {
+                    CheckMarkManger.shared.removeCheckMark(checkedDate: removeTarget)
+                }
+
+                self.calendarView.reloadDecorations(forDateComponents: targetArray, animated: false)
 
             } cancelCallback: {
                 print("취소")
@@ -107,6 +97,5 @@ extension CalendarViewController :UICalendarViewDelegate {
         let matchingCount = target.filter { $0.checkedDate?.month == availableDate }.count
 
         self.navigationItem.title = "\(availableDate) 월 오운완 \(matchingCount) 번"
-
     }
 }
