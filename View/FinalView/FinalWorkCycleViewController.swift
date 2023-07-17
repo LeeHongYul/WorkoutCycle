@@ -33,14 +33,10 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
         WorkCycleManger.shared.fetchWorkCycle()
 
         let target = WorkCycleManger.shared.workCycleList[checkHowManyDayGone()].name
-        cell.finalWorkoutLabel.text = "\(target!)"
 
-//        let getTomorrow = checkHowManyDayGone() < (target!.count - 1) ? checkHowManyDayGone() + 1 : 0
-//
-//        let tomorrowTarget = WorkCycleManger.shared.workCycleList[getTomorrow].name
-//
-//        let selectedTarget = WorkCycleManger.shared.workCycleList.count > 1 ? tomorrowTarget : target
-//        tomorrowWorkLabel.text = selectedTarget
+        if let target = target {
+            cell.finalWorkoutLabel.text = "\(target)"
+        }
 
         return cell
     }

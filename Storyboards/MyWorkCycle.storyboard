@@ -381,6 +381,9 @@
         <designable name="CJe-dQ-Jvc">
             <size key="intrinsicContentSize" width="3300" height="2200"/>
         </designable>
+        <designable name="E9T-jR-PYX">
+            <size key="intrinsicContentSize" width="353" height="42"/>
+        </designable>
     </designables>
     <resources>
         <image name="cycle2" width="512" height="512"/>

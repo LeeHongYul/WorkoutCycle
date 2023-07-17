@@ -25,14 +25,12 @@ extension TabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 
         if let finalWorkCycleViewController = (viewController as? UINavigationController)?.topViewController as? FinalWorkCycleViewController {
-            print("Entered FinalView")
             finalWorkCycleViewController.finalTableView.reloadData()
+
             WorkCycleManger.shared.fetchWorkCycle()
-            
+
             let now = Date()
             let today = calendar.startOfDay(for: now)
-
-            print("Tab Bar FinalView: Today Date: \(today)일")
 
             let target = DayCheckManger.shared.dayCheckList.first
 
@@ -40,7 +38,6 @@ extension TabBarViewController: UITabBarControllerDelegate {
                 DayCheckManger.shared.updateTodayDay(update: target, latestDay: today)
                 NotificationCenter.default.post(name: .doneUpdateDate, object: nil)
             }
-
         } else {
             print("Just Tab Bar Clicked")
         }

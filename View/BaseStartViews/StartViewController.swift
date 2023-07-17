@@ -16,6 +16,8 @@ class StartViewController: BaseViewController {
         let now = Date()
         let today = calendar.startOfDay(for: now) //현재 시간의 시간을 12:00AM으로 설정
 
+        DayCheckManger.shared.fetcthDays()
+
         if DayCheckManger.shared.dayCheckList.count == 0 {
             DayCheckManger.shared.addLatestDay(latestDay: today, firstDay: today)
         } else {
@@ -25,6 +27,7 @@ class StartViewController: BaseViewController {
         }
 
         let segueIdentifier = WorkCycleManger.shared.workCycleList.count != 0 ? "YesWorkoutCycle" : "NoWorkoutCycle"
+
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 

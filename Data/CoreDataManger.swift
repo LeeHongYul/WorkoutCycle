@@ -177,8 +177,9 @@ class DayCheckManger: BaseManger {
     }
     
     func deleteDayDate() {
-        let data = dayCheckList.first!
-        mainContext.delete(data)
+        for i in dayCheckList {
+            mainContext.delete(i)
+        }
         saveContext()
     }
 }
@@ -228,7 +229,7 @@ class CheckMarkManger: BaseManger {
         }
         checkMarkList = checkMarkList.filter{ $0 != checkMark }
 
-                mainContext.delete(checkMark)
+        mainContext.delete(checkMark)
         saveContext()
 }
     
