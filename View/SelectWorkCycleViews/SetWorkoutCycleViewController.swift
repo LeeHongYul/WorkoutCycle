@@ -71,6 +71,7 @@ class SetWorkoutCycleViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "운동 분할법을 선택해주세요"
         setPageControl()
         pickCollectionView.collectionViewLayout = createLayout() 
         pickCollectionView.reloadData()

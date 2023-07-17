@@ -221,12 +221,22 @@ class CheckMarkManger: BaseManger {
         }
         saveContext()
     }
-    
-    func removeCheckMark(checkedDate: CheckMarkEntity) {
 
-        mainContext.delete(checkedDate)
+    func removeCheckMark(checkedDate: Date) {
+        guard let checkMark = checkMarkList.first(where: {$0.checkedDate == checkedDate}) else {
+        return
+        }
+        checkMarkList = checkMarkList.filter{ $0 != checkMark }
+
+                mainContext.delete(checkMark)
         saveContext()
-    }
+}
+    
+//    func removeCheckMark(checkedDate: CheckMarkEntity) {
+//
+//        mainContext.delete(checkedDate)
+//        saveContext()
+//    }
 }
 
 

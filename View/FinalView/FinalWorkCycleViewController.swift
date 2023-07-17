@@ -16,7 +16,6 @@ class FinalWorkCycleViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tomorrowWorkView.dropShadow()
         WorkCycleManger.shared.fetchWorkCycle()
         DayCheckManger.shared.fetcthDays()
         checkPermission()

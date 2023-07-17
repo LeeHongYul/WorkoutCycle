@@ -437,7 +437,6 @@
                     <connections>
                         <segue destination="b33-f1-E56" kind="relationship" relationship="viewControllers" id="rU8-SC-zPR"/>
                         <segue destination="kw6-jN-QuF" kind="relationship" relationship="viewControllers" id="N8r-3Y-KUu"/>
-                        <segue destination="mbq-fW-VOU" kind="relationship" relationship="viewControllers" id="c6S-6c-gFL"/>
                         <segue destination="kGk-Rp-eoe" kind="relationship" relationship="viewControllers" id="6mK-V6-2uT"/>
                     </connections>
                 </tabBarController>
@@ -530,17 +529,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7c-OE-Esa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944" y="1339"/>
-        </scene>
-        <!--Calendar-->
-        <scene sceneID="HPH-8k-1Pe">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Calendar" id="mbq-fW-VOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lNj-qa-cux"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BVE-Yh-DMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1184" y="1339"/>
+            <point key="canvasLocation" x="1033" y="1332"/>
         </scene>
         <!--Setting-->
         <scene sceneID="65N-of-jy4">
@@ -550,7 +539,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2l7-xE-Pin" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1402" y="1339"/>
+            <point key="canvasLocation" x="1252" y="1332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iuK-yg-9Nv">
