@@ -49,12 +49,10 @@ class InputWorlCycleViewController: BaseViewController {
 
 extension InputWorlCycleViewController: TagListViewDelegate {
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        print("Tag Pressed")
-        tagView.isSelected.toggle()
+        addTextField.text = title
     }
 
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        print("Tag Removed")
         sender.removeTagView(tagView)
         TagManger.shared.deleteTage(tag: title)
     }

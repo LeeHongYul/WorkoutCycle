@@ -22,25 +22,19 @@ class BaseViewController: UIViewController {
     func checkHowManyDayGone() -> Int {
         let target = DayCheckManger.shared.dayCheckList // firstDay, latestDay 데이터 접근
 
-        print("처음 날짜: \(target.first!.firstDay)일, 최근 날짜: \(target.first!.latestDay)일")
-
         let firstDay = target.first!.firstDay
         let latestDay = target.first!.latestDay
 
         let daysCount =  calendar.dateComponents([.day], from: firstDay!, to: latestDay!)// firstDay, latestDay 차 구하기
 
-        print("두 날짜의 차이: \(daysCount) !!!!!!!")
-
         var resultDayCount = (daysCount.day!) % WorkCycleManger.shared.workCycleList.count
 
-        print("최종 오늘의 날짜 순서: \(resultDayCount) !!!!!!!!!!!")
         return resultDayCount
 
     }
 
     func getTodayWork(dayInt: Int) -> String? {
         let target = WorkCycleManger.shared.workCycleList[dayInt].name
-
         return target
     }
 

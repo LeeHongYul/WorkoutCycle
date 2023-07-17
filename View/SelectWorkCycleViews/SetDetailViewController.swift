@@ -21,8 +21,8 @@ class SetDetailViewController: UIViewController {
         super.viewDidLoad()
         if let targetLabelValue, let targetContentValue, let targetImageStr {
             detailRecommendLabel.text = targetLabelValue
-            contextLabel.text = targetContentValue
-            detailImage.image = UIImage(named: targetImageStr)
+            contextLabel.text         = targetContentValue
+            detailImage.image         = UIImage(named: targetImageStr)
         }
     }
 }

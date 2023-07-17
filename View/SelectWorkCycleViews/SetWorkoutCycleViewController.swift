@@ -40,20 +40,21 @@ class SetWorkoutCycleViewController: BaseViewController {
             let target = cycleList[indexPath.row]
             vc.selectedSegue = target
         } else if segue.identifier == "RecommendSegue", let cell = sender as? UITableViewCell, let indexPath = recommendTableView.indexPath(for: cell) {
-            let target = recommendWorkCycle[indexPath.row]
+            let target  = recommendWorkCycle[indexPath.row]
             let target2 = context[indexPath.row]
             let target3 = detailImages[indexPath.row]
 
             if let viewController = segue.destination as? SetDetailViewController {
-                viewController.targetLabelValue = target
+                viewController.targetLabelValue   = target
                 viewController.targetContentValue = target2
-                viewController.targetImageStr = target3
+                viewController.targetImageStr     = target3
             }
         }
     }
 
     func createLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(250))
+
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
 
@@ -64,6 +65,7 @@ class SetWorkoutCycleViewController: BaseViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         section.orthogonalScrollingBehavior = .groupPaging
+
         let layout = UICollectionViewCompositionalLayout(section: section)
 
         return layout
@@ -115,6 +117,7 @@ extension SetWorkoutCycleViewController: UITableViewDataSource {
 
         cell.recommendLabel.text = target
         cell.recommendWorkImage.image = UIImage(named: targetName)
+
         return cell
     }
 }

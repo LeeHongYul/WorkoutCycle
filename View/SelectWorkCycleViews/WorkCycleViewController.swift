@@ -96,7 +96,3 @@ extension WorkCycleViewController: UITableViewDataSource {
         return cell
     }
 }
-
-extension WorkCycleViewController: UITableViewDelegate {
-
-}

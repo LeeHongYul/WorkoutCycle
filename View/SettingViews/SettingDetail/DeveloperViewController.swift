@@ -39,7 +39,6 @@ class DeveloperViewController: UIViewController {
                 composeVC.setMessageBody("", isHTML: false) // 이메일 본문 설정
                 self.present(composeVC, animated: true, completion: nil)
             } else {
-                // 이 기기에서 이메일 전송이 불가능한 경우 처리할 코드 작성
                 print("안됩니다 실패")
             }
     }

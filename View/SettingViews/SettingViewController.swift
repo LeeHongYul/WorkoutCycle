@@ -99,8 +99,12 @@ extension SettingViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             print("버전 정보")
+            guard let url = URL(string: "itms-apps://itunes.apple.com/app/") else { return }
+
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
         case 1:
-            print("알림 시간 설정")
             performSegue(withIdentifier: "AlramSegue", sender: self)
         case 2:
             if target == "공지사항" {

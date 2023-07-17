@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Then
 
 class CalendarViewController: BaseViewController {
 
@@ -24,14 +25,12 @@ class CalendarViewController: BaseViewController {
         countLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     }
 
-    var countLabel: UILabel = {
-        let label = UILabel()
-        label.text = "오운완 기록"
-        label.font = UIFont.boldSystemFont(ofSize: 17)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        return label
-    }()
+    var countLabel = UILabel().then {
+        $0.text = "오운완 기록"
+        $0.font = UIFont.boldSystemFont(ofSize: 17)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.textAlignment = .center
+    }
 
     func createCalendar() {
         calendarView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,9 +45,7 @@ class CalendarViewController: BaseViewController {
 
         NSLayoutConstraint.activate([
             calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-//            calendarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            calendarView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.9)
+            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
     }
 }

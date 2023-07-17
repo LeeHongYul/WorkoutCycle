@@ -44,12 +44,17 @@ extension ListWorkCycleViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
-        if editingStyle == .delete {
-            let target = WorkCycleManger.shared.workCycleList[indexPath.row]
-            WorkCycleManger.shared.deleteOneWorkData(workCycle: target)
+        let target = WorkCycleManger.shared.workCycleList
+
+        if editingStyle == .delete && target.count > 1  {
+            WorkCycleManger.shared.deleteOneWorkData(workCycle: target[indexPath.row])
 
             WorkCycleManger.shared.fetchWorkCycle()
             listTableView.reloadData()
+        } else {
+            showOneAlert(title: "하나의 루틴은 필요합니다") {
+                print("더 이상 삭제 못합니다")
+            }
         }
     }
 }
