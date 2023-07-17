@@ -17,18 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yVd-CY-cWu">
-                                <rect key="frame" x="0.0" y="102.99999999999997" width="393" height="438.33333333333326"/>
+                                <rect key="frame" x="0.0" y="102.99999999999999" width="393" height="199.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FinalWorkoutCycleTableViewCell" rowHeight="433" id="QRP-Hc-Uzj" customClass="FinalWorkoutCycleTableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="433"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FinalWorkoutCycleTableViewCell" rowHeight="129" id="QRP-Hc-Uzj" customClass="FinalWorkoutCycleTableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QRP-Hc-Uzj" id="ozw-37-Nye">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="433"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout1" translatesAutoresizingMaskIntoConstraints="NO" id="Emz-td-zZ3" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="353" height="413"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="109"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="128" id="mcC-ew-gg0"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="15"/>
@@ -36,11 +39,8 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-vp-awb" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="353" height="413"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="109"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="BWw-vp-awb" secondAttribute="height" multiplier="353:413" id="vGh-si-mS2"/>
-                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="15"/>
@@ -48,7 +48,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOb-pt-FK4">
-                                                    <rect key="frame" x="20" y="10" width="353" height="413"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="109"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -79,72 +79,34 @@
                                     <outlet property="dataSource" destination="yFV-u7-8OJ" id="CQc-SI-HOK"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout3" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-Nn-Gwz" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                <rect key="frame" x="20" y="561.33333333333337" width="353" height="187.66666666666663"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8f-g1-Z78">
-                                <rect key="frame" x="20" y="561.33333333333337" width="353" height="187.66666666666663"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0qj-Ot-hUC">
-                                <rect key="frame" x="50" y="591.33333333333337" width="293" height="127.66666666666663"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="내일의 운동" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csI-zv-T1f">
-                                        <rect key="frame" x="0.0" y="0.0" width="293" height="91.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tB5-tn-QMR">
-                                        <rect key="frame" x="0.0" y="91.666666666666629" width="293" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMj-SA-tG6">
+                                <rect key="frame" x="0.0" y="303" width="393" height="466"/>
+                                <connections>
+                                    <segue destination="N9K-HG-VVu" kind="embed" id="gff-AI-QJR"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i0c-rQ-tiJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0qj-Ot-hUC" firstAttribute="bottom" secondItem="J8f-g1-Z78" secondAttribute="bottom" constant="-30" id="1PC-ci-a4U"/>
-                            <constraint firstItem="J8f-g1-Z78" firstAttribute="height" secondItem="yVd-CY-cWu" secondAttribute="height" multiplier="3:7" id="6Fh-TE-vA4"/>
-                            <constraint firstItem="12Z-Nn-Gwz" firstAttribute="top" secondItem="J8f-g1-Z78" secondAttribute="top" id="7tm-g1-WLl"/>
-                            <constraint firstItem="J8f-g1-Z78" firstAttribute="leading" secondItem="i0c-rQ-tiJ" secondAttribute="leading" constant="20" id="CBI-5H-BTu"/>
+                            <constraint firstItem="i0c-rQ-tiJ" firstAttribute="bottom" secondItem="dMj-SA-tG6" secondAttribute="bottom" id="7Mz-ni-SLB"/>
                             <constraint firstItem="yVd-CY-cWu" firstAttribute="trailing" secondItem="i0c-rQ-tiJ" secondAttribute="trailing" id="DE0-4R-zUS"/>
-                            <constraint firstItem="i0c-rQ-tiJ" firstAttribute="trailing" secondItem="J8f-g1-Z78" secondAttribute="trailing" constant="20" id="FcN-Yc-3dh"/>
+                            <constraint firstItem="dMj-SA-tG6" firstAttribute="top" secondItem="yVd-CY-cWu" secondAttribute="bottom" id="DHK-vQ-gLu"/>
                             <constraint firstItem="yVd-CY-cWu" firstAttribute="top" secondItem="i0c-rQ-tiJ" secondAttribute="top" id="FhY-Xd-zCk"/>
+                            <constraint firstItem="dMj-SA-tG6" firstAttribute="leading" secondItem="i0c-rQ-tiJ" secondAttribute="leading" id="H5k-TA-OtL"/>
                             <constraint firstItem="yVd-CY-cWu" firstAttribute="leading" secondItem="i0c-rQ-tiJ" secondAttribute="leading" id="LJz-qX-Edg"/>
-                            <constraint firstItem="0qj-Ot-hUC" firstAttribute="top" secondItem="J8f-g1-Z78" secondAttribute="top" constant="30" id="MXg-3R-7KK"/>
-                            <constraint firstItem="i0c-rQ-tiJ" firstAttribute="bottom" secondItem="J8f-g1-Z78" secondAttribute="bottom" constant="20" id="aZB-5V-da4"/>
-                            <constraint firstItem="12Z-Nn-Gwz" firstAttribute="bottom" secondItem="J8f-g1-Z78" secondAttribute="bottom" id="fWs-Sk-frR"/>
-                            <constraint firstItem="J8f-g1-Z78" firstAttribute="top" secondItem="yVd-CY-cWu" secondAttribute="bottom" constant="20" id="iHM-WP-vOV"/>
-                            <constraint firstItem="0qj-Ot-hUC" firstAttribute="leading" secondItem="J8f-g1-Z78" secondAttribute="leading" constant="30" id="nda-ty-nNf"/>
-                            <constraint firstItem="0qj-Ot-hUC" firstAttribute="trailing" secondItem="J8f-g1-Z78" secondAttribute="trailing" constant="-30" id="t27-gU-aMt"/>
-                            <constraint firstItem="12Z-Nn-Gwz" firstAttribute="leading" secondItem="J8f-g1-Z78" secondAttribute="leading" id="vFg-pJ-Psz"/>
-                            <constraint firstItem="12Z-Nn-Gwz" firstAttribute="trailing" secondItem="J8f-g1-Z78" secondAttribute="trailing" id="vn8-Kx-s9V"/>
+                            <constraint firstItem="dMj-SA-tG6" firstAttribute="height" secondItem="yVd-CY-cWu" secondAttribute="height" multiplier="7:3" id="PFX-rm-fIC"/>
+                            <constraint firstItem="i0c-rQ-tiJ" firstAttribute="trailing" secondItem="dMj-SA-tG6" secondAttribute="trailing" id="hCz-kc-a76"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="오늘의 운동 " id="NuT-Te-1C8"/>
                     <connections>
                         <outlet property="finalTableView" destination="yVd-CY-cWu" id="iiU-vo-9Pc"/>
-                        <outlet property="tomorrowWorkLabel" destination="tB5-tn-QMR" id="lGb-0O-fJV"/>
-                        <outlet property="tomorrowWorkView" destination="J8f-g1-Z78" id="EjQ-xF-BH3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7FY-I7-bnu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="1574"/>
+            <point key="canvasLocation" x="1817.5572519083969" y="1573.943661971831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wNJ-R7-fS7">
@@ -166,11 +128,22 @@
             </objects>
             <point key="canvasLocation" x="877" y="1574"/>
         </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="QLf-hj-6Rp">
+            <objects>
+                <viewController id="N9K-HG-VVu" customClass="CalendarViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z4i-KJ-yQs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="449.33333333333331"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YU5-6V-Jc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2654" y="1681"/>
+        </scene>
     </scenes>
     <designables>
-        <designable name="12Z-Nn-Gwz">
-            <size key="intrinsicContentSize" width="2784" height="1856"/>
-        </designable>
         <designable name="Emz-td-zZ3">
             <size key="intrinsicContentSize" width="3024" height="2012"/>
         </designable>
@@ -178,7 +151,6 @@
     <resources>
         <image name="dumbbell" catalog="system" width="128" height="72"/>
         <image name="workout1" width="3024" height="2012"/>
-        <image name="workout3" width="2784" height="1856"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

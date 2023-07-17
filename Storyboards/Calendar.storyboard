@@ -11,7 +11,7 @@
         <!--오운완 달력-->
         <scene sceneID="Cim-fX-Dlz">
             <objects>
-                <viewController id="X5i-6a-rUG" customClass="CalendarViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X5i-6a-rUG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="frM-A8-j61">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

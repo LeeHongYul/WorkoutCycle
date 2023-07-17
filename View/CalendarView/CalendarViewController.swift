@@ -16,7 +16,22 @@ class CalendarViewController: BaseViewController {
         createCalendar()
         CheckMarkManger.shared.fetchCheckMark()
         calendarView.reloadInputViews()
+        view.addSubview(countLabel)
+
+        countLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        countLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor, constant: 0).isActive = true
+        countLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        countLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
     }
+
+    var countLabel: UILabel = {
+        let label = UILabel()
+        label.text = "오운완 기록"
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
 
     func createCalendar() {
         calendarView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,10 +45,10 @@ class CalendarViewController: BaseViewController {
         view.addSubview(calendarView)
 
         NSLayoutConstraint.activate([
-            calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 10),
-            calendarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            calendarView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.9)
+            calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+//            calendarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            calendarView.heightAnchor.constraint(equalToConstant: view.bounds.height * 0.9)
         ])
     }
 }
@@ -41,6 +56,8 @@ class CalendarViewController: BaseViewController {
 
 extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
+
+        calendarView(calendarView, didChangeVisibleDateComponentsFrom: dateComponents!)
 
         guard let todayDate = dateComponents?.date else { return }
 
@@ -64,9 +81,11 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
 
                 let targetArray = target.map { Calendar.current.dateComponents([.year, .month, .day], from: $0.checkedDate!)}
 
-                if let removeTarget = target.first { $0.checkedDate == dateComponents?.date} {
-                    CheckMarkManger.shared.removeCheckMark(checkedDate: removeTarget)
-                }
+                CheckMarkManger.shared.removeCheckMark(checkedDate: todayDate)
+
+//                if let removeTarget = target.first { $0.checkedDate == dateComponents?.date} {
+//                    CheckMarkManger.shared.removeCheckMark(checkedDate: removeTarget)
+//                }
 
                 self.calendarView.reloadDecorations(forDateComponents: targetArray, animated: false)
 
@@ -96,6 +115,6 @@ extension CalendarViewController :UICalendarViewDelegate {
 
         let matchingCount = target.filter { $0.checkedDate?.month == availableDate }.count
 
-        self.navigationItem.title = "\(availableDate) 월 오운완 \(matchingCount) 번"
+        countLabel.text = "\(availableDate) 월 오운완 \(matchingCount) 번"
     }
 }
