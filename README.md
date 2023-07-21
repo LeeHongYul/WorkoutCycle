@@ -46,7 +46,7 @@ NSLayoutConstraint.activate([
 <details>
 <summary>UITabBarController, UINavigationController에 대한 이해</summary>
 <div markdown="1">
-  개인 프로젝트에서 UITabBarController와 연결된 뷰들 중에서 새로운 탭으로 이동할 때 해당 뷰의 데이터를 다시 로드해야 하는 상황이 발생했다.<br>
+UITabBarController와 연결된 뷰들 중에서 새로운 탭으로 이동할 때 해당 뷰의 데이터를 다시 로드해야 하는 상황이 발생했다.<br>
 초기에는 viewWillAppear 메서드를 사용하려고 생각했지만, TabBar 컨트롤러는 뷰 컨트롤러를 사전에 로드하여 관리하고, 각 탭의 뷰 컨트롤러가 메모리에 남아 있기 때문에 뷰가 그대로 유지되었다.<br>
 
 이에 따라 UITabBarControllerDelegate의 didSelect 메서드를 활용하여 문제에 접근하였다. FinalViewController에 접근하기 위해 아래 코드를 사용했다.<br>
