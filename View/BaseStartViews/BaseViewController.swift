@@ -69,7 +69,7 @@ class BaseViewController: UIViewController {
 
             let identifier = "FisrtAlarm"
             let title = "운동갈 시간입니다"
-            let message = "오늘 운동 부위: \(todayWorkout)"
+            let message = "오늘 운동 화이팅!"
             let isDaily = true
 
             if (setting.authorizationStatus == .authorized) {

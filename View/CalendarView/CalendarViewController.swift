@@ -27,7 +27,7 @@ class CalendarViewController: BaseViewController {
 
     var countLabel = UILabel().then {
         $0.text = "오운완 기록"
-        $0.font = UIFont.boldSystemFont(ofSize: 17)
+        $0.font = UIFont.boldSystemFont(ofSize: 15)
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textAlignment = .center
     }
@@ -45,7 +45,8 @@ class CalendarViewController: BaseViewController {
 
         NSLayoutConstraint.activate([
             calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            calendarView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

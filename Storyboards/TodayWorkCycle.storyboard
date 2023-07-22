@@ -20,17 +20,17 @@
                                 <rect key="frame" x="0.0" y="102.99999999999999" width="393" height="199.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FinalWorkoutCycleTableViewCell" rowHeight="129" id="QRP-Hc-Uzj" customClass="FinalWorkoutCycleTableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="129"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FinalWorkoutCycleTableViewCell" rowHeight="145" id="QRP-Hc-Uzj" customClass="FinalWorkoutCycleTableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QRP-Hc-Uzj" id="ozw-37-Nye">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="129"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout1" translatesAutoresizingMaskIntoConstraints="NO" id="Emz-td-zZ3" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="353" height="109"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="125"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="128" id="mcC-ew-gg0"/>
+                                                        <constraint firstAttribute="height" constant="160" id="4Gj-Dz-yLc"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -39,7 +39,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-vp-awb" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="353" height="109"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="125"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -48,7 +48,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOb-pt-FK4">
-                                                    <rect key="frame" x="20" y="10" width="353" height="109"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="125"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -75,12 +75,13 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="yFV-u7-8OJ" id="CQc-SI-HOK"/>
                                 </connections>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMj-SA-tG6">
-                                <rect key="frame" x="0.0" y="303" width="393" height="466"/>
+                                <rect key="frame" x="0.0" y="302.66666666666674" width="393" height="466.33333333333326"/>
                                 <connections>
                                     <segue destination="N9K-HG-VVu" kind="embed" id="gff-AI-QJR"/>
                                 </connections>
@@ -133,8 +134,9 @@
             <objects>
                 <viewController id="N9K-HG-VVu" customClass="CalendarViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z4i-KJ-yQs">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="449.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="466.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nEH-p0-44l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
