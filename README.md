@@ -14,22 +14,13 @@
     
 ### 기능
 
-- 운동 분할 선택
-  <p>
-   <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/6bf903fc-ea98-4d34-835f-3a29daff2aa8">
-  </p>
-- 운동 루틴 추가
-  <p>
-    <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/67699c05-ba70-4e5b-9c0b-219d4434ccfe">
-  </p>
-- UICalendar을 활용한 오운완 기록하기
-  <p>
-    <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/8ef83aa6-d9bd-4ddf-975b-8c4028d09fde">
-  </p>
-- 로컬 노티피케이션
-  <p>
-    <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/2646781b-d00a-4455-8ce4-dac73fbce3b0">
-  </p>
+<br/>
+
+| <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/6bf903fc-ea98-4d34-835f-3a29daff2aa8"> | <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/67699c05-ba70-4e5b-9c0b-219d4434ccfe"> | <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/8ef83aa6-d9bd-4ddf-975b-8c4028d09fde"> | <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/2646781b-d00a-4455-8ce4-dac73fbce3b0"> |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  `운동 분할 선택`   |  `운동 루틴 추가`  | `UICalendar을 활용한 오운완 기록하기`  | `로컬 노티피케이션` | 
+
+<br/>
 
 ### UI
 
