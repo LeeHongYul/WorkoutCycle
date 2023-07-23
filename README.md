@@ -9,7 +9,7 @@
 - 2023년 06월 ~ 2023년 08월
 ### 기술 스택
   - Language : Swift
-  - Framework : UIKit, CoreData, UICalendar, UserNotifications
+  - Framework : UIKit, CoreData, UserNotifications
   - Library : Then, TagListView
     
 ### 기능
@@ -18,13 +18,38 @@
 
 | <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/6bf903fc-ea98-4d34-835f-3a29daff2aa8"> | <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/67699c05-ba70-4e5b-9c0b-219d4434ccfe"> | <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/8ef83aa6-d9bd-4ddf-975b-8c4028d09fde"> | <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/2646781b-d00a-4455-8ce4-dac73fbce3b0"> |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|  `운동 분할 선택`   |  `운동 루틴 추가`  | `UICalendar을 활용한 오운완 기록하기`  | `로컬 노티피케이션` | 
+|  `운동 분할 선택`   |  `운동 루틴 추가`  | `UICalendar을 활용한 오운완 기록하기`  | `Local Notification` | 
 
 <br/>
 
 ### UI
 
   <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/4ae1995f-bf23-49cd-87a4-a6499699feba"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/08b443ec-ddda-4445-8601-c2cb3030db50"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/9ae81e72-3732-497a-a88c-3f919f618ee8"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/ed2b6a84-88c1-4578-9105-538368c521c8"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/79160a82-913e-4cd7-98b8-0f07ff5b954a"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/43b5be92-9ba0-4bfa-a523-49f2301b0253"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/16d91d4d-5e99-4a0c-ab2b-6fb36626811b"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/9fcf64ca-63bd-4017-b417-0b95ab3fdff9"> <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/20a778a5-ea67-4ed4-a4f0-2a1bf633915b">
+
+### 개발 상세
+<details>
+<summary>배열에서 매일 로테이션을 돌리는 기능 구현</summary>
+<div markdown="1">
+앱에 처음 접속한 날짜와 최근에 접속한 날짜를 저장하는 기능이 구현되었으므로, 두 날짜 사이의 차이를 계산하고, 설정된 운동 분할법이 저장된 배열의 요소 수로 나누어 로테이션을 돌리면서 매일 다음 운동 부위를 표시하도록 하였습니다.
+</div>
+</details>
+
+<details>
+<summary>Local Notification</summary>
+<div markdown="1">
+알림을 예약할 날짜와 시간을 나타내는 DateComponents 객체를 생성하며, 사용자가 시간과 분을 설정할 수 있도록 구현했습니다.<br>
+UNCalendarNotificationTrigger를 사용하여 알림을 예약하는 트리거(trigger)를 생성했습니다.<br>
+이 트리거는 dateComponents에 설정된 날짜와 시간에 알림이 발생하도록 했습니다.<br>
+</div>
+</details>
+
+<details>
+<summary>Calendar에서 Decoration 사용</summary>
+<div markdown="1">
+캘린더에서 특정 날짜에 이벤트가 있는 경우 해당 날짜 셀을 다른 스타일로 표시하로독 decorationFor 메소드를 사용하였습니다.<br>
+UICalendarView는 기본적으로 제공하는 기능이므로, 추가적인 라이브러리나 외부 의존성 없이도 즉시 사용할 수 있어 편리하고 간편했습니다.<br>
+</div>
+</details>
 
 ### 고민 과정
 <details>
