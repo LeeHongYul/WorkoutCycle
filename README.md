@@ -13,11 +13,26 @@
   - Library : Then, TagListView
     
 ### 기능
-| <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/6bf903fc-ea98-4d34-835f-3a29daff2aa8"> | <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/8ef83aa6-d9bd-4ddf-975b-8c4028d09fde"> | <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/5f95e410-d8a8-4bbd-9e3a-8cbfb18cdf48"> |
-| :----------------------------------------------------------:| :----------------------------------------------------------:| :----------------------------------------------------------:
-|  `분할 선택`   |  `오운완 기록하기`  | `운동 루틴 추가`  |
+
+- 운동 분할 선택
+  <p>
+   <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/6bf903fc-ea98-4d34-835f-3a29daff2aa8">
+  </p>
+- 운동 루틴 추가
+  <p>
+    <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/5f95e410-d8a8-4bbd-9e3a-8cbfb18cdf48">
+  </p>
+- UICalendar을 활용한 오운완 기록하기
+  <p>
+    <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/8ef83aa6-d9bd-4ddf-975b-8c4028d09fde">
+  </p>
+- 로컬 노티피케이션
+  <p>
+    <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/2646781b-d00a-4455-8ce4-dac73fbce3b0">
+  </p>
 
 ### UI
+
   <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/4ae1995f-bf23-49cd-87a4-a6499699feba"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/08b443ec-ddda-4445-8601-c2cb3030db50"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/9ae81e72-3732-497a-a88c-3f919f618ee8"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/ed2b6a84-88c1-4578-9105-538368c521c8"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/79160a82-913e-4cd7-98b8-0f07ff5b954a"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/43b5be92-9ba0-4bfa-a523-49f2301b0253"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/16d91d4d-5e99-4a0c-ab2b-6fb36626811b"> <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/9fcf64ca-63bd-4017-b417-0b95ab3fdff9"> <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/20a778a5-ea67-4ed4-a4f0-2a1bf633915b">
 
 ### 고민 과정
