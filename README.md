@@ -20,7 +20,7 @@
   </p>
 - 운동 루틴 추가
   <p>
-    <img width="250" height="360" src="https://github.com/LeeHongYul/WorkoutCycle/assets/117960228/5f95e410-d8a8-4bbd-9e3a-8cbfb18cdf48">
+    <img width="250" height="360" src="https://github.com/LeeHongYul/TIL/assets/117960228/67699c05-ba70-4e5b-9c0b-219d4434ccfe">
   </p>
 - UICalendar을 활용한 오운완 기록하기
   <p>
