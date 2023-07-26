@@ -24,7 +24,6 @@ class SetWorkoutCycleViewController: BaseViewController {
     @IBOutlet var recommendTableView: UITableView!
 
     @IBAction func workcyclePageControl(_ sender: Any) {
-
         let indexPath = IndexPath(item: self.workcyclePageControl.currentPage, section: 0)
 
         pickCollectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)

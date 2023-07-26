@@ -12,7 +12,6 @@ extension Notification.Name {
 }
 
 class TabBarViewController: UITabBarController {
-
     let calendar = Calendar.current
 
     override func viewDidLoad() {
@@ -31,7 +30,6 @@ extension TabBarViewController: UITabBarControllerDelegate {
 
             let now = Date()
             let today = calendar.startOfDay(for: now)
-
             let target = DayCheckManger.shared.dayCheckList.first
 
             if let target {

@@ -21,7 +21,6 @@ class InputWorlCycleViewController: BaseViewController {
                 self.TagListView.addTag(newWorkCycle)
                 TagManger.shared.addTag(name: newWorkCycle)
                 WorkCycleManger.shared.addWorkCycle(name: newWorkCycle)
-//                self.dismiss(animated: true)
             } cancelCallback: {
                 return
             }

@@ -33,7 +33,6 @@ class AlarmViewController: BaseViewController {
                 }
             }
         } else {
-
             guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
 
             if UIApplication.shared.canOpenURL(url) {

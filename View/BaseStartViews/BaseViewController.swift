@@ -74,12 +74,14 @@ class BaseViewController: UIViewController {
 
             if (setting.authorizationStatus == .authorized) {
                 let content = UNMutableNotificationContent()
+
                 content.title = title
                 content.body = message
                 content.sound = .default
 
                 let calendar = Calendar.current
                 var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+
                 dateComponents.hour = hour
                 dateComponents.minute = minute
 
@@ -93,7 +95,6 @@ class BaseViewController: UIViewController {
                         print(error)
                     }
                 }
-
             } else {
                 print("알람 권한이 없습니다")
             }
@@ -132,6 +133,7 @@ class BaseViewController: UIViewController {
         let confirmAction = UIAlertAction(title: "확인", style: confrimStyle){ _ in
             callback()
         }
+
         let cancleAction = UIAlertAction(title: "취소", style: .cancel){ _ in
             cancelCallback()
         }

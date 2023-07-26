@@ -29,7 +29,7 @@ class DeveloperViewController: UIViewController {
             UIApplication.shared.open(url)
         }
     }
-    //    ryullee0911@gmail.com
+
     func openGmail() {
         if MFMailComposeViewController.canSendMail() {
                 let composeVC = MFMailComposeViewController()
@@ -48,5 +48,4 @@ extension DeveloperViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
             self.dismiss(animated: true, completion: nil)
         }
-
 }
