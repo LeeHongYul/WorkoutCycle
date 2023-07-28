@@ -75,7 +75,7 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
                 let targetArray = target.map { Calendar.current.dateComponents([.year, .month, .day], from: $0.checkedDate!)}
                 self.calendarView.reloadDecorations(forDateComponents: targetArray, animated: true)
             } cancelCallback: {
-                print("취소")
+                ValidationError.cancel
             }
         } else {
             self.showActionSheet(title: "오운완을 취소합니다", message: "운동 취소합니다.", confrimStyle: .destructive) {
@@ -85,15 +85,11 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
                 let targetArray = target.map { Calendar.current.dateComponents([.year, .month, .day], from: $0.checkedDate!)}
 
                 CheckMarkManger.shared.removeCheckMark(checkedDate: todayDate)
-
-//                if let removeTarget = target.first { $0.checkedDate == dateComponents?.date} {
-//                    CheckMarkManger.shared.removeCheckMark(checkedDate: removeTarget)
-//                }
-
+                
                 self.calendarView.reloadDecorations(forDateComponents: targetArray, animated: false)
 
             } cancelCallback: {
-                print("취소")
+                ValidationError.cancel
             }
         }
     }

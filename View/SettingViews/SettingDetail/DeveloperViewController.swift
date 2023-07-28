@@ -38,7 +38,7 @@ class DeveloperViewController: UIViewController {
                 composeVC.setMessageBody("", isHTML: false) // 이메일 본문 설정
                 self.present(composeVC, animated: true, completion: nil)
             } else {
-                print("안됩니다 실패")
+                ValidationError.cancel
             }
     }
 }

@@ -27,7 +27,7 @@ class CheckMarkManger: BaseManger {
         do {
             checkMarkList = try mainContext.fetch(request)
         } catch {
-            print(error)
+            ValidationError.cancel
         }
     }
 
@@ -56,11 +56,5 @@ class CheckMarkManger: BaseManger {
 
         mainContext.delete(checkMark)
         saveContext()
-}
-
-//    func removeCheckMark(checkedDate: CheckMarkEntity) {
-//
-//        mainContext.delete(checkedDate)
-//        saveContext()
-//    }
+    }
 }

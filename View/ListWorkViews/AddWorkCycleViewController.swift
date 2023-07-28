@@ -76,6 +76,5 @@ extension AddWorkCycleViewController: UICollectionViewDelegate {
                 return
             }
         }
-        print("Cell Clicked")
     }
 }

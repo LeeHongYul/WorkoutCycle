@@ -26,7 +26,7 @@ class TagManger: BaseManger {
         do {
             tagList = try mainContext.fetch(request)
         } catch {
-            print(error)
+            ValidationError.cancel
         }
     }
 

@@ -26,7 +26,7 @@ class InputWorkCycleViewController: BaseViewController {
             }
         } else if newWorkCycle.count > 15 {
             showOneAlert(title: "15자 이하로 작성해주세요") {
-                print("cancel")
+                ValidationError.tooLong
             }
         }
     }

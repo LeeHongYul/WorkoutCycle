@@ -27,7 +27,7 @@ class DayCheckManger: BaseManger {
         do {
             dayCheckList = try mainContext.fetch(request)
         } catch {
-            print(error)
+            ValidationError.cancel
         }
     }
 
@@ -48,7 +48,7 @@ class DayCheckManger: BaseManger {
         do {
             try mainContext.save()
         } catch {
-            print(error)
+            ValidationError.cancel
         }
     }
 

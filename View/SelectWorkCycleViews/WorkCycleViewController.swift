@@ -38,8 +38,9 @@ class WorkCycleViewController: BaseViewController {
     }
 
     @IBAction func saveCycleButton(_ sender: Any) {
+        guard let selectedSegue else { return }
 
-        showAlert(title: "분할법을 선택합니다", message: "\(selectedSegue!)으로 하시겠습니다?") {
+        showAlert(title: "분할법을 선택합니다", message: "\(selectedSegue)으로 하시겠습니다?") {
             self.saveToCoredata(target: self.selectedSegue ?? "없음")
             self.performSegue(withIdentifier: "FinalWorkout", sender: self)
         } cancelCallback: {

@@ -29,10 +29,9 @@ class BaseViewController: UIViewController {
 
         let daysCount =  calendar.dateComponents([.day], from: firstDay!, to: latestDay!)// firstDay, latestDay 차 구하기
 
-        var resultDayCount = (daysCount.day!) % WorkCycleManger.shared.workCycleList.count
+        let resultDayCount = (daysCount.day!) % WorkCycleManger.shared.workCycleList.count
 
         return resultDayCount
-
     }
 
     func getTodayWork(dayInt: Int) -> String? {
@@ -67,12 +66,9 @@ class BaseViewController: UIViewController {
 
         notiCenter.getNotificationSettings { setting in
 
-            guard let todayWorkout = self.getTodayWork(dayInt:getDayInt) else { return }
-
             let identifier = "FisrtAlarm"
             let title = "운동갈 시간입니다"
             let message = "오늘 운동 화이팅!"
-            let isDaily = true
 
             if (setting.authorizationStatus == .authorized) {
                 let content = UNMutableNotificationContent()
@@ -94,11 +90,11 @@ class BaseViewController: UIViewController {
                 notiCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
                 UNUserNotificationCenter.current().add(request) { error in
                     if let error {
-                        print(error)
+                        ValidationError.cancel
                     }
                 }
             } else {
-                print("알람 권한이 없습니다")
+                ValidationError.noAuthority
             }
         }
     }

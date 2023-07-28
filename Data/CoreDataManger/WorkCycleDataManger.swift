@@ -27,7 +27,7 @@ class WorkCycleManger: BaseManger {
         do {
             workCycleList = try mainContext.fetch(request)
         } catch {
-            print(error)
+            ValidationError.cancel
         }
     }
 
@@ -47,7 +47,7 @@ class WorkCycleManger: BaseManger {
         do {
             try mainContext.save()
         } catch {
-            print(error)
+            ValidationError.cancel
         }
     }
 

@@ -24,7 +24,7 @@ class SettingViewController: BaseViewController {
                     self.present(vc, animated: true)
                 }
             } cancelCallback: {
-                print("Canel")
+                ValidationError.cancel
             }
         }
     }
@@ -99,7 +99,6 @@ extension SettingViewController: UITableViewDelegate {
 
         switch indexPath.section {
         case 0:
-            print("버전 정보")
             guard let url = URL(string: "itms-apps://itunes.apple.com/app/") else { return }
 
             if UIApplication.shared.canOpenURL(url) {
