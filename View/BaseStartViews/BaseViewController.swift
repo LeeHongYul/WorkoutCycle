@@ -22,8 +22,10 @@ class BaseViewController: UIViewController {
     func checkHowManyDayGone() -> Int {
         let target = DayCheckManger.shared.dayCheckList // firstDay, latestDay 데이터 접근
 
-        let firstDay = target.first!.firstDay
-        let latestDay = target.first!.latestDay
+        guard let safeTarget = target.first else { return 0 }
+
+        let firstDay = safeTarget.firstDay
+        let latestDay = safeTarget.latestDay
 
         let daysCount =  calendar.dateComponents([.day], from: firstDay!, to: latestDay!)// firstDay, latestDay 차 구하기
 

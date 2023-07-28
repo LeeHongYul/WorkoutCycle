@@ -15,6 +15,7 @@ class SettingViewController: BaseViewController {
                 DayCheckManger.shared.deleteDayDate()
                 CheckMarkManger.shared.deleteCheckMark()
                 WorkCycleManger.shared.deleteAllWorkData()
+                TagManger.shared.deleteAllTage()
 
                 if let vc = segue.destination.storyboard?.instantiateViewController(identifier: "StartViewController") as? StartViewController {
                     vc.modalTransitionStyle = .coverVertical

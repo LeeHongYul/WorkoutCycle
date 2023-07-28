@@ -11,9 +11,7 @@ import CoreData
 class FinalWorkCycleViewController: BaseViewController {
 
     @IBOutlet var finalTableView: UITableView!
-    @IBOutlet var tomorrowWorkLabel: UILabel!
-    @IBOutlet var tomorrowWorkView: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         WorkCycleManger.shared.fetchWorkCycle()
@@ -37,7 +35,7 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
         if let target = target {
             cell.finalWorkoutLabel.text = "\(target)"
         }
-
+        
         return cell
     }
 }

@@ -147,12 +147,12 @@
     </scenes>
     <designables>
         <designable name="Emz-td-zZ3">
-            <size key="intrinsicContentSize" width="3024" height="2012"/>
+            <size key="intrinsicContentSize" width="1512" height="1006"/>
         </designable>
     </designables>
     <resources>
         <image name="dumbbell" catalog="system" width="128" height="72"/>
-        <image name="workout1" width="3024" height="2012"/>
+        <image name="workout1" width="1512" height="1006"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

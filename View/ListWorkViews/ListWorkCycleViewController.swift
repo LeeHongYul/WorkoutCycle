@@ -52,8 +52,8 @@ extension ListWorkCycleViewController: UITableViewDelegate {
             WorkCycleManger.shared.fetchWorkCycle()
             listTableView.reloadData()
         } else {
-            showOneAlert(title: "하나의 루틴은 필요합니다") {
-                print("더 이상 삭제 못합니다")
+            showOneAlert(title: "하나의 루틴은 필요합니다.") {
+                print("더 이상 삭제 못합니다.")
             }
         }
     }

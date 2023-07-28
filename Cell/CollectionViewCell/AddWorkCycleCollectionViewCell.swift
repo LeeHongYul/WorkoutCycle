@@ -16,6 +16,7 @@ class AddWorkCycleCollectionViewCell: UICollectionViewCell {
         cellView.dropGrayShadow()
         cellView.backgroundColor = .systemGray6
         cellView.layer.cornerRadius = 15
+        addWorkCycleLabel.textColor = .black
     }
 
     override var isSelected: Bool {
@@ -23,10 +24,8 @@ class AddWorkCycleCollectionViewCell: UICollectionViewCell {
             if isSelected {
                 cellView.backgroundColor = .orange
                 addWorkCycleLabel.textColor = .white
-            } else {
-                cellView.backgroundColor = .systemYellow
-                addWorkCycleLabel.textColor = .black
             }
         }
     }
 }
+

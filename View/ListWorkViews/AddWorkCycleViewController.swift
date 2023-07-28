@@ -14,7 +14,7 @@ class AddWorkCycleViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "inputWorkcycle" {
             if (segue.destination.sheetPresentationController?.detents = [.medium()]) != nil {
-                let viewController = segue.destination as? InputWorlCycleViewController
+                let viewController = segue.destination as? InputWorkCycleViewController
             }
         }
     }
@@ -62,12 +62,7 @@ extension AddWorkCycleViewController: UICollectionViewDataSource {
 
 extension AddWorkCycleViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddWorkCycleCollectionViewCell", for: indexPath) as! AddWorkCycleCollectionViewCell
-        
-        if indexPath.item == 0 {
-            cell.isSelected = true
-        }
-        
+
         let target = addWorkCycleList[indexPath.row]
         if !target.isEmpty {
 

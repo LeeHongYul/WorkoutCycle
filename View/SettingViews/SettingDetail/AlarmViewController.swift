@@ -25,7 +25,6 @@ class AlarmViewController: BaseViewController {
                     notiCenter.requestAuthorization(options: [.alert, .sound]) { permissionGranted, error in
                         if permissionGranted {
                             self.grantedNotification(18, 0)
-                            print("Noti granted")
                         }
                     }
                 @unknown default:

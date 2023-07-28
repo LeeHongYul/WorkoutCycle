@@ -18,11 +18,7 @@ class CalendarViewController: BaseViewController {
         CheckMarkManger.shared.fetchCheckMark()
         calendarView.reloadInputViews()
         view.addSubview(countLabel)
-
-        countLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        countLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor, constant: 0).isActive = true
-        countLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        countLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        countLabelLayout()
     }
 
     var countLabel = UILabel().then {
@@ -30,6 +26,17 @@ class CalendarViewController: BaseViewController {
         $0.font = UIFont.boldSystemFont(ofSize: 15)
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textAlignment = .center
+    }
+
+    func countLabelLayout() {
+        countLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            countLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            countLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor),
+            countLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            countLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
 
     func createCalendar() {
@@ -66,9 +73,7 @@ extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
 
                 let target = CheckMarkManger.shared.checkMarkList
                 let targetArray = target.map { Calendar.current.dateComponents([.year, .month, .day], from: $0.checkedDate!)}
-
                 self.calendarView.reloadDecorations(forDateComponents: targetArray, animated: true)
-
             } cancelCallback: {
                 print("취소")
             }

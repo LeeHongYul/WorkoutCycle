@@ -273,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="3748.8549618320608" y="1590.8450704225354"/>
         </scene>
-        <!--Input Worl Cycle View Controller-->
+        <!--Input Work Cycle View Controller-->
         <scene sceneID="Yek-VO-u7f">
             <objects>
-                <viewController id="hBs-pK-Zyk" customClass="InputWorlCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hBs-pK-Zyk" customClass="InputWorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JXx-iQ-6dL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

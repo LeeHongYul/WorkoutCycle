@@ -9,8 +9,8 @@ import UIKit
 
 class SetDetailViewController: UIViewController {
 
-    var targetLabelValue: String?
-    var targetContentValue: String?
+    var targetLabelValue: String? = "디테일 운동 제목입니다."
+    var targetContentValue: String? = "디테일 운동 내용입니다."
     var targetImageStr: String?
 
     @IBOutlet var detailImage: UIImageView!
@@ -19,10 +19,9 @@ class SetDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let targetLabelValue, let targetContentValue, let targetImageStr {
-            detailRecommendLabel.text = targetLabelValue
-            contextLabel.text         = targetContentValue
-            detailImage.image         = UIImage(named: targetImageStr)
-        }
+
+        detailRecommendLabel.text = targetLabelValue
+        contextLabel.text         = targetContentValue
+        detailImage.image         = UIImage(named: targetImageStr ?? "diet")
     }
 }

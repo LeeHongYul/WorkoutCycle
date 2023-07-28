@@ -20,7 +20,6 @@ class DeveloperViewController: UIViewController {
 
     @IBAction func moveToGmail(_ sender: Any) {
         openGmail()
-        print("Btn Pressed")
     }
 
     func moveToGithub() {

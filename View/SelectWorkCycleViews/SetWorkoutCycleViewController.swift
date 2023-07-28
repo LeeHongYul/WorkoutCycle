@@ -9,16 +9,6 @@ import UIKit
 
 class SetWorkoutCycleViewController: BaseViewController {
 
-    @IBOutlet var setThemeControl: UISegmentedControl!
-
-    @IBAction func setThemeControl(_ sender: Any) {
-        if setThemeControl.selectedSegmentIndex == 0 {
-            print(setThemeControl.titleForSegment(at: 0))
-        } else {
-            print(setThemeControl.titleForSegment(at: 2))
-        }
-    }
-
     @IBOutlet var pickCollectionView: UICollectionView!
     @IBOutlet var workcyclePageControl: UIPageControl!
     @IBOutlet var recommendTableView: UITableView!

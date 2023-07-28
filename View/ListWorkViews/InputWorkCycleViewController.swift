@@ -8,7 +8,7 @@
 import UIKit
 import TagListView
 
-class InputWorlCycleViewController: BaseViewController {
+class InputWorkCycleViewController: BaseViewController {
 
     @IBOutlet var TagListView: TagListView!
     @IBOutlet var addTextField: UITextField!
@@ -40,13 +40,14 @@ class InputWorlCycleViewController: BaseViewController {
     func initTagListView() {
         TagManger.shared.fetchTag()
         let target = TagManger.shared.tagList
+
         for i in target {
-            TagListView.addTag(i.name!)
+            TagListView.addTag(i.name ?? "추가된 태그가 없습니다.")
         }
     }
 }
 
-extension InputWorlCycleViewController: TagListViewDelegate {
+extension InputWorkCycleViewController: TagListViewDelegate {
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         addTextField.text = title
     }
