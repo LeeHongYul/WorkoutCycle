@@ -14,17 +14,17 @@ enum ValidationError: Error {
     case noAuthority
 }
 
-extension ValidationError: LocalizedError {
+extension ValidationError {
     var errorDescription: String? {
         switch self {
         case .tooShort:
-            return NSLocalizedString("Need more Line", comment: "")
+            return "Too Short"
         case .tooLong:
-            return NSLocalizedString("Need few Line", comment: "")
+            return "Need few Line"
         case .cancel:
-        return NSLocalizedString("Nothing Happen", comment: "")
+            return "Nothing Happen"
         case .noAuthority:
-            return NSLocalizedString("User Don't have Authority", comment: "")
+            return "User Don't have Authority"
         }
     }
 }
