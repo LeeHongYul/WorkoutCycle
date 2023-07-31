@@ -39,4 +39,3 @@ extension FinalWorkCycleViewController: UITableViewDataSource {
         return cell
     }
 }
-

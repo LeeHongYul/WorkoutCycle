@@ -25,7 +25,7 @@ class SetWorkoutCycleViewController: BaseViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? WorkCycleViewController, let cell = sender as? UICollectionViewCell, let indexPath = pickCollectionView.indexPath(for: cell)  {
+        if let vc = segue.destination as? WorkCycleViewController, let cell = sender as? UICollectionViewCell, let indexPath = pickCollectionView.indexPath(for: cell) {
             let target = cycleList[indexPath.row]
             vc.selectedSegue = target
         } else if segue.identifier == "RecommendSegue", let cell = sender as? UITableViewCell, let indexPath = recommendTableView.indexPath(for: cell) {
@@ -124,5 +124,3 @@ enum SegueID: String {
     case fourCycle  = "4분할"
     case fiveCycle  = "5분할"
 }
-
-

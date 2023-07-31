@@ -11,12 +11,12 @@ import UIKit
 @IBDesignable
 class FAUGradientView: UIView {
 
-    @IBInspectable var firstColor:UIColor = UIColor.clear
-    @IBInspectable var secondColor:UIColor = UIColor.clear
-    @IBInspectable var startPoint:CGPoint = CGPoint(x: 0.0, y: 1.0)
-    @IBInspectable var endPoint:CGPoint = CGPoint(x: 1.0, y:0.0)
+    @IBInspectable var firstColor: UIColor = UIColor.clear
+    @IBInspectable var secondColor: UIColor = UIColor.clear
+    @IBInspectable var startPoint: CGPoint = CGPoint(x: 0.0, y: 1.0)
+    @IBInspectable var endPoint: CGPoint = CGPoint(x: 1.0, y: 0.0)
 
-    var gradientLayer:CAGradientLayer!
+    var gradientLayer: CAGradientLayer!
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)

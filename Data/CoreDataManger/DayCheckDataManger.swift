@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 class DayCheckManger: BaseManger {
 
     static let shared = DayCheckManger()
@@ -37,7 +36,7 @@ class DayCheckManger: BaseManger {
         newLatestDay.latestDay = latestDay
         newLatestDay.firstDay = firstDay
 
-        dayCheckList.insert(newLatestDay, at:  0)
+        dayCheckList.insert(newLatestDay, at: 0)
 
         saveContext()
     }

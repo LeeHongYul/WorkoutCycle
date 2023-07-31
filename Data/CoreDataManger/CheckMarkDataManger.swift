@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 class CheckMarkManger: BaseManger {
 
     static let shared = CheckMarkManger()
@@ -36,7 +35,7 @@ class CheckMarkManger: BaseManger {
 
         newCheck.checkedDate = checkedDate
 
-        checkMarkList.insert(newCheck, at:  0)
+        checkMarkList.insert(newCheck, at: 0)
 
         saveContext()
     }
@@ -52,7 +51,7 @@ class CheckMarkManger: BaseManger {
         guard let checkMark = checkMarkList.first(where: {$0.checkedDate == checkedDate}) else {
         return
         }
-        checkMarkList = checkMarkList.filter{ $0 != checkMark }
+        checkMarkList = checkMarkList.filter { $0 != checkMark }
 
         mainContext.delete(checkMark)
         saveContext()

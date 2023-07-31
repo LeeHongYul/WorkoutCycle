@@ -278,7 +278,7 @@
             <objects>
                 <viewController id="hBs-pK-Zyk" customClass="InputWorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JXx-iQ-6dL">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="soM-M2-Prj">
@@ -348,8 +348,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="IOT-Rg-YX3"/>
                     <connections>
-                        <outlet property="TagListView" destination="E9T-jR-PYX" id="Uep-5p-4n2"/>
                         <outlet property="addTextField" destination="FUx-rF-LtM" id="Nzq-Dm-lpg"/>
+                        <outlet property="tagListView" destination="E9T-jR-PYX" id="Uep-5p-4n2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hm7-2M-8dX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -377,14 +377,6 @@
             <point key="canvasLocation" x="1960" y="1591"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="CJe-dQ-Jvc">
-            <size key="intrinsicContentSize" width="3300" height="2200"/>
-        </designable>
-        <designable name="E9T-jR-PYX">
-            <size key="intrinsicContentSize" width="353" height="42"/>
-        </designable>
-    </designables>
     <resources>
         <image name="cycle2" width="512" height="512"/>
         <image name="dumbells" width="3300" height="2200"/>

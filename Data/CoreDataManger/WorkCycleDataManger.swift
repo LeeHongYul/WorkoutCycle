@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 class WorkCycleManger: BaseManger {
 
     static let shared = WorkCycleManger()
@@ -57,7 +56,7 @@ class WorkCycleManger: BaseManger {
     }
 
     func deleteAllWorkData() {
-        for i in workCycleList{
+        for i in workCycleList {
             mainContext.delete(i)
         }
         saveContext()

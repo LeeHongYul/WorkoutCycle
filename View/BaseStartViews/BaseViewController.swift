@@ -62,7 +62,6 @@ class BaseViewController: UIViewController {
 
     func grantedNotification(_ hour: Int, _ minute: Int) {
         let notiCenter = UNUserNotificationCenter.current()
-        let getDayInt = checkHowManyDayGone()
 
         notiCenter.getNotificationSettings { setting in
 
@@ -70,7 +69,7 @@ class BaseViewController: UIViewController {
             let title = "운동갈 시간입니다"
             let message = "오늘 운동 화이팅!"
 
-            if (setting.authorizationStatus == .authorized) {
+            if setting.authorizationStatus == .authorized {
                 let content = UNMutableNotificationContent()
 
                 content.title = title
@@ -99,12 +98,12 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func showAlert(title : String,
-                   message : String ,
-                   confrimTitle: String = "확인" ,
-                   cancelTitle : String = "취소",
+    func showAlert(title: String,
+                   message: String,
+                   confrimTitle: String = "확인",
+                   cancelTitle: String = "취소",
                    callback: @escaping () -> Void,
-                   cancelCallback : @escaping () -> Void) {
+                   cancelCallback: @escaping () -> Void) {
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
@@ -123,16 +122,16 @@ class BaseViewController: UIViewController {
 
     func showActionSheet(title: String,
                          message: String,
-                         confrimStyle:  UIAlertAction.Style,
+                         confrimStyle: UIAlertAction.Style,
                          callback: @escaping () -> Void,
-                         cancelCallback : @escaping () -> Void) {
+                         cancelCallback: @escaping () -> Void) {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
 
-        let confirmAction = UIAlertAction(title: "확인", style: confrimStyle){ _ in
+        let confirmAction = UIAlertAction(title: "확인", style: confrimStyle) { _ in
             callback()
         }
 
-        let cancleAction = UIAlertAction(title: "취소", style: .cancel){ _ in
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel) { _ in
             cancelCallback()
         }
 
@@ -141,15 +140,13 @@ class BaseViewController: UIViewController {
         self.present(actionSheet, animated: true)
     }
 
-    func showOneAlert(title: String,
-                      cancelCallback : @escaping () -> Void) {
+    func showOneAlert(title: String, cancelCallback: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
 
-        let cancleAction = UIAlertAction(title: "확인", style: .cancel){ _ in
+        let cancleAction = UIAlertAction(title: "확인", style: .cancel) { _ in
             cancelCallback()
         }
         alert.addAction(cancleAction)
         self.present(alert, animated: true)
     }
 }
-

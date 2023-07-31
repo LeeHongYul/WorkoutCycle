@@ -22,4 +22,3 @@ class PickCollectionViewCell: UICollectionViewCell {
         randomWorkoutImageView.image = UIImage(named: "workout\(randomeNumber)")
     }
 }
-
