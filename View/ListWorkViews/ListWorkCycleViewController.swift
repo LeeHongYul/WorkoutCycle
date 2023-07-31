@@ -46,7 +46,7 @@ extension ListWorkCycleViewController: UITableViewDelegate {
 
         let target = WorkCycleManger.shared.workCycleList
 
-        if editingStyle == .delete && target.count > 1  {
+        if editingStyle == .delete && target.count > 1 {
             WorkCycleManger.shared.deleteOneWorkData(workCycle: target[indexPath.row])
 
             WorkCycleManger.shared.fetchWorkCycle()

@@ -14,7 +14,7 @@ class StartViewController: BaseViewController {
     @IBOutlet var startBtn: UIButton!
     @IBAction func startButton(_ sender: Any) {
         let now = Date()
-        let today = calendar.startOfDay(for: now) //현재 시간의 시간을 12:00AM으로 설정
+        let today = calendar.startOfDay(for: now)
 
         DayCheckManger.shared.fetcthDays()
 

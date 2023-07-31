@@ -14,7 +14,7 @@ class AddWorkCycleViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "inputWorkcycle" {
             if (segue.destination.sheetPresentationController?.detents = [.medium()]) != nil {
-                let viewController = segue.destination as? InputWorkCycleViewController
+                _ = segue.destination as? InputWorkCycleViewController
             }
         }
     }

@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 class TagManger: BaseManger {
     static let shared = TagManger()
 
@@ -50,7 +49,7 @@ class TagManger: BaseManger {
     }
 
     func deleteAllTage() {
-        for i in tagList{
+        for i in tagList {
             mainContext.delete(i)
         }
         saveContext()

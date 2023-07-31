@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 class BaseManger {
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
@@ -36,12 +35,3 @@ class BaseManger {
         }
     }
 }
-
-
-
-
-
-
-
-
-

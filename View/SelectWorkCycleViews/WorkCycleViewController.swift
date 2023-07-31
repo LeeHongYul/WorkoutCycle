@@ -13,12 +13,12 @@ class WorkCycleViewController: BaseViewController {
 
     @IBOutlet var workcycleTableView: UITableView!
 
-    func saveToCoredata(target: String)  {
+    func saveToCoredata(target: String) {
 
         switch target {
         case SegueID.twoCycle.rawValue:
             for i in twoCycleList {
-                WorkCycleManger.shared.addWorkCycle(name:i.workPart)
+                WorkCycleManger.shared.addWorkCycle(name: i.workPart)
             }
         case SegueID.threeCycle.rawValue:
             for i in threeCycleList {

@@ -39,4 +39,3 @@ class CustomButton: UIButton {
         configuration?.imagePlacement = .leading
     }
 }
-

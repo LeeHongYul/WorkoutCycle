@@ -33,7 +33,7 @@ extension Date {
         return dateString.string(from: self)
     }
 
-    func dateToString(format : String) -> String {
+    func dateToString(format: String) -> String {
         let dateString = DateFormatter()
         dateString.dateFormat = format
         dateString.locale = Locale(identifier: "en_US_POSIX")
@@ -62,4 +62,3 @@ extension Date {
         return cal.component(.minute, from: self)
     }
 }
-
