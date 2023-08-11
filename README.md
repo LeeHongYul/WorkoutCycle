@@ -10,7 +10,7 @@
 ### 기술 스택
   - Language : Swift
   - Framework : UIKit, CoreData, UserNotifications
-  - Library : Then, TagListView
+  - Library : Then, TagListView, SwiftLint
     
 ### 기능
 
