@@ -17,7 +17,7 @@ class SettingViewController: BaseViewController {
                 WorkCycleManger.shared.deleteAllWorkData()
                 TagManger.shared.deleteAllTage()
 
-                if let vc = segue.destination.storyboard?.instantiateViewController(identifier: "StartViewController") as? StartViewController {
+                if let vc = segue.destination.storyboard?.instantiateViewController(identifier: "StartViewController") {
                     vc.modalTransitionStyle = .coverVertical
                     vc.modalPresentationStyle = .fullScreen
 

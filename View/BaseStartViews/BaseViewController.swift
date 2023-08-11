@@ -65,7 +65,7 @@ class BaseViewController: UIViewController {
 
         notiCenter.getNotificationSettings { setting in
 
-            let identifier = "FisrtAlarm"
+            let identifier = "WorkoutAlarm"
             let title = "운동갈 시간입니다"
             let message = "오늘 운동 화이팅!"
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cPe-gG-sTd">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22113.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cPe-gG-sTd">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22089.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,22 +14,22 @@
             <objects>
                 <viewController id="yFV-u7-8OJ" customClass="FinalWorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SkM-jB-sp5">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yVd-CY-cWu">
-                                <rect key="frame" x="0.0" y="102.99999999999999" width="393" height="199.66666666666663"/>
+                                <rect key="frame" x="0.0" y="102.99999999999999" width="430" height="223.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FinalWorkoutCycleTableViewCell" rowHeight="145" id="QRP-Hc-Uzj" customClass="FinalWorkoutCycleTableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="145"/>
+                                        <rect key="frame" x="0.0" y="50" width="430" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QRP-Hc-Uzj" id="ozw-37-Nye">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="145"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="145"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout1" translatesAutoresizingMaskIntoConstraints="NO" id="Emz-td-zZ3" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="353" height="125"/>
+                                                    <rect key="frame" x="20" y="10" width="390" height="125"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="160" id="4Gj-Dz-yLc"/>
                                                     </constraints>
@@ -39,7 +40,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-vp-awb" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="353" height="125"/>
+                                                    <rect key="frame" x="20" y="10" width="390" height="125"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -48,7 +49,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOb-pt-FK4">
-                                                    <rect key="frame" x="20" y="10" width="353" height="125"/>
+                                                    <rect key="frame" x="20" y="10" width="390" height="125"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -81,7 +82,7 @@
                                 </connections>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMj-SA-tG6">
-                                <rect key="frame" x="0.0" y="302.66666666666674" width="393" height="466.33333333333326"/>
+                                <rect key="frame" x="0.0" y="326.66666666666669" width="430" height="522.33333333333326"/>
                                 <connections>
                                     <segue destination="N9K-HG-VVu" kind="embed" id="gff-AI-QJR"/>
                                 </connections>
@@ -117,7 +118,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="43h-84-KDU">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -134,7 +135,7 @@
             <objects>
                 <viewController id="N9K-HG-VVu" customClass="CalendarViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z4i-KJ-yQs">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="466.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="855.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nEH-p0-44l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

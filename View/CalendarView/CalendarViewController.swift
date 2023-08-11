@@ -32,7 +32,7 @@ class CalendarViewController: BaseViewController {
         countLabel.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            countLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            countLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             countLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor),
             countLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             countLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)

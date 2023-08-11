@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yfa-Dr-60x">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22113.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yfa-Dr-60x">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22089.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -14,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SetWorkoutCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2A1-ma-zfm">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="dLo-fm-6FG"/>
@@ -31,7 +32,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PickCollectionViewCell" id="6TO-D9-iUE" customClass="PickCollectionViewCell" customModule="WorkoutCycle" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="0.0" width="353" height="269"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="269"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Spm-h7-zeI">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="269"/>
@@ -109,18 +110,18 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jfr-Wf-CSc">
-                                <rect key="frame" x="0.0" y="380" width="393" height="432"/>
+                                <rect key="frame" x="0.0" y="380" width="1024" height="946"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecommendCell" rowHeight="87" id="Peq-sf-mdl" customClass="RecommendCellableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="87"/>
+                                        <rect key="frame" x="0.0" y="50" width="1024" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Peq-sf-mdl" id="YG7-B8-CBf">
-                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="997.5" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MM8-uW-y8Q" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                    <rect key="frame" x="25" y="16" width="324.66666666666669" height="65"/>
+                                                    <rect key="frame" x="21" y="20" width="963.5" height="57"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ab2-3d-KI7">
                                                             <rect key="frame" x="5" y="5" width="55" height="55"/>
@@ -130,7 +131,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1k5-nF-QQK">
-                                                            <rect key="frame" x="69.999999999999986" y="22" width="249.66666666666663" height="21"/>
+                                                            <rect key="frame" x="70" y="18" width="888.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -173,7 +174,7 @@
                                 </connections>
                             </tableView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="SdL-Ta-cSv">
-                                <rect key="frame" x="0.0" y="360" width="393" height="20"/>
+                                <rect key="frame" x="0.0" y="360" width="1024" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="gHg-f9-afB"/>
                                 </constraints>
@@ -215,14 +216,14 @@
             <objects>
                 <viewController id="6tj-MG-5G4" customClass="SetDetailViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4K2-8K-GZk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginner" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-wL-eZ6">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </imageView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGX-kT-oxQ" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                <rect key="frame" x="15" y="611.66666666666663" width="363" height="60.666666666666629"/>
+                                <rect key="frame" x="15" y="1197" width="994" height="61"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -231,13 +232,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초보자를 위한 루틴" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywk-nJ-7d2">
-                                <rect key="frame" x="25" y="621.66666666666663" width="343" height="40.666666666666629"/>
+                                <rect key="frame" x="25" y="1207" width="974" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7q-qx-6at" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                <rect key="frame" x="15" y="692.33333333333337" width="363" height="139.66666666666663"/>
+                                <rect key="frame" x="15" y="1278" width="994" height="68"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -246,7 +247,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="균형있는 운동: 5분할은 다양한 근육 그룹을 포함하는 균형 잡힌 운동을 할 수 있도록 도와줍니다. 다양한 부위의 근육을 동일하게 발달시키면서도 부상의 위험을 줄일 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioj-90-1Nh">
-                                <rect key="frame" x="25" y="702.33333333333337" width="343" height="119.66666666666663"/>
+                                <rect key="frame" x="25" y="1288" width="974" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -292,32 +293,32 @@
             <objects>
                 <viewController id="S9t-eD-8sR" customClass="WorkCycleViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MqO-z7-Ua3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="g9V-KM-wRJ">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="669"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1181"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WorkCycleTableViewCell" rowHeight="167" id="dvV-qD-Q0U" customClass="WorkCycleTableViewCell" customModule="WorkoutCycle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="167"/>
+                                        <rect key="frame" x="0.0" y="50" width="1024" height="167"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dvV-qD-Q0U" id="puv-Ol-piU">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evs-yA-XDV" customClass="FAUGradientView" customModule="WorkoutCycle" customModuleProvider="target">
-                                                    <rect key="frame" x="25" y="16" width="343" height="135"/>
+                                                    <rect key="frame" x="21" y="20" width="982" height="127"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="figure.run" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JRB-Zb-9Au">
-                                                            <rect key="frame" x="10" y="10.333333333333329" width="100" height="115"/>
+                                                            <rect key="frame" x="10" y="9.5" width="100" height="107.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="UZj-Nq-mFr"/>
                                                                 <constraint firstAttribute="height" constant="100" id="ld3-6S-M1W"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상체" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdA-Ql-cuj">
-                                                            <rect key="frame" x="115" y="47.666666666666671" width="223" height="39.666666666666671"/>
+                                                            <rect key="frame" x="115" y="43" width="862" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -369,10 +370,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-kh-jeB" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                <rect key="frame" x="20" y="689" width="353" height="64"/>
+                                <rect key="frame" x="20" y="1201" width="984" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfj-zg-YQG">
-                                        <rect key="frame" x="5" y="5" width="343" height="54"/>
+                                        <rect key="frame" x="5" y="5" width="974" height="55"/>
                                         <color key="backgroundColor" red="0.99520033600000002" green="0.74975043539999997" blue="0.1103985384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -449,14 +450,14 @@
             <objects>
                 <viewController storyboardIdentifier="StartViewController" id="7p0-As-Sa6" customClass="StartViewController" customModule="WorkoutCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nig-Ck-rfj">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaC-bZ-e34" customClass="RoundedView" customModule="WorkoutCycle" customModuleProvider="target">
-                                <rect key="frame" x="20" y="703.33333333333337" width="353" height="64.666666666666629"/>
+                                <rect key="frame" x="20" y="1231" width="984" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trq-Ow-4nZ">
-                                        <rect key="frame" x="5" y="4.9999999999999964" width="343" height="54.666666666666657"/>
+                                        <rect key="frame" x="5" y="5" width="974" height="55"/>
                                         <color key="backgroundColor" red="0.99520033600000002" green="0.74975043539999997" blue="0.1103985384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -482,7 +483,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WorkoutCycleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="M2x-s3-bLv">
-                                <rect key="frame" x="21.666666666666657" y="163" width="350" height="350"/>
+                                <rect key="frame" x="337" y="134" width="350" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="iw5-Jy-Ii0"/>
                                     <constraint firstAttribute="height" constant="350" id="mpI-1A-iEC"/>
@@ -548,7 +549,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jA5-pt-vI5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="va0-oG-UJy">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -567,7 +568,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="4fx-Pl-bwm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y78-k6-YuA">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -585,26 +586,26 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WorkoutCycleIcon" width="512" height="512"/>
-        <image name="beginner" width="2008" height="3008"/>
+        <image name="beginner" width="1004" height="1504"/>
         <image name="figure.run" catalog="system" width="115" height="128"/>
-        <image name="workout4" width="3499" height="2251.5"/>
+        <image name="workout4" width="1749.5" height="1126"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
