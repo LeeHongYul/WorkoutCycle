@@ -1,5 +1,8 @@
 # WorkoutCycle
 
+### AppStore 
+[WorkoutCycle](https://apps.apple.com/kr/app/workoutcycle/id6457203197)
+
 ### 프로젝트 소개
 운동을 하는 사람들을 위한 앱을 개발했습니다. 이 앱은 사용자가 쉽게 자신의 현재 운동 분할법을 설정하고 매일 어디 부위를 운동을 해야 하는지 쉽게 알 수 있도록 도와줍니다.
   - 기본 분할법을 설정하며, 이후에는 사용자가 원하는 대로 분할법을 커스터마이징할 수 있습니다.
@@ -168,3 +171,6 @@ func removeCheckMark(checkedDate: Date) {
 ### 성장 과정
 - 머리 속에서 필요성에 의해 고민한 것을 실제로 실행하여 스스로에게 칭찬할 만한 일을 해냈다고 생각합니다.
 - 해당 프로젝트를 진행하면서 새로운 기능을 배우고 싶다는 열망이 생겨 추가하고 싶은 욕구가 생겼습니다. 이를 통해 더 많은 공부가 필요하다는 것을 깨닫게 되었습니다.
+
+### 상세 내용
+[WorkoutCycle 포트폴리오](https://bright-melody-10d.notion.site/WorkoutCycle-e5a22f5c21f04682bb7c0dfee4af06c6?pvs=4)
