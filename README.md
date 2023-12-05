@@ -129,7 +129,7 @@ if let finalWorkCycleViewController = (viewController as? UINavigationController
 UICalendarView에서 새로운 이벤트를 추가할 때마다 바로 데이터를 다시 로드하기 위해 reloadDecorations(forDateComponents:animated:) 메서드를 활용하였습니다.<br>
 이 메서드는 DateComponents 타입의 배열에 현재까지 체크된 날짜를 저장하여 적절한 시기에 데이터를 갱신하는 방식으로 구현되었습니다.<br>
 하지만 decoration을 추가할 때는 즉시 적용되었지만, 삭제를 시도할 때는 즉시 실행되지 않았습니다.<br>
-이 문제는 주어진 날짜에 대한 장식(데코레이션)을 설정하는 데 사용되는 메소드 'calendarView(_:decorationFor:)'가 언제 호출되는지를 확인하지 못해서 발생한 문제였습니다.<br>
+이 문제는 주어진 날짜에 대한 장식(데코레이션)을 설정하는 데 사용되는 메소드 'calendarView.reloadDecorations'가 언제 호출되는지를 확인하지 못해서 발생한 문제였습니다.<br>
 decoration을 제거하고 확인 후 메소드를 호출하니 문제가 해결되었습니다.<br>
 </div>
 </details>
